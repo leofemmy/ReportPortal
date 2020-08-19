@@ -1,0 +1,2182 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{119B500E-1256-4E6F-8EDE-AE9136AB8465}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReportPortal</RootNamespace>
+    <AssemblyName>ReportPortal</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CryptSharp, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CryptSharpOfficial.2.1.0.0\lib\CryptSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.1.Drawing, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Export, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.1.Web, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.1.Web.WebForms, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ActivationEmail.aspx" />
+    <Content Include="Agent.aspx" />
+    <Content Include="AssessmentCummulativeSummary.aspx" />
+    <Content Include="AssessmentTaxoffice.aspx" />
+    <Content Include="AssessmentTaxOfficeYear.aspx" />
+    <Content Include="AssessmentYear.aspx" />
+    <Content Include="AssessmentYearSummary.aspx" />
+    <Content Include="Cerificate.aspx" />
+    <Content Include="CollectionRanking.aspx" />
+    <Content Include="CollectionSummary.aspx" />
+    <Content Include="Content\css\select2.css" />
+    <Content Include="Content\css\select2.min.css" />
+    <Content Include="CummulativeSummary.aspx" />
+    <Content Include="DetailByYear.aspx" />
+    <Content Include="DetailsbyAll.aspx" />
+    <Content Include="Detailsbytaxoffice.aspx" />
+    <Content Include="DetailsIndividual.aspx" />
+    <Content Include="forgotpassword.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="images\american-express.png" />
+    <Content Include="images\clearimage.jpeg" />
+    <Content Include="images\cropper.jpg" />
+    <Content Include="images\img.jpg" />
+    <Content Include="images\inbox.png" />
+    <Content Include="images\mastercard.png" />
+    <Content Include="images\media.jpg" />
+    <Content Include="images\paypal.png" />
+    <Content Include="images\picture.jpg" />
+    <Content Include="images\prod-1.jpg" />
+    <Content Include="images\prod-2.jpg" />
+    <Content Include="images\prod-3.jpg" />
+    <Content Include="images\prod-4.jpg" />
+    <Content Include="images\prod-5.jpg" />
+    <Content Include="images\user.png" />
+    <Content Include="images\visa.png" />
+    <Content Include="Index.aspx" />
+    <Content Include="js\1.6\jquery-ui.min.js" />
+    <Content Include="js\1.8\jquery-ui.css" />
+    <Content Include="js\1.8\jquery-ui.min.js" />
+    <Content Include="js\jquery-1.11.3.min.js" />
+    <Content Include="LineSummaryAll.aspx" />
+    <Content Include="LineSummaryTaxOffice.aspx" />
+    <Content Include="LineSummaryTaxOfficeView.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="Logo\deltalogo.jpg" />
+    <Content Include="Logo\ogunlogo.jpg" />
+    <Content Include="Logo\oyostate logo.jpg" />
+    <Content Include="Payer.aspx" />
+    <Content Include="Payerledger.aspx" />
+    <Content Include="Payment.aspx" />
+    <Content Include="plugins\assets\css\animate.css" />
+    <Content Include="plugins\assets\css\basic-admin.css" />
+    <Content Include="plugins\assets\css\basic.css" />
+    <Content Include="plugins\assets\css\default.css" />
+    <Content Include="plugins\assets\css\filter.css" />
+    <Content Include="plugins\assets\css\font-icons\dripicons.css" />
+    <Content Include="plugins\assets\css\font-icons\font-awesome.min.css" />
+    <Content Include="plugins\assets\css\font-icons\lg\lgd41d.html" />
+    <Content Include="plugins\assets\css\font-icons\lg\lgd641.html" />
+    <Content Include="plugins\assets\css\font-icons\lg\lgd641.svg" />
+    <Content Include="plugins\assets\css\font-icons\materialdesignicons.min.css" />
+    <Content Include="plugins\assets\css\font-icons\pe-icon-7.css" />
+    <Content Include="plugins\assets\css\font-icons\typicons.css" />
+    <Content Include="plugins\assets\css\icons.css" />
+    <Content Include="plugins\assets\css\lightgallery.css" />
+    <Content Include="plugins\assets\css\main.css" />
+    <Content Include="plugins\assets\css\media-queries.css" />
+    <Content Include="plugins\assets\css\mega-menu.css" />
+    <Content Include="plugins\assets\css\responsive.css" />
+    <Content Include="plugins\assets\css\spinners.css" />
+    <Content Include="plugins\assets\fonts\dripicons\dripicons-v2.svg" />
+    <Content Include="plugins\assets\fonts\fontawesome\fontawesome-webfont5b62.svg" />
+    <Content Include="plugins\assets\fonts\lgd41d.html" />
+    <Content Include="plugins\assets\fonts\lgd641-2.html" />
+    <Content Include="plugins\assets\fonts\lgd641-3.html" />
+    <Content Include="plugins\assets\fonts\lgd641.html" />
+    <Content Include="plugins\assets\fonts\material-design\materialdesignicons-webfontb675.svg" />
+    <Content Include="plugins\assets\fonts\pe-icon-7\Pe-icon-7-strokebb1d.svg" />
+    <Content Include="plugins\assets\fonts\typicons\typicons.svg" />
+    <Content Include="plugins\assets\img\avatar3b.jpg" />
+    <Content Include="plugins\assets\img\big\circle.jpg" />
+    <Content Include="plugins\assets\img\big\img-1.jpg" />
+    <Content Include="plugins\assets\img\big\img1.jpg" />
+    <Content Include="plugins\assets\img\big\img2.jpg" />
+    <Content Include="plugins\assets\img\big\img3.jpg" />
+    <Content Include="plugins\assets\img\big\img4.jpg" />
+    <Content Include="plugins\assets\img\big\img5.jpg" />
+    <Content Include="plugins\assets\img\big\img6.jpg" />
+    <Content Include="plugins\assets\img\boder.jpg" />
+    <Content Include="plugins\assets\img\errorbg.jpg" />
+    <Content Include="plugins\assets\img\favicon\favicon.png" />
+    <Content Include="plugins\assets\img\gallery\equal-size\mock1.jpg" />
+    <Content Include="plugins\assets\img\gallery\equal-size\mock2.jpg" />
+    <Content Include="plugins\assets\img\gallery\equal-size\mock3.jpg" />
+    <Content Include="plugins\assets\img\gallery\equal-size\mock4.jpg" />
+    <Content Include="plugins\assets\img\gallery\equal-size\mock5.jpg" />
+    <Content Include="plugins\assets\img\gallery\equal-size\mock6.jpg" />
+    <Content Include="plugins\assets\img\gallery\equal-size\mock7.jpg" />
+    <Content Include="plugins\assets\img\gallery\equal-size\mock8.jpg" />
+    <Content Include="plugins\assets\img\gallery\mock1.jpg" />
+    <Content Include="plugins\assets\img\gallery\mock10.jpg" />
+    <Content Include="plugins\assets\img\gallery\mock11.jpg" />
+    <Content Include="plugins\assets\img\gallery\mock2.jpg" />
+    <Content Include="plugins\assets\img\gallery\mock3.jpg" />
+    <Content Include="plugins\assets\img\gallery\mock4.jpg" />
+    <Content Include="plugins\assets\img\gallery\mock5.jpg" />
+    <Content Include="plugins\assets\img\gallery\mock6.jpg" />
+    <Content Include="plugins\assets\img\gallery\mock7.jpg" />
+    <Content Include="plugins\assets\img\gallery\mock8.jpg" />
+    <Content Include="plugins\assets\img\gallery\mock9.jpg" />
+    <Content Include="plugins\assets\img\heading-bg\slide1.jpg" />
+    <Content Include="plugins\assets\img\heading-bg\slide2.jpg" />
+    <Content Include="plugins\assets\img\heading-bg\slide3.jpg" />
+    <Content Include="plugins\assets\img\heading-bg\slide4.jpg" />
+    <Content Include="plugins\assets\img\heading-bg\slide6.jpg" />
+    <Content Include="plugins\assets\img\heartbeat.svg" />
+    <Content Include="plugins\assets\img\icons\business\attachment.svg" />
+    <Content Include="plugins\assets\img\icons\business\business-1.svg" />
+    <Content Include="plugins\assets\img\icons\business\business-2.svg" />
+    <Content Include="plugins\assets\img\icons\business\business-3.svg" />
+    <Content Include="plugins\assets\img\icons\business\business-4.svg" />
+    <Content Include="plugins\assets\img\icons\business\business-5.svg" />
+    <Content Include="plugins\assets\img\icons\business\business-6.svg" />
+    <Content Include="plugins\assets\img\icons\business\business-7.svg" />
+    <Content Include="plugins\assets\img\icons\business\business.svg" />
+    <Content Include="plugins\assets\img\icons\business\coins.svg" />
+    <Content Include="plugins\assets\img\icons\business\edit.svg" />
+    <Content Include="plugins\assets\img\icons\business\folder.svg" />
+    <Content Include="plugins\assets\img\icons\business\graphic-1.svg" />
+    <Content Include="plugins\assets\img\icons\business\graphic.svg" />
+    <Content Include="plugins\assets\img\icons\business\man.svg" />
+    <Content Include="plugins\assets\img\icons\business\message.svg" />
+    <Content Include="plugins\assets\img\icons\business\money.svg" />
+    <Content Include="plugins\assets\img\icons\business\pen.svg" />
+    <Content Include="plugins\assets\img\icons\business\people-1.svg" />
+    <Content Include="plugins\assets\img\icons\business\people.svg" />
+    <Content Include="plugins\assets\img\icons\business\suitcase.svg" />
+    <Content Include="plugins\assets\img\icons\business\target.svg" />
+    <Content Include="plugins\assets\img\icons\business\technology-1.svg" />
+    <Content Include="plugins\assets\img\icons\business\technology.svg" />
+    <Content Include="plugins\assets\img\icons\business\transport.svg" />
+    <Content Include="plugins\assets\img\icons\business\travel.svg" />
+    <Content Include="plugins\assets\img\icons\files\aac.svg" />
+    <Content Include="plugins\assets\img\icons\files\ace.svg" />
+    <Content Include="plugins\assets\img\icons\files\ai.svg" />
+    <Content Include="plugins\assets\img\icons\files\aut.svg" />
+    <Content Include="plugins\assets\img\icons\files\avi.svg" />
+    <Content Include="plugins\assets\img\icons\files\bin.svg" />
+    <Content Include="plugins\assets\img\icons\files\bmp.svg" />
+    <Content Include="plugins\assets\img\icons\files\cad.svg" />
+    <Content Include="plugins\assets\img\icons\files\cdr.svg" />
+    <Content Include="plugins\assets\img\icons\files\css.svg" />
+    <Content Include="plugins\assets\img\icons\files\db.svg" />
+    <Content Include="plugins\assets\img\icons\files\dmg.svg" />
+    <Content Include="plugins\assets\img\icons\files\doc.svg" />
+    <Content Include="plugins\assets\img\icons\files\docx.svg" />
+    <Content Include="plugins\assets\img\icons\files\dwf.svg" />
+    <Content Include="plugins\assets\img\icons\files\dwg.svg" />
+    <Content Include="plugins\assets\img\icons\files\eps.svg" />
+    <Content Include="plugins\assets\img\icons\files\exe.svg" />
+    <Content Include="plugins\assets\img\icons\files\flac.svg" />
+    <Content Include="plugins\assets\img\icons\files\gif.svg" />
+    <Content Include="plugins\assets\img\icons\files\hlp.svg" />
+    <Content Include="plugins\assets\img\icons\files\htm.svg" />
+    <Content Include="plugins\assets\img\icons\files\html.svg" />
+    <Content Include="plugins\assets\img\icons\files\ini.svg" />
+    <Content Include="plugins\assets\img\icons\files\iso.svg" />
+    <Content Include="plugins\assets\img\icons\files\java.svg" />
+    <Content Include="plugins\assets\img\icons\files\jpg.svg" />
+    <Content Include="plugins\assets\img\icons\files\js.svg" />
+    <Content Include="plugins\assets\img\icons\files\mkv.svg" />
+    <Content Include="plugins\assets\img\icons\files\mov.svg" />
+    <Content Include="plugins\assets\img\icons\files\mp3.svg" />
+    <Content Include="plugins\assets\img\icons\files\mp4.svg" />
+    <Content Include="plugins\assets\img\icons\files\mpg.svg" />
+    <Content Include="plugins\assets\img\icons\files\pdf.svg" />
+    <Content Include="plugins\assets\img\icons\files\php.svg" />
+    <Content Include="plugins\assets\img\icons\files\png.svg" />
+    <Content Include="plugins\assets\img\icons\files\ppt.svg" />
+    <Content Include="plugins\assets\img\icons\files\ps.svg" />
+    <Content Include="plugins\assets\img\icons\files\psd.svg" />
+    <Content Include="plugins\assets\img\icons\files\rar.svg" />
+    <Content Include="plugins\assets\img\icons\files\rss.svg" />
+    <Content Include="plugins\assets\img\icons\files\rtf.svg" />
+    <Content Include="plugins\assets\img\icons\files\svg.svg" />
+    <Content Include="plugins\assets\img\icons\files\swf.svg" />
+    <Content Include="plugins\assets\img\icons\files\sys.svg" />
+    <Content Include="plugins\assets\img\icons\files\tiff.svg" />
+    <Content Include="plugins\assets\img\icons\files\txt.svg" />
+    <Content Include="plugins\assets\img\icons\files\xls.svg" />
+    <Content Include="plugins\assets\img\icons\files\xlsx.svg" />
+    <Content Include="plugins\assets\img\icons\files\zip.svg" />
+    <Content Include="plugins\assets\img\icons\flags\abkhazia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\afghanistan.svg" />
+    <Content Include="plugins\assets\img\icons\flags\aland-islands.svg" />
+    <Content Include="plugins\assets\img\icons\flags\albania.svg" />
+    <Content Include="plugins\assets\img\icons\flags\algeria.svg" />
+    <Content Include="plugins\assets\img\icons\flags\american-samoa.svg" />
+    <Content Include="plugins\assets\img\icons\flags\andorra.svg" />
+    <Content Include="plugins\assets\img\icons\flags\angola.svg" />
+    <Content Include="plugins\assets\img\icons\flags\anguilla.svg" />
+    <Content Include="plugins\assets\img\icons\flags\antigua-and-barbuda.svg" />
+    <Content Include="plugins\assets\img\icons\flags\argentina.svg" />
+    <Content Include="plugins\assets\img\icons\flags\armenia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\aruba.svg" />
+    <Content Include="plugins\assets\img\icons\flags\australia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\austria.svg" />
+    <Content Include="plugins\assets\img\icons\flags\azerbaijan.svg" />
+    <Content Include="plugins\assets\img\icons\flags\azores-islands.svg" />
+    <Content Include="plugins\assets\img\icons\flags\bahamas.svg" />
+    <Content Include="plugins\assets\img\icons\flags\bahrain.svg" />
+    <Content Include="plugins\assets\img\icons\flags\balearic-islands.svg" />
+    <Content Include="plugins\assets\img\icons\flags\bangladesh.svg" />
+    <Content Include="plugins\assets\img\icons\flags\barbados.svg" />
+    <Content Include="plugins\assets\img\icons\flags\basque-country.svg" />
+    <Content Include="plugins\assets\img\icons\flags\belarus.svg" />
+    <Content Include="plugins\assets\img\icons\flags\belgium.svg" />
+    <Content Include="plugins\assets\img\icons\flags\belize.svg" />
+    <Content Include="plugins\assets\img\icons\flags\benin.svg" />
+    <Content Include="plugins\assets\img\icons\flags\bermuda.svg" />
+    <Content Include="plugins\assets\img\icons\flags\bhutan.svg" />
+    <Content Include="plugins\assets\img\icons\flags\bolivia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\bonaire.svg" />
+    <Content Include="plugins\assets\img\icons\flags\bosnia-and-herzegovina.svg" />
+    <Content Include="plugins\assets\img\icons\flags\botswana.svg" />
+    <Content Include="plugins\assets\img\icons\flags\brazil.svg" />
+    <Content Include="plugins\assets\img\icons\flags\bristish-indian-ocean-territory.svg" />
+    <Content Include="plugins\assets\img\icons\flags\british-columbia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\british-virgin-islands.svg" />
+    <Content Include="plugins\assets\img\icons\flags\bulgaria.svg" />
+    <Content Include="plugins\assets\img\icons\flags\cambodia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\canada.svg" />
+    <Content Include="plugins\assets\img\icons\flags\canary-islands.svg" />
+    <Content Include="plugins\assets\img\icons\flags\central-african-republic.svg" />
+    <Content Include="plugins\assets\img\icons\flags\chile.svg" />
+    <Content Include="plugins\assets\img\icons\flags\china.svg" />
+    <Content Include="plugins\assets\img\icons\flags\cocos-island.svg" />
+    <Content Include="plugins\assets\img\icons\flags\colombia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\corsica.svg" />
+    <Content Include="plugins\assets\img\icons\flags\costa-rica.svg" />
+    <Content Include="plugins\assets\img\icons\flags\croatia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\cuba.svg" />
+    <Content Include="plugins\assets\img\icons\flags\curacao.svg" />
+    <Content Include="plugins\assets\img\icons\flags\cyprus.svg" />
+    <Content Include="plugins\assets\img\icons\flags\czech-republic.svg" />
+    <Content Include="plugins\assets\img\icons\flags\denmark.svg" />
+    <Content Include="plugins\assets\img\icons\flags\dominica.svg" />
+    <Content Include="plugins\assets\img\icons\flags\dominican-republic.svg" />
+    <Content Include="plugins\assets\img\icons\flags\ecuador.svg" />
+    <Content Include="plugins\assets\img\icons\flags\egypt.svg" />
+    <Content Include="plugins\assets\img\icons\flags\el-salvador.svg" />
+    <Content Include="plugins\assets\img\icons\flags\england.svg" />
+    <Content Include="plugins\assets\img\icons\flags\estonia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\ethiopia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\european-union.svg" />
+    <Content Include="plugins\assets\img\icons\flags\fiji.svg" />
+    <Content Include="plugins\assets\img\icons\flags\finland.svg" />
+    <Content Include="plugins\assets\img\icons\flags\france.svg" />
+    <Content Include="plugins\assets\img\icons\flags\french-polynesia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\gambia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\georgia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\germany.svg" />
+    <Content Include="plugins\assets\img\icons\flags\ghana.svg" />
+    <Content Include="plugins\assets\img\icons\flags\gibraltar.svg" />
+    <Content Include="plugins\assets\img\icons\flags\greece.svg" />
+    <Content Include="plugins\assets\img\icons\flags\greenland.svg" />
+    <Content Include="plugins\assets\img\icons\flags\grenada.svg" />
+    <Content Include="plugins\assets\img\icons\flags\guam.svg" />
+    <Content Include="plugins\assets\img\icons\flags\guinea.svg" />
+    <Content Include="plugins\assets\img\icons\flags\guyana.svg" />
+    <Content Include="plugins\assets\img\icons\flags\haiti.svg" />
+    <Content Include="plugins\assets\img\icons\flags\hawaii.svg" />
+    <Content Include="plugins\assets\img\icons\flags\hong-kong.svg" />
+    <Content Include="plugins\assets\img\icons\flags\hungary.svg" />
+    <Content Include="plugins\assets\img\icons\flags\iceland.svg" />
+    <Content Include="plugins\assets\img\icons\flags\india.svg" />
+    <Content Include="plugins\assets\img\icons\flags\indonesia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\iran.svg" />
+    <Content Include="plugins\assets\img\icons\flags\iraq.svg" />
+    <Content Include="plugins\assets\img\icons\flags\ireland.svg" />
+    <Content Include="plugins\assets\img\icons\flags\israel.svg" />
+    <Content Include="plugins\assets\img\icons\flags\italy.svg" />
+    <Content Include="plugins\assets\img\icons\flags\jamaica.svg" />
+    <Content Include="plugins\assets\img\icons\flags\japan.svg" />
+    <Content Include="plugins\assets\img\icons\flags\jersey.svg" />
+    <Content Include="plugins\assets\img\icons\flags\jordan.svg" />
+    <Content Include="plugins\assets\img\icons\flags\kazakhstan.svg" />
+    <Content Include="plugins\assets\img\icons\flags\kenya.svg" />
+    <Content Include="plugins\assets\img\icons\flags\kuwait.svg" />
+    <Content Include="plugins\assets\img\icons\flags\laos.svg" />
+    <Content Include="plugins\assets\img\icons\flags\lebanon.svg" />
+    <Content Include="plugins\assets\img\icons\flags\lesotho.svg" />
+    <Content Include="plugins\assets\img\icons\flags\liberia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\libya.svg" />
+    <Content Include="plugins\assets\img\icons\flags\lithuania.svg" />
+    <Content Include="plugins\assets\img\icons\flags\luxembourg.svg" />
+    <Content Include="plugins\assets\img\icons\flags\macao.svg" />
+    <Content Include="plugins\assets\img\icons\flags\madagascar.svg" />
+    <Content Include="plugins\assets\img\icons\flags\madeira.svg" />
+    <Content Include="plugins\assets\img\icons\flags\malawi.svg" />
+    <Content Include="plugins\assets\img\icons\flags\malaysia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\maldives.svg" />
+    <Content Include="plugins\assets\img\icons\flags\mali.svg" />
+    <Content Include="plugins\assets\img\icons\flags\mauritania.svg" />
+    <Content Include="plugins\assets\img\icons\flags\mauritius.svg" />
+    <Content Include="plugins\assets\img\icons\flags\melilla.svg" />
+    <Content Include="plugins\assets\img\icons\flags\mexico.svg" />
+    <Content Include="plugins\assets\img\icons\flags\micronesia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\moldova.svg" />
+    <Content Include="plugins\assets\img\icons\flags\monaco.svg" />
+    <Content Include="plugins\assets\img\icons\flags\mongolia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\montenegro.svg" />
+    <Content Include="plugins\assets\img\icons\flags\morocco.svg" />
+    <Content Include="plugins\assets\img\icons\flags\myanmar.svg" />
+    <Content Include="plugins\assets\img\icons\flags\namibia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\nepal.svg" />
+    <Content Include="plugins\assets\img\icons\flags\netherlands.svg" />
+    <Content Include="plugins\assets\img\icons\flags\new-zealand.svg" />
+    <Content Include="plugins\assets\img\icons\flags\nigeria.svg" />
+    <Content Include="plugins\assets\img\icons\flags\north-korea.svg" />
+    <Content Include="plugins\assets\img\icons\flags\northern-marianas-islands.svg" />
+    <Content Include="plugins\assets\img\icons\flags\norway.svg" />
+    <Content Include="plugins\assets\img\icons\flags\oman.svg" />
+    <Content Include="plugins\assets\img\icons\flags\orkney-islands.svg" />
+    <Content Include="plugins\assets\img\icons\flags\pakistan.svg" />
+    <Content Include="plugins\assets\img\icons\flags\palau.svg" />
+    <Content Include="plugins\assets\img\icons\flags\palestine.svg" />
+    <Content Include="plugins\assets\img\icons\flags\panama.svg" />
+    <Content Include="plugins\assets\img\icons\flags\paraguay.svg" />
+    <Content Include="plugins\assets\img\icons\flags\peru.svg" />
+    <Content Include="plugins\assets\img\icons\flags\philippines.svg" />
+    <Content Include="plugins\assets\img\icons\flags\portugal.svg" />
+    <Content Include="plugins\assets\img\icons\flags\puerto-rico.svg" />
+    <Content Include="plugins\assets\img\icons\flags\qatar.svg" />
+    <Content Include="plugins\assets\img\icons\flags\republic-of-macedonia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\romania.svg" />
+    <Content Include="plugins\assets\img\icons\flags\russia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\rwanda.svg" />
+    <Content Include="plugins\assets\img\icons\flags\saba-island.svg" />
+    <Content Include="plugins\assets\img\icons\flags\san-marino.svg" />
+    <Content Include="plugins\assets\img\icons\flags\sao-tome-and-principe.svg" />
+    <Content Include="plugins\assets\img\icons\flags\saudi-arabia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\scotland.svg" />
+    <Content Include="plugins\assets\img\icons\flags\senegal.svg" />
+    <Content Include="plugins\assets\img\icons\flags\serbia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\singapore.svg" />
+    <Content Include="plugins\assets\img\icons\flags\slovakia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\slovenia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\solomon-islands.svg" />
+    <Content Include="plugins\assets\img\icons\flags\somalia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\somaliland.svg" />
+    <Content Include="plugins\assets\img\icons\flags\south-africa.svg" />
+    <Content Include="plugins\assets\img\icons\flags\south-korea.svg" />
+    <Content Include="plugins\assets\img\icons\flags\spain.svg" />
+    <Content Include="plugins\assets\img\icons\flags\sri-lanka.svg" />
+    <Content Include="plugins\assets\img\icons\flags\st-lucia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\sudan.svg" />
+    <Content Include="plugins\assets\img\icons\flags\sweden.svg" />
+    <Content Include="plugins\assets\img\icons\flags\switzerland.svg" />
+    <Content Include="plugins\assets\img\icons\flags\syria.svg" />
+    <Content Include="plugins\assets\img\icons\flags\taiwan.svg" />
+    <Content Include="plugins\assets\img\icons\flags\tajikistan.svg" />
+    <Content Include="plugins\assets\img\icons\flags\tanzania.svg" />
+    <Content Include="plugins\assets\img\icons\flags\thailand.svg" />
+    <Content Include="plugins\assets\img\icons\flags\tibet.svg" />
+    <Content Include="plugins\assets\img\icons\flags\trinidad-and-tobago.svg" />
+    <Content Include="plugins\assets\img\icons\flags\tunisia.svg" />
+    <Content Include="plugins\assets\img\icons\flags\turkey.svg" />
+    <Content Include="plugins\assets\img\icons\flags\turkmenistan.svg" />
+    <Content Include="plugins\assets\img\icons\flags\uganda.svg" />
+    <Content Include="plugins\assets\img\icons\flags\ukraine.svg" />
+    <Content Include="plugins\assets\img\icons\flags\united-arab-emirates.svg" />
+    <Content Include="plugins\assets\img\icons\flags\united-kingdom.svg" />
+    <Content Include="plugins\assets\img\icons\flags\united-nations.svg" />
+    <Content Include="plugins\assets\img\icons\flags\united-states.svg" />
+    <Content Include="plugins\assets\img\icons\flags\uruguay.svg" />
+    <Content Include="plugins\assets\img\icons\flags\uzbekistn.svg" />
+    <Content Include="plugins\assets\img\icons\flags\vatican-city.svg" />
+    <Content Include="plugins\assets\img\icons\flags\venezuela.svg" />
+    <Content Include="plugins\assets\img\icons\flags\vietnam.svg" />
+    <Content Include="plugins\assets\img\icons\flags\virgin-islands.svg" />
+    <Content Include="plugins\assets\img\icons\flags\wales.svg" />
+    <Content Include="plugins\assets\img\icons\flags\yemen.svg" />
+    <Content Include="plugins\assets\img\icons\flags\zimbabwe.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-1.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-10.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-11.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-12.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-13.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-14.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-15.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-16.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-17.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-18.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-19.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-2.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-20.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-21.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-22.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-23.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-24.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-25.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-26.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-27.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-28.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-29.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-3.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-30.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-31.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-32.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-33.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-34.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-35.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-4.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-5.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-6.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-7.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-8.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders-9.svg" />
+    <Content Include="plugins\assets\img\icons\folders\monocolour\folders.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-1.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-10.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-11.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-12.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-13.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-14.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-15.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-16.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-17.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-18.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-19.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-2.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-20.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-21.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-22.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-23.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-24.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-25.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-26.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-27.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-28.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-29.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-3.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-30.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-31.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-32.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-33.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-34.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-35.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-4.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-5.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-6.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-7.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-8.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders-9.svg" />
+    <Content Include="plugins\assets\img\icons\folders\multicolour\folders.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\camera-2.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\camera-3.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\camera-4.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\camera.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\cinema.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\education-video.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\frame.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\photo-1.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\photo-2.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\photo-3.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\photo-4.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\photo-5.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\photo-6.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\photo-7.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\photo-8.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\photo-9.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\photo-two.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\photo.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\play-arrows.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\play.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\signs.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\video-camera.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\video-play.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\video.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\vr-display.svg" />
+    <Content Include="plugins\assets\img\icons\photo-video\youtube.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\alarm-clock.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\archives.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\atom.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\browser.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\cards.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\cloudy.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\cogwheel.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\compass.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\computer-1.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\computer.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\cone.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\crown.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\diamond.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\dice.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\edit-tools.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\file.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\firewall.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\flask.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\gamepad.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\hierarchy-structure.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\ladybug.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\laptop.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\layers.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\levels.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\link.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\magnifying-glass.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\microscope.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\open-box.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\padlock.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\pen.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\pie-chart.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\play-video.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\plug.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\protractor.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\puzzle.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\search.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\seo.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\shield.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\shopping-bag.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\shopping-cart.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\strategy.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\swiss-army-knife.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\target.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\traffic-lights.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\transfer.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\visibility.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\worldwide-1.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\worldwide.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\wrench.svg" />
+    <Content Include="plugins\assets\img\icons\seo-developement\writing.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\android.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\behance.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\bing.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\box.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\buffer.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\creative-market.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\delicious.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\deviantart.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\dribbble.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\dropbox.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\envato.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\etsy.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\facebook.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\flickr.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\foursquare.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\google-plus.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\hi5.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\howcast.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\html-5.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\instagram.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\kickstarter.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\linkedin.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\medium.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\myspace.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\path.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\paypal.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\periscope.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\pinterest.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\plaxo.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\quora.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\reddit.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\scribd.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\shutterstock.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\skype.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\snapchat.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\soundcloud.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\spotify.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\stumbleupon.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\trello.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\tumblr.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\twitter.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\vimeo.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\vine.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\whatsapp.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\wikipedia.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\wordpress.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\yelp.svg" />
+    <Content Include="plugins\assets\img\icons\social-media\youtube.svg" />
+    <Content Include="plugins\assets\img\img1.jpg" />
+    <Content Include="plugins\assets\img\img2.jpg" />
+    <Content Include="plugins\assets\img\loading.html" />
+    <Content Include="plugins\assets\img\login-register.jpg" />
+    <Content Include="plugins\assets\img\logo-dark.png" />
+    <Content Include="plugins\assets\img\logo.png" />
+    <Content Include="plugins\assets\img\modals\modal-4.png" />
+    <Content Include="plugins\assets\img\modals\modal-5.png" />
+    <Content Include="plugins\assets\img\modals\model.png" />
+    <Content Include="plugins\assets\img\modals\model2.png" />
+    <Content Include="plugins\assets\img\modals\model3.png" />
+    <Content Include="plugins\assets\img\product-1.jpg" />
+    <Content Include="plugins\assets\img\product-2.jpg" />
+    <Content Include="plugins\assets\img\product-3.jpg" />
+    <Content Include="plugins\assets\img\sweetalert\alert.png" />
+    <Content Include="plugins\assets\img\sweetalert\alert2.png" />
+    <Content Include="plugins\assets\img\sweetalert\alert3.png" />
+    <Content Include="plugins\assets\img\sweetalert\alert4.png" />
+    <Content Include="plugins\assets\img\sweetalert\alert5.png" />
+    <Content Include="plugins\assets\img\sweetalert\alert6.png" />
+    <Content Include="plugins\assets\img\sweetalert\alert7.png" />
+    <Content Include="plugins\assets\img\sweetalert\alert8.png" />
+    <Content Include="plugins\assets\img\users\avatar-1.jpg" />
+    <Content Include="plugins\assets\img\users\avatar-2.jpg" />
+    <Content Include="plugins\assets\img\users\avatar-3.jpg" />
+    <Content Include="plugins\assets\img\users\avatar-4.jpg" />
+    <Content Include="plugins\assets\img\users\avatar-5.jpg" />
+    <Content Include="plugins\assets\img\users\img-user.jpg" />
+    <Content Include="plugins\assets\img\video-play.png" />
+    <Content Include="plugins\assets\img\vimeo-play.png" />
+    <Content Include="plugins\assets\img\youtube-play.png" />
+    <Content Include="plugins\assets\js\bitcoin-init.js" />
+    <Content Include="plugins\assets\js\bootstrap-carousel.js" />
+    <Content Include="plugins\assets\js\chartist-data.js" />
+    <Content Include="plugins\assets\js\dashboard-dark.init.js" />
+    <Content Include="plugins\assets\js\dashboard.init.js" />
+    <Content Include="plugins\assets\js\db.js" />
+    <Content Include="plugins\assets\js\dropdown-bootstrap-extended.js" />
+    <Content Include="plugins\assets\js\dropify.js" />
+    <Content Include="plugins\assets\js\ecommerce-dashboard.js" />
+    <Content Include="plugins\assets\js\editable-init.js" />
+    <Content Include="plugins\assets\js\error-init.js" />
+    <Content Include="plugins\assets\js\flot-data-dashboard.js" />
+    <Content Include="plugins\assets\js\flot-data.js" />
+    <Content Include="plugins\assets\js\footable-init.js" />
+    <Content Include="plugins\assets\js\form-advance-data.js" />
+    <Content Include="plugins\assets\js\form-picker-data.js" />
+    <Content Include="plugins\assets\js\froogaloop2.min.js" />
+    <Content Include="plugins\assets\js\gallery-data.js" />
+    <Content Include="plugins\assets\js\init.js" />
+    <Content Include="plugins\assets\js\isotope.js" />
+    <Content Include="plugins\assets\js\jquery.PrintArea.js" />
+    <Content Include="plugins\assets\js\jquery.scrollbar.js" />
+    <Content Include="plugins\assets\js\jquery.slimscroll.js" />
+    <Content Include="plugins\assets\js\jquery.tooltipster.js" />
+    <Content Include="plugins\assets\js\jquery.xeditable.init.js" />
+    <Content Include="plugins\assets\js\jsgrid-data.js" />
+    <Content Include="plugins\assets\js\lightgallery-all.js" />
+    <Content Include="plugins\assets\js\mask.js" />
+    <Content Include="plugins\assets\js\morris-data.js" />
+    <Content Include="plugins\assets\js\owl-data.js" />
+    <Content Include="plugins\assets\js\peity-data.js" />
+    <Content Include="plugins\assets\js\print.js" />
+    <Content Include="plugins\assets\js\random-class.js" />
+    <Content Include="plugins\assets\js\rangeslider-data.js" />
+    <Content Include="plugins\assets\js\stock-chart.init.js" />
+    <Content Include="plugins\assets\js\summernote.init.js" />
+    <Content Include="plugins\assets\js\sweetalert-data.js" />
+    <Content Include="plugins\assets\js\toast-data.js" />
+    <Content Include="plugins\assets\js\toggle.js" />
+    <Content Include="plugins\assets\js\validate.js" />
+    <Content Include="plugins\assets\validation.js" />
+    <Content Include="plugins\assets\videos\video1-2.html" />
+    <Content Include="plugins\assets\videos\video1.html" />
+    <Content Include="plugins\echarts\echarts-all.js" />
+    <Content Include="plugins\echarts\echarts-init.js" />
+    <Content Include="plugins\error-page\css\style.css" />
+    <Content Include="plugins\error-page\images\404-01.png" />
+    <Content Include="plugins\error-page\images\500-01.png" />
+    <Content Include="plugins\error-page\images\monster-01.png" />
+    <Content Include="plugins\error-page\images\shadows-01.png" />
+    <Content Include="plugins\error-page\images\text-01.png" />
+    <Content Include="plugins\error-page\js\parallax.js" />
+    <Content Include="plugins\vendors\bower_components\amcharts\amcharts.js" />
+    <Content Include="plugins\vendors\bower_components\amcharts\amstock.js" />
+    <Content Include="plugins\vendors\bower_components\amcharts\serial.js" />
+    <Content Include="plugins\vendors\bower_components\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" />
+    <Content Include="plugins\vendors\bower_components\bootstrap-datepicker\bootstrap-datepicker.min.css" />
+    <Content Include="plugins\vendors\bower_components\bootstrap-datepicker\bootstrap-datepicker.min.js" />
+    <Content Include="plugins\vendors\bower_components\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="plugins\vendors\bower_components\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="plugins\vendors\bower_components\bootstrap-material-datetimepicker\css\bootstrap-material-datetimepicker.css" />
+    <Content Include="plugins\vendors\bower_components\bootstrap-material-datetimepicker\js\bootstrap-material-datetimepicker.js" />
+    <Content Include="plugins\vendors\bower_components\bootstrap-select\dist\css\bootstrap-select.min.css" />
+    <Content Include="plugins\vendors\bower_components\bootstrap-select\dist\js\bootstrap-select.min.js" />
+    <Content Include="plugins\vendors\bower_components\bootstrap-switch\dist\css\bootstrap3\bootstrap-switch.min.css" />
+    <Content Include="plugins\vendors\bower_components\bootstrap-switch\dist\js\bootstrap-switch.min.js" />
+    <Content Include="plugins\vendors\bower_components\bootstrap-tagsinput\dist\bootstrap-tagsinput.css" />
+    <Content Include="plugins\vendors\bower_components\bootstrap-tagsinput\dist\bootstrap-tagsinput.min.js" />
+    <Content Include="plugins\vendors\bower_components\bootstrap-touchspin\dist\jquery.bootstrap-touchspin.min.css" />
+    <Content Include="plugins\vendors\bower_components\bootstrap-touchspin\dist\jquery.bootstrap-touchspin.min.js" />
+    <Content Include="plugins\vendors\bower_components\bootstrap-xeditable\css\bootstrap-editable.css" />
+    <Content Include="plugins\vendors\bower_components\bootstrap-xeditable\img\clear.png" />
+    <Content Include="plugins\vendors\bower_components\bootstrap-xeditable\img\loading.gif" />
+    <Content Include="plugins\vendors\bower_components\bootstrap-xeditable\js\bootstrap-editable.min.js" />
+    <Content Include="plugins\vendors\bower_components\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="plugins\vendors\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="plugins\vendors\bower_components\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="plugins\vendors\bower_components\calendar\cal-init.js" />
+    <Content Include="plugins\vendors\bower_components\calendar\calendar.css" />
+    <Content Include="plugins\vendors\bower_components\calendar\fullcalendar.css" />
+    <Content Include="plugins\vendors\bower_components\calendar\fullcalendar.min.js" />
+    <Content Include="plugins\vendors\bower_components\calendar\jquery-ui.min.js" />
+    <Content Include="plugins\vendors\bower_components\calendar\moment\moment.js" />
+    <Content Include="plugins\vendors\bower_components\chartist-js\dist\chartist.min.css" />
+    <Content Include="plugins\vendors\bower_components\chartist-js\dist\chartist.min.js" />
+    <Content Include="plugins\vendors\bower_components\chartist-plugin-tooltip-master\dist\chartist-plugin-tooltip.css" />
+    <Content Include="plugins\vendors\bower_components\chartist-plugin-tooltip-master\dist\chartist-plugin-tooltip.min.js" />
+    <Content Include="plugins\vendors\bower_components\clockpicker\dist\jquery-clockpicker.min.css" />
+    <Content Include="plugins\vendors\bower_components\clockpicker\dist\jquery-clockpicker.min.js" />
+    <Content Include="plugins\vendors\bower_components\data-table\css\buttons.dataTables.min.css" />
+    <Content Include="plugins\vendors\bower_components\data-table\js\data-table-custom.js" />
+    <Content Include="plugins\vendors\bower_components\data-table\js\jszip.min.js" />
+    <Content Include="plugins\vendors\bower_components\data-table\js\pdfmake.min.js" />
+    <Content Include="plugins\vendors\bower_components\data-table\js\vfs_fonts.js" />
+    <Content Include="plugins\vendors\bower_components\datatables.net-bs4\css\dataTables.bootstrap4.min.css" />
+    <Content Include="plugins\vendors\bower_components\datatables.net-bs4\js\dataTables.bootstrap4.min.js" />
+    <Content Include="plugins\vendors\bower_components\datatables.net-buttons\js\buttons.html5.min.js" />
+    <Content Include="plugins\vendors\bower_components\datatables.net-buttons\js\buttons.print.min.js" />
+    <Content Include="plugins\vendors\bower_components\datatables.net-buttons\js\dataTables.buttons.min.js" />
+    <Content Include="plugins\vendors\bower_components\datatables.net-responsive-bs4\css\responsive.bootstrap4.min.css" />
+    <Content Include="plugins\vendors\bower_components\datatables.net-responsive-bs4\js\responsive.bootstrap4.min.js" />
+    <Content Include="plugins\vendors\bower_components\datatables.net-responsive\js\dataTables.responsive.min.js" />
+    <Content Include="plugins\vendors\bower_components\datatables.net\js\jquery.dataTables.min.js" />
+    <Content Include="plugins\vendors\bower_components\datatables\dataTables.bootstrap.js" />
+    <Content Include="plugins\vendors\bower_components\datatables\media\css\jquery.dataTables.min.css" />
+    <Content Include="plugins\vendors\bower_components\datatables\media\images\sort_asc.png" />
+    <Content Include="plugins\vendors\bower_components\datatables\media\images\sort_asc_disabled.png" />
+    <Content Include="plugins\vendors\bower_components\datatables\media\images\sort_both.png" />
+    <Content Include="plugins\vendors\bower_components\datatables\media\images\sort_desc.png" />
+    <Content Include="plugins\vendors\bower_components\datatables\media\images\sort_desc_disabled.png" />
+    <Content Include="plugins\vendors\bower_components\datatables\media\js\jquery.dataTables.min.js" />
+    <Content Include="plugins\vendors\bower_components\dropify\dist\css\dropify.min.css" />
+    <Content Include="plugins\vendors\bower_components\dropify\dist\fonts\dropify.svg" />
+    <Content Include="plugins\vendors\bower_components\dropify\dist\js\dropify.min.js" />
+    <Content Include="plugins\vendors\bower_components\echarts\dist\echarts-en.min.js" />
+    <Content Include="plugins\vendors\bower_components\flot.tooltip\js\jquery.flot.tooltip.min.js" />
+    <Content Include="plugins\vendors\bower_components\flot\excanvas.min.js" />
+    <Content Include="plugins\vendors\bower_components\flot\jquery.flot.crosshair.js" />
+    <Content Include="plugins\vendors\bower_components\flot\jquery.flot.js" />
+    <Content Include="plugins\vendors\bower_components\flot\jquery.flot.pie.js" />
+    <Content Include="plugins\vendors\bower_components\flot\jquery.flot.resize.js" />
+    <Content Include="plugins\vendors\bower_components\flot\jquery.flot.stack.js" />
+    <Content Include="plugins\vendors\bower_components\flot\jquery.flot.time.js" />
+    <Content Include="plugins\vendors\bower_components\footable\css\fonts\footable.svg" />
+    <Content Include="plugins\vendors\bower_components\footable\css\footable.core.css" />
+    <Content Include="plugins\vendors\bower_components\footable\js\footable.all.min.js" />
+    <Content Include="plugins\vendors\bower_components\forms-mod-bootstrap\dist\css\forms-mod-bootstrap.min.css" />
+    <Content Include="plugins\vendors\bower_components\forms-mod-bootstrap\dist\js\forms-mod-bootstrap.min.js" />
+    <Content Include="plugins\vendors\bower_components\gmaps\gmaps.min.js" />
+    <Content Include="plugins\vendors\bower_components\gmaps\jquery.gmaps.js" />
+    <Content Include="plugins\vendors\bower_components\index.html" />
+    <Content Include="plugins\vendors\bower_components\ion.rangeSlider\css\ion.rangeSlider.css" />
+    <Content Include="plugins\vendors\bower_components\ion.rangeSlider\css\ion.rangeSlider.skinFlat.css" />
+    <Content Include="plugins\vendors\bower_components\ion.rangeSlider\img\sprite-skin-flat.png" />
+    <Content Include="plugins\vendors\bower_components\ion.rangeSlider\js\ion.rangeSlider.min.js" />
+    <Content Include="plugins\vendors\bower_components\jquery-asColorPicker-master\css\asColorPicker.css" />
+    <Content Include="plugins\vendors\bower_components\jquery-asColorPicker-master\dist\jquery-asColorPicker.min.js" />
+    <Content Include="plugins\vendors\bower_components\jquery-asColorPicker-master\images\alpha.png" />
+    <Content Include="plugins\vendors\bower_components\jquery-asColorPicker-master\images\hue.png" />
+    <Content Include="plugins\vendors\bower_components\jquery-asColorPicker-master\images\saturation.png" />
+    <Content Include="plugins\vendors\bower_components\jquery-asColorPicker-master\images\transparent.png" />
+    <Content Include="plugins\vendors\bower_components\jquery-asColorPicker-master\libs\jquery-asColor.js" />
+    <Content Include="plugins\vendors\bower_components\jquery-asColorPicker-master\libs\jquery-asGradient.js" />
+    <Content Include="plugins\vendors\bower_components\jquery-datatables-editable\jquery.dataTables.js" />
+    <Content Include="plugins\vendors\bower_components\jquery-toast-plugin\dist\jquery.toast.min.css" />
+    <Content Include="plugins\vendors\bower_components\jquery-toast-plugin\dist\jquery.toast.min.js" />
+    <Content Include="plugins\vendors\bower_components\jquery.counterup\jquery.counterup.min.js" />
+    <Content Include="plugins\vendors\bower_components\jquery\dist\jquery.min.js" />
+    <Content Include="plugins\vendors\bower_components\jsgrid\dist\jsgrid-theme.min.css" />
+    <Content Include="plugins\vendors\bower_components\jsgrid\dist\jsgrid.min.css" />
+    <Content Include="plugins\vendors\bower_components\jsgrid\dist\jsgrid.min.js" />
+    <Content Include="plugins\vendors\bower_components\moment\min\moment-with-locales.min.js" />
+    <Content Include="plugins\vendors\bower_components\moment\min\moment.min.js" />
+    <Content Include="plugins\vendors\bower_components\moment\moment.js" />
+    <Content Include="plugins\vendors\bower_components\morris-js\morris.css" />
+    <Content Include="plugins\vendors\bower_components\morris-js\morris.js" />
+    <Content Include="plugins\vendors\bower_components\multiselect\css\multi-select.css" />
+    <Content Include="plugins\vendors\bower_components\multiselect\img\switch.png" />
+    <Content Include="plugins\vendors\bower_components\multiselect\js\jquery.multi-select.js" />
+    <Content Include="plugins\vendors\bower_components\owl.carousel\dist\assets\owl.carousel.min.css" />
+    <Content Include="plugins\vendors\bower_components\owl.carousel\dist\assets\owl.theme.default.min.css" />
+    <Content Include="plugins\vendors\bower_components\owl.carousel\dist\assets\owl.video.play.png" />
+    <Content Include="plugins\vendors\bower_components\owl.carousel\dist\owl.carousel.min.js" />
+    <Content Include="plugins\vendors\bower_components\peity\jquery.peity.init.js" />
+    <Content Include="plugins\vendors\bower_components\peity\jquery.peity.min.js" />
+    <Content Include="plugins\vendors\bower_components\raphael\raphael.min.js" />
+    <Content Include="plugins\vendors\bower_components\select2\dist\css\select2.min.css" />
+    <Content Include="plugins\vendors\bower_components\select2\dist\js\select2.full.min.js" />
+    <Content Include="plugins\vendors\bower_components\skycons\skycons.js" />
+    <Content Include="plugins\vendors\bower_components\sparkline\jquery.charts-sparkline.js" />
+    <Content Include="plugins\vendors\bower_components\sparkline\jquery.sparkline.min.js" />
+    <Content Include="plugins\vendors\bower_components\summernote\dist\summernote.css" />
+    <Content Include="plugins\vendors\bower_components\summernote\dist\summernote.min.js" />
+    <Content Include="plugins\vendors\bower_components\sweetalert\dist\sweetalert.css" />
+    <Content Include="plugins\vendors\bower_components\sweetalert\dist\sweetalert.min.js" />
+    <Content Include="plugins\vendors\bower_components\switchery\dist\switchery.min.css" />
+    <Content Include="plugins\vendors\bower_components\switchery\dist\switchery.min.js" />
+    <Content Include="plugins\vendors\bower_components\timepicker\bootstrap-timepicker.min.css" />
+    <Content Include="plugins\vendors\bower_components\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="plugins\vendors\bower_components\tiny-editable\mindmup-editabletable.js" />
+    <Content Include="plugins\vendors\bower_components\tiny-editable\numeric-input-example.js" />
+    <Content Include="plugins\vendors\bower_components\tooltipster\tooltipster.bundle.min.css" />
+    <Content Include="plugins\vendors\bower_components\tooltipster\tooltipster.bundle.min.js" />
+    <Content Include="plugins\vendors\bower_components\vectormap\jquery-jvectormap-2.0.2.css" />
+    <Content Include="plugins\vendors\bower_components\vectormap\jquery-jvectormap-2.0.2.min.js" />
+    <Content Include="plugins\vendors\bower_components\vectormap\jquery-jvectormap-au-mill.js" />
+    <Content Include="plugins\vendors\bower_components\vectormap\jquery-jvectormap-in-mill.js" />
+    <Content Include="plugins\vendors\bower_components\vectormap\jquery-jvectormap-uk-mill-en.js" />
+    <Content Include="plugins\vendors\bower_components\vectormap\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="plugins\vendors\bower_components\vectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="plugins\vendors\bower_components\vectormap\jvectormap.custom.js" />
+    <Content Include="plugins\vendors\bower_components\waypoints\lib\jquery.waypoints.min.js" />
+    <Content Include="plugins\vendors\bower_components\web-ticker\jquery.webticker.min.js" />
+    <Content Include="plugins\vendors\bower_components\wizard\jquery.steps.min.js" />
+    <Content Include="plugins\vendors\bower_components\wizard\jquery.validate.min.js" />
+    <Content Include="plugins\vendors\bower_components\wizard\steps.css" />
+    <Content Include="plugins\vendors\bower_components\wizard\steps.js" />
+    <Content Include="plugins\vendors\jquery.sparkline\dist\jquery.sparkline.min.js" />
+    <Content Include="ResetPassword.aspx" />
+    <Content Include="TaxOfficeSummary.aspx" />
+    <Content Include="TaxOfficeYear.aspx" />
+    <Content Include="TCCDetailByYear.aspx" />
+    <Content Include="TCCDetailsbyAll.aspx" />
+    <Content Include="TCCDetailsbytaxoffice.aspx" />
+    <Content Include="TCCDetailsIndividual.aspx" />
+    <Content Include="TCCGeneralSummaryTaxoffice.aspx" />
+    <Content Include="TccLineSummaryAll.aspx" />
+    <Content Include="TCCLineSummaryTaxoffice.aspx" />
+    <Content Include="TccLineYearSummary.aspx" />
+    <Content Include="TccYearSummary.aspx" />
+    <Content Include="ViewAssessmentCummulativeSummary.aspx" />
+    <Content Include="ViewAssessmentCummulativeSummaryChild.aspx" />
+    <Content Include="ViewAssessmentCummulativeSummaryChildDetails.aspx" />
+    <Content Include="ViewAssessmentTaxOfficeYear.aspx" />
+    <Content Include="ViewAssessmentTaxOfficeYearChild.aspx" />
+    <Content Include="ViewAssessmentYearSummary.aspx" />
+    <Content Include="ViewAssessmentYearSummaryChild.aspx" />
+    <Content Include="ViewAssessmentYearSummaryChildDetails.aspx" />
+    <Content Include="ViewCollectionRanking.aspx" />
+    <Content Include="ViewCollectSum.aspx" />
+    <Content Include="ViewCollectSumAgency.aspx" />
+    <Content Include="ViewCollectSummaryAgencyChild.aspx" />
+    <Content Include="ViewCollectSummaryChild.aspx" />
+    <Content Include="ViewCummulativeSummary.aspx" />
+    <Content Include="ViewCummulativeSummaryChild.aspx" />
+    <Content Include="ViewCummulativeSummaryChildDetails.aspx" />
+    <Content Include="ViewdetailByTaxOffice.aspx" />
+    <Content Include="ViewDetailByYear.aspx" />
+    <Content Include="ViewDetailsbyAll.aspx" />
+    <Content Include="ViewDetailsByIndividual.aspx" />
+    <Content Include="ViewLineSummaryAll.aspx" />
+    <Content Include="ViewLineSummaryAllChild.aspx" />
+    <Content Include="ViewLineSummaryChild.aspx" />
+    <Content Include="ViewLineSummaryTaxOffice.aspx" />
+    <Content Include="ViewTaxofficeLinesummary.aspx" />
+    <Content Include="ViewTaxOfficeSummary.aspx" />
+    <Content Include="ViewTaxOfficeYear.aspx" />
+    <Content Include="ViewTaxOfficeYearChild.aspx" />
+    <Content Include="ViewTCCDetailByYear.aspx" />
+    <Content Include="ViewTCCDetailsbyAll.aspx" />
+    <Content Include="ViewTCCDetailsbytaxoffice.aspx" />
+    <Content Include="ViewTCCDetailsIndividual.aspx" />
+    <Content Include="ViewTCCGeneralSummaryTaxoffice.aspx" />
+    <Content Include="ViewTCCGeneralSummaryTaxofficeChild.aspx" />
+    <Content Include="ViewTccLineSummaryAll.aspx" />
+    <Content Include="ViewTccLineSummaryAllChild.aspx" />
+    <Content Include="ViewTCCLineSummaryTaxoffice.aspx" />
+    <Content Include="ViewTCCLineSummaryTaxofficeChild.aspx" />
+    <Content Include="ViewTccLineYearSummary.aspx" />
+    <Content Include="ViewTccLineYearSummaryChild.aspx" />
+    <Content Include="ViewTccYearSummary.aspx" />
+    <Content Include="ViewTccYearSummaryChild.aspx" />
+    <Content Include="ViewTccYearSummaryChildDetails.aspx" />
+    <Content Include="ViewYearLineSummary.aspx" />
+    <Content Include="ViewYearSummary.aspx" />
+    <Content Include="YearlineSummaryViewChild.aspx" />
+    <Content Include="YearSummary.aspx" />
+    <None Include="Scripts\jquery-1.7-vsdoc.js" />
+    <Content Include="Scripts\i18n\af.js" />
+    <Content Include="Scripts\i18n\ar.js" />
+    <Content Include="Scripts\i18n\az.js" />
+    <Content Include="Scripts\i18n\bg.js" />
+    <Content Include="Scripts\i18n\bn.js" />
+    <Content Include="Scripts\i18n\bs.js" />
+    <Content Include="Scripts\i18n\ca.js" />
+    <Content Include="Scripts\i18n\cs.js" />
+    <Content Include="Scripts\i18n\da.js" />
+    <Content Include="Scripts\i18n\de.js" />
+    <Content Include="Scripts\i18n\dsb.js" />
+    <Content Include="Scripts\i18n\el.js" />
+    <Content Include="Scripts\i18n\en.js" />
+    <Content Include="Scripts\i18n\es.js" />
+    <Content Include="Scripts\i18n\et.js" />
+    <Content Include="Scripts\i18n\eu.js" />
+    <Content Include="Scripts\i18n\fa.js" />
+    <Content Include="Scripts\i18n\fi.js" />
+    <Content Include="Scripts\i18n\fr.js" />
+    <Content Include="Scripts\i18n\gl.js" />
+    <Content Include="Scripts\i18n\he.js" />
+    <Content Include="Scripts\i18n\hi.js" />
+    <Content Include="Scripts\i18n\hr.js" />
+    <Content Include="Scripts\i18n\hsb.js" />
+    <Content Include="Scripts\i18n\hu.js" />
+    <Content Include="Scripts\i18n\hy.js" />
+    <Content Include="Scripts\i18n\id.js" />
+    <Content Include="Scripts\i18n\is.js" />
+    <Content Include="Scripts\i18n\it.js" />
+    <Content Include="Scripts\i18n\ja.js" />
+    <Content Include="Scripts\i18n\ka.js" />
+    <Content Include="Scripts\i18n\km.js" />
+    <Content Include="Scripts\i18n\ko.js" />
+    <Content Include="Scripts\i18n\lt.js" />
+    <Content Include="Scripts\i18n\lv.js" />
+    <Content Include="Scripts\i18n\mk.js" />
+    <Content Include="Scripts\i18n\ms.js" />
+    <Content Include="Scripts\i18n\nb.js" />
+    <Content Include="Scripts\i18n\ne.js" />
+    <Content Include="Scripts\i18n\nl.js" />
+    <Content Include="Scripts\i18n\pl.js" />
+    <Content Include="Scripts\i18n\ps.js" />
+    <Content Include="Scripts\i18n\pt-BR.js" />
+    <Content Include="Scripts\i18n\pt.js" />
+    <Content Include="Scripts\i18n\ro.js" />
+    <Content Include="Scripts\i18n\ru.js" />
+    <Content Include="Scripts\i18n\sk.js" />
+    <Content Include="Scripts\i18n\sl.js" />
+    <Content Include="Scripts\i18n\sq.js" />
+    <Content Include="Scripts\i18n\sr-Cyrl.js" />
+    <Content Include="Scripts\i18n\sr.js" />
+    <Content Include="Scripts\i18n\sv.js" />
+    <Content Include="Scripts\i18n\th.js" />
+    <Content Include="Scripts\i18n\tk.js" />
+    <Content Include="Scripts\i18n\tr.js" />
+    <Content Include="Scripts\i18n\uk.js" />
+    <Content Include="Scripts\i18n\vi.js" />
+    <Content Include="Scripts\i18n\zh-CN.js" />
+    <Content Include="Scripts\i18n\zh-TW.js" />
+    <Content Include="Scripts\jquery-1.7.js" />
+    <Content Include="Scripts\jquery-1.7.min.js" />
+    <Content Include="Scripts\select2.js" />
+    <Content Include="Scripts\select2.min.js" />
+    <Content Include="Self.aspx" />
+    <Content Include="Signup.aspx" />
+    <Content Include="ViewAgent.aspx" />
+    <Content Include="ViewAssessmentTaxoffice.aspx" />
+    <Content Include="ViewAssessmentYear.aspx" />
+    <Content Include="ViewCertificate.aspx" />
+    <Content Include="ViewChildledge.aspx" />
+    <Content Include="ViewPay.aspx" />
+    <Content Include="viewPayerledger.aspx" />
+    <Content Include="ViewPayment.aspx" />
+    <Content Include="Viewself.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivationEmail.aspx.cs">
+      <DependentUpon>ActivationEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActivationEmail.aspx.designer.cs">
+      <DependentUpon>ActivationEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Agent.aspx.cs">
+      <DependentUpon>Agent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Agent.aspx.designer.cs">
+      <DependentUpon>Agent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssessmentCummulativeSummary.aspx.cs">
+      <DependentUpon>AssessmentCummulativeSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssessmentCummulativeSummary.aspx.designer.cs">
+      <DependentUpon>AssessmentCummulativeSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssessmentTaxoffice.aspx.cs">
+      <DependentUpon>AssessmentTaxoffice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssessmentTaxoffice.aspx.designer.cs">
+      <DependentUpon>AssessmentTaxoffice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssessmentTaxOfficeYear.aspx.cs">
+      <DependentUpon>AssessmentTaxOfficeYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssessmentTaxOfficeYear.aspx.designer.cs">
+      <DependentUpon>AssessmentTaxOfficeYear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssessmentYear.aspx.cs">
+      <DependentUpon>AssessmentYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssessmentYear.aspx.designer.cs">
+      <DependentUpon>AssessmentYear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssessmentYearSummary.aspx.cs">
+      <DependentUpon>AssessmentYearSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssessmentYearSummary.aspx.designer.cs">
+      <DependentUpon>AssessmentYearSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cerificate.aspx.cs">
+      <DependentUpon>Cerificate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cerificate.aspx.designer.cs">
+      <DependentUpon>Cerificate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CollectionRanking.aspx.cs">
+      <DependentUpon>CollectionRanking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CollectionRanking.aspx.designer.cs">
+      <DependentUpon>CollectionRanking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CollectionSummary.aspx.cs">
+      <DependentUpon>CollectionSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CollectionSummary.aspx.designer.cs">
+      <DependentUpon>CollectionSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CummulativeSummary.aspx.cs">
+      <DependentUpon>CummulativeSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CummulativeSummary.aspx.designer.cs">
+      <DependentUpon>CummulativeSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetailByYear.aspx.cs">
+      <DependentUpon>DetailByYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetailByYear.aspx.designer.cs">
+      <DependentUpon>DetailByYear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetailsbyAll.aspx.cs">
+      <DependentUpon>DetailsbyAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetailsbyAll.aspx.designer.cs">
+      <DependentUpon>DetailsbyAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detailsbytaxoffice.aspx.cs">
+      <DependentUpon>Detailsbytaxoffice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detailsbytaxoffice.aspx.designer.cs">
+      <DependentUpon>Detailsbytaxoffice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetailsIndividual.aspx.cs">
+      <DependentUpon>DetailsIndividual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetailsIndividual.aspx.designer.cs">
+      <DependentUpon>DetailsIndividual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Encodings.cs" />
+    <Compile Include="forgotpassword.aspx.cs">
+      <DependentUpon>forgotpassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgotpassword.aspx.designer.cs">
+      <DependentUpon>forgotpassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LineSummaryAll.aspx.cs">
+      <DependentUpon>LineSummaryAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LineSummaryAll.aspx.designer.cs">
+      <DependentUpon>LineSummaryAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LineSummaryTaxOffice.aspx.cs">
+      <DependentUpon>LineSummaryTaxOffice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LineSummaryTaxOffice.aspx.designer.cs">
+      <DependentUpon>LineSummaryTaxOffice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LineSummaryTaxOfficeView.aspx.cs">
+      <DependentUpon>LineSummaryTaxOfficeView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LineSummaryTaxOfficeView.aspx.designer.cs">
+      <DependentUpon>LineSummaryTaxOfficeView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Payer.aspx.cs">
+      <DependentUpon>Payer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payer.aspx.designer.cs">
+      <DependentUpon>Payer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Payerledger.aspx.cs">
+      <DependentUpon>Payerledger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payerledger.aspx.designer.cs">
+      <DependentUpon>Payerledger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PortalSite.Master.cs">
+      <DependentUpon>PortalSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PortalSite.Master.designer.cs">
+      <DependentUpon>PortalSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\RepCollBank.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RepCollBank.Designer.cs">
+      <DependentUpon>RepCollBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepAssessmentCummulativeSummaryChild.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepAssessmentCummulativeSummaryChild.Designer.cs">
+      <DependentUpon>XtraRepAssessmentCummulativeSummaryChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepAssessmentDetails.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepAssessmentDetails.Designer.cs">
+      <DependentUpon>XtraRepAssessmentDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepAssessmentTaxOfficeYear.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepAssessmentTaxOfficeYear.Designer.cs">
+      <DependentUpon>XtraRepAssessmentTaxOfficeYear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepAssessmentYearSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepAssessmentYearSummary.Designer.cs">
+      <DependentUpon>XtraRepAssessmentYearSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepAssessmentYearSummaryChild.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepAssessmentYearSummaryChild.Designer.cs">
+      <DependentUpon>XtraRepAssessmentYearSummaryChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepCollAgency.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepCollAgency.Designer.cs">
+      <DependentUpon>XtraRepCollAgency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepCollectionRanking.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepCummulativeSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepCummulativeSummary.Designer.cs">
+      <DependentUpon>XtraRepCummulativeSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepCummulativeSummaryChild.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepCummulativeSummaryChild.Designer.cs">
+      <DependentUpon>XtraRepCummulativeSummaryChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepPayerlineSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepPayerlineSummary.Designer.cs">
+      <DependentUpon>XtraRepPayerlineSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepRevenue.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepRevenue.Designer.cs">
+      <DependentUpon>XtraRepRevenue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepTaxOfficeSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepTaxOfficeSummary.Designer.cs">
+      <DependentUpon>XtraRepTaxOfficeSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepTaxOfficeSummary2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepTaxOfficeSummary2.Designer.cs">
+      <DependentUpon>XtraRepTaxOfficeSummary2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepTaxOfficeYear.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepTaxOfficeYear.Designer.cs">
+      <DependentUpon>XtraRepTaxOfficeYear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepTCCDetailByYear.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepTCCDetailByYear.Designer.cs">
+      <DependentUpon>XtraRepTCCDetailByYear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepTccDetails.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepTccDetails.Designer.cs">
+      <DependentUpon>XtraRepTccDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepTccDetails2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepTccDetails2.Designer.cs">
+      <DependentUpon>XtraRepTccDetails2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepTCCDetailsbyAll.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepTCCDetailsbyAll.Designer.cs">
+      <DependentUpon>XtraRepTCCDetailsbyAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepTCCDetailsbytaxoffice.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepTCCDetailsbytaxoffice.Designer.cs">
+      <DependentUpon>XtraRepTCCDetailsbytaxoffice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepTCCGeneralSummaryTaxoffice.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepTCCGeneralSummaryTaxoffice.Designer.cs">
+      <DependentUpon>XtraRepTCCGeneralSummaryTaxoffice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepTCCGeneralSummaryTaxofficeChild.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepTCCGeneralSummaryTaxofficeChild.Designer.cs">
+      <DependentUpon>XtraRepTCCGeneralSummaryTaxofficeChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepTccLineSummaryAll.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepTccLineSummaryAll.Designer.cs">
+      <DependentUpon>XtraRepTccLineSummaryAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepTccLineYearSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepTccLineYearSummary.Designer.cs">
+      <DependentUpon>XtraRepTccLineYearSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepTccYearSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepTccYearSummary.Designer.cs">
+      <DependentUpon>XtraRepTccYearSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepTccYearSummaryChild.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepTccYearSummaryChild.Designer.cs">
+      <DependentUpon>XtraRepTccYearSummaryChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepTccYearSummaryChildDetails.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepTccYearSummaryChildDetails.Designer.cs">
+      <DependentUpon>XtraRepTccYearSummaryChildDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepViewdetailByTaxOffice.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepViewdetailByTaxOffice.Designer.cs">
+      <DependentUpon>XtraRepViewdetailByTaxOffice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepViewDetailByYear.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepViewDetailByYear.Designer.cs">
+      <DependentUpon>XtraRepViewDetailByYear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepYearLineSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepYearLineSummary.Designer.cs">
+      <DependentUpon>XtraRepYearLineSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepYearSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepYearSummary.Designer.cs">
+      <DependentUpon>XtraRepYearSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Security.cs" />
+    <Compile Include="Self.aspx.cs">
+      <DependentUpon>Self.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Self.aspx.designer.cs">
+      <DependentUpon>Self.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SessionManager.cs" />
+    <Compile Include="Signup.aspx.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Signup.aspx.designer.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxOfficeSummary.aspx.cs">
+      <DependentUpon>TaxOfficeSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaxOfficeSummary.aspx.designer.cs">
+      <DependentUpon>TaxOfficeSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaxOfficeYear.aspx.cs">
+      <DependentUpon>TaxOfficeYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaxOfficeYear.aspx.designer.cs">
+      <DependentUpon>TaxOfficeYear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TCCDetailByYear.aspx.cs">
+      <DependentUpon>TCCDetailByYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TCCDetailByYear.aspx.designer.cs">
+      <DependentUpon>TCCDetailByYear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TCCDetailsbyAll.aspx.cs">
+      <DependentUpon>TCCDetailsbyAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TCCDetailsbyAll.aspx.designer.cs">
+      <DependentUpon>TCCDetailsbyAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TCCDetailsbytaxoffice.aspx.cs">
+      <DependentUpon>TCCDetailsbytaxoffice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TCCDetailsbytaxoffice.aspx.designer.cs">
+      <DependentUpon>TCCDetailsbytaxoffice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TCCDetailsIndividual.aspx.cs">
+      <DependentUpon>TCCDetailsIndividual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TCCDetailsIndividual.aspx.designer.cs">
+      <DependentUpon>TCCDetailsIndividual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TCCGeneralSummaryTaxoffice.aspx.cs">
+      <DependentUpon>TCCGeneralSummaryTaxoffice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TCCGeneralSummaryTaxoffice.aspx.designer.cs">
+      <DependentUpon>TCCGeneralSummaryTaxoffice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TccLineSummaryAll.aspx.cs">
+      <DependentUpon>TccLineSummaryAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TccLineSummaryAll.aspx.designer.cs">
+      <DependentUpon>TccLineSummaryAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TCCLineSummaryTaxoffice.aspx.cs">
+      <DependentUpon>TCCLineSummaryTaxoffice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TCCLineSummaryTaxoffice.aspx.designer.cs">
+      <DependentUpon>TCCLineSummaryTaxoffice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TccLineYearSummary.aspx.cs">
+      <DependentUpon>TccLineYearSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TccLineYearSummary.aspx.designer.cs">
+      <DependentUpon>TccLineYearSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TccYearSummary.aspx.cs">
+      <DependentUpon>TccYearSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TccYearSummary.aspx.designer.cs">
+      <DependentUpon>TccYearSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAgent.aspx.cs">
+      <DependentUpon>ViewAgent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAgent.aspx.designer.cs">
+      <DependentUpon>ViewAgent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAssessmentCummulativeSummary.aspx.cs">
+      <DependentUpon>ViewAssessmentCummulativeSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAssessmentCummulativeSummary.aspx.designer.cs">
+      <DependentUpon>ViewAssessmentCummulativeSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAssessmentCummulativeSummaryChild.aspx.cs">
+      <DependentUpon>ViewAssessmentCummulativeSummaryChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAssessmentCummulativeSummaryChild.aspx.designer.cs">
+      <DependentUpon>ViewAssessmentCummulativeSummaryChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAssessmentCummulativeSummaryChildDetails.aspx.cs">
+      <DependentUpon>ViewAssessmentCummulativeSummaryChildDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAssessmentCummulativeSummaryChildDetails.aspx.designer.cs">
+      <DependentUpon>ViewAssessmentCummulativeSummaryChildDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAssessmentTaxoffice.aspx.cs">
+      <DependentUpon>ViewAssessmentTaxoffice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAssessmentTaxoffice.aspx.designer.cs">
+      <DependentUpon>ViewAssessmentTaxoffice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAssessmentTaxOfficeYear.aspx.cs">
+      <DependentUpon>ViewAssessmentTaxOfficeYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAssessmentTaxOfficeYear.aspx.designer.cs">
+      <DependentUpon>ViewAssessmentTaxOfficeYear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAssessmentTaxOfficeYearChild.aspx.cs">
+      <DependentUpon>ViewAssessmentTaxOfficeYearChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAssessmentTaxOfficeYearChild.aspx.designer.cs">
+      <DependentUpon>ViewAssessmentTaxOfficeYearChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAssessmentYear.aspx.cs">
+      <DependentUpon>ViewAssessmentYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAssessmentYear.aspx.designer.cs">
+      <DependentUpon>ViewAssessmentYear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAssessmentYearSummary.aspx.cs">
+      <DependentUpon>ViewAssessmentYearSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAssessmentYearSummary.aspx.designer.cs">
+      <DependentUpon>ViewAssessmentYearSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAssessmentYearSummaryChild.aspx.cs">
+      <DependentUpon>ViewAssessmentYearSummaryChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAssessmentYearSummaryChild.aspx.designer.cs">
+      <DependentUpon>ViewAssessmentYearSummaryChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAssessmentYearSummaryChildDetails.aspx.cs">
+      <DependentUpon>ViewAssessmentYearSummaryChildDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAssessmentYearSummaryChildDetails.aspx.designer.cs">
+      <DependentUpon>ViewAssessmentYearSummaryChildDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCertificate.aspx.cs">
+      <DependentUpon>ViewCertificate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewCertificate.aspx.designer.cs">
+      <DependentUpon>ViewCertificate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewChildledge.aspx.cs">
+      <DependentUpon>ViewChildledge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewChildledge.aspx.designer.cs">
+      <DependentUpon>ViewChildledge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCollectionRanking.aspx.cs">
+      <DependentUpon>ViewCollectionRanking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewCollectionRanking.aspx.designer.cs">
+      <DependentUpon>ViewCollectionRanking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCollectSum.aspx.cs">
+      <DependentUpon>ViewCollectSum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewCollectSum.aspx.designer.cs">
+      <DependentUpon>ViewCollectSum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCollectSumAgency.aspx.cs">
+      <DependentUpon>ViewCollectSumAgency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewCollectSumAgency.aspx.designer.cs">
+      <DependentUpon>ViewCollectSumAgency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCollectSummaryAgencyChild.aspx.cs">
+      <DependentUpon>ViewCollectSummaryAgencyChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewCollectSummaryAgencyChild.aspx.designer.cs">
+      <DependentUpon>ViewCollectSummaryAgencyChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCollectSummaryChild.aspx.cs">
+      <DependentUpon>ViewCollectSummaryChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewCollectSummaryChild.aspx.designer.cs">
+      <DependentUpon>ViewCollectSummaryChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCummulativeSummary.aspx.cs">
+      <DependentUpon>ViewCummulativeSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewCummulativeSummary.aspx.designer.cs">
+      <DependentUpon>ViewCummulativeSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCummulativeSummaryChild.aspx.cs">
+      <DependentUpon>ViewCummulativeSummaryChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewCummulativeSummaryChild.aspx.designer.cs">
+      <DependentUpon>ViewCummulativeSummaryChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCummulativeSummaryChildDetails.aspx.cs">
+      <DependentUpon>ViewCummulativeSummaryChildDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewCummulativeSummaryChildDetails.aspx.designer.cs">
+      <DependentUpon>ViewCummulativeSummaryChildDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewdetailByTaxOffice.aspx.cs">
+      <DependentUpon>ViewdetailByTaxOffice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewdetailByTaxOffice.aspx.designer.cs">
+      <DependentUpon>ViewdetailByTaxOffice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewDetailByYear.aspx.cs">
+      <DependentUpon>ViewDetailByYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewDetailByYear.aspx.designer.cs">
+      <DependentUpon>ViewDetailByYear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewDetailsbyAll.aspx.cs">
+      <DependentUpon>ViewDetailsbyAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewDetailsbyAll.aspx.designer.cs">
+      <DependentUpon>ViewDetailsbyAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewDetailsByIndividual.aspx.cs">
+      <DependentUpon>ViewDetailsByIndividual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewDetailsByIndividual.aspx.designer.cs">
+      <DependentUpon>ViewDetailsByIndividual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewLineSummaryAll.aspx.cs">
+      <DependentUpon>ViewLineSummaryAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewLineSummaryAll.aspx.designer.cs">
+      <DependentUpon>ViewLineSummaryAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewLineSummaryAllChild.aspx.cs">
+      <DependentUpon>ViewLineSummaryAllChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewLineSummaryAllChild.aspx.designer.cs">
+      <DependentUpon>ViewLineSummaryAllChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewLineSummaryChild.aspx.cs">
+      <DependentUpon>ViewLineSummaryChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewLineSummaryChild.aspx.designer.cs">
+      <DependentUpon>ViewLineSummaryChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewLineSummaryTaxOffice.aspx.cs">
+      <DependentUpon>ViewLineSummaryTaxOffice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewLineSummaryTaxOffice.aspx.designer.cs">
+      <DependentUpon>ViewLineSummaryTaxOffice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPay.aspx.cs">
+      <DependentUpon>ViewPay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewPay.aspx.designer.cs">
+      <DependentUpon>ViewPay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewPayerledger.aspx.cs">
+      <DependentUpon>viewPayerledger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewPayerledger.aspx.designer.cs">
+      <DependentUpon>viewPayerledger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPayment.aspx.cs">
+      <DependentUpon>ViewPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewPayment.aspx.designer.cs">
+      <DependentUpon>ViewPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Viewself.aspx.cs">
+      <DependentUpon>Viewself.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Viewself.aspx.designer.cs">
+      <DependentUpon>Viewself.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTaxofficeLinesummary.aspx.cs">
+      <DependentUpon>ViewTaxofficeLinesummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTaxofficeLinesummary.aspx.designer.cs">
+      <DependentUpon>ViewTaxofficeLinesummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTaxOfficeSummary.aspx.cs">
+      <DependentUpon>ViewTaxOfficeSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTaxOfficeSummary.aspx.designer.cs">
+      <DependentUpon>ViewTaxOfficeSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTaxOfficeYear.aspx.cs">
+      <DependentUpon>ViewTaxOfficeYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTaxOfficeYear.aspx.designer.cs">
+      <DependentUpon>ViewTaxOfficeYear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTaxOfficeYearChild.aspx.cs">
+      <DependentUpon>ViewTaxOfficeYearChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTaxOfficeYearChild.aspx.designer.cs">
+      <DependentUpon>ViewTaxOfficeYearChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTCCDetailByYear.aspx.cs">
+      <DependentUpon>ViewTCCDetailByYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTCCDetailByYear.aspx.designer.cs">
+      <DependentUpon>ViewTCCDetailByYear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTCCDetailsbyAll.aspx.cs">
+      <DependentUpon>ViewTCCDetailsbyAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTCCDetailsbyAll.aspx.designer.cs">
+      <DependentUpon>ViewTCCDetailsbyAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTCCDetailsbytaxoffice.aspx.cs">
+      <DependentUpon>ViewTCCDetailsbytaxoffice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTCCDetailsbytaxoffice.aspx.designer.cs">
+      <DependentUpon>ViewTCCDetailsbytaxoffice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTCCDetailsIndividual.aspx.cs">
+      <DependentUpon>ViewTCCDetailsIndividual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTCCDetailsIndividual.aspx.designer.cs">
+      <DependentUpon>ViewTCCDetailsIndividual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTCCGeneralSummaryTaxoffice.aspx.cs">
+      <DependentUpon>ViewTCCGeneralSummaryTaxoffice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTCCGeneralSummaryTaxoffice.aspx.designer.cs">
+      <DependentUpon>ViewTCCGeneralSummaryTaxoffice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTCCGeneralSummaryTaxofficeChild.aspx.cs">
+      <DependentUpon>ViewTCCGeneralSummaryTaxofficeChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTCCGeneralSummaryTaxofficeChild.aspx.designer.cs">
+      <DependentUpon>ViewTCCGeneralSummaryTaxofficeChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTccLineSummaryAll.aspx.cs">
+      <DependentUpon>ViewTccLineSummaryAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTccLineSummaryAll.aspx.designer.cs">
+      <DependentUpon>ViewTccLineSummaryAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTccLineSummaryAllChild.aspx.cs">
+      <DependentUpon>ViewTccLineSummaryAllChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTccLineSummaryAllChild.aspx.designer.cs">
+      <DependentUpon>ViewTccLineSummaryAllChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTCCLineSummaryTaxoffice.aspx.cs">
+      <DependentUpon>ViewTCCLineSummaryTaxoffice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTCCLineSummaryTaxoffice.aspx.designer.cs">
+      <DependentUpon>ViewTCCLineSummaryTaxoffice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTCCLineSummaryTaxofficeChild.aspx.cs">
+      <DependentUpon>ViewTCCLineSummaryTaxofficeChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTCCLineSummaryTaxofficeChild.aspx.designer.cs">
+      <DependentUpon>ViewTCCLineSummaryTaxofficeChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTccLineYearSummary.aspx.cs">
+      <DependentUpon>ViewTccLineYearSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTccLineYearSummary.aspx.designer.cs">
+      <DependentUpon>ViewTccLineYearSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTccLineYearSummaryChild.aspx.cs">
+      <DependentUpon>ViewTccLineYearSummaryChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTccLineYearSummaryChild.aspx.designer.cs">
+      <DependentUpon>ViewTccLineYearSummaryChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTccYearSummary.aspx.cs">
+      <DependentUpon>ViewTccYearSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTccYearSummary.aspx.designer.cs">
+      <DependentUpon>ViewTccYearSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTccYearSummaryChild.aspx.cs">
+      <DependentUpon>ViewTccYearSummaryChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTccYearSummaryChild.aspx.designer.cs">
+      <DependentUpon>ViewTccYearSummaryChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTccYearSummaryChildDetails.aspx.cs">
+      <DependentUpon>ViewTccYearSummaryChildDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTccYearSummaryChildDetails.aspx.designer.cs">
+      <DependentUpon>ViewTccYearSummaryChildDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewYearLineSummary.aspx.cs">
+      <DependentUpon>ViewYearLineSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewYearLineSummary.aspx.designer.cs">
+      <DependentUpon>ViewYearLineSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewYearSummary.aspx.cs">
+      <DependentUpon>ViewYearSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewYearSummary.aspx.designer.cs">
+      <DependentUpon>ViewYearSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XtraAgent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraRepAssessment.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraRepAssessment.Designer.cs">
+      <DependentUpon>XtraRepAssessment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraRepAssessmentCummulativeSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraRepAssessmentCummulativeSummary.Designer.cs">
+      <DependentUpon>XtraRepAssessmentCummulativeSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraRepCertifi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraRepCertiificate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraRepEmployed.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraRepPayerledge.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraRepPayerledge.Designer.cs">
+      <DependentUpon>XtraRepPayerledge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraRepPayment.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraRepPayment.Designer.cs">
+      <DependentUpon>XtraRepPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraRepPayment2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraRepPayment2.Designer.cs">
+      <DependentUpon>XtraRepPayment2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraRepSelf.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepSummaryLedger.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepSummaryLedger.Designer.cs">
+      <DependentUpon>XtraRepSummaryLedger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YearlineSummaryViewChild.aspx.cs">
+      <DependentUpon>YearlineSummaryViewChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YearlineSummaryViewChild.aspx.designer.cs">
+      <DependentUpon>YearlineSummaryViewChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YearSummary.aspx.cs">
+      <DependentUpon>YearSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YearSummary.aspx.designer.cs">
+      <DependentUpon>YearSummary.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="PortalSite.Master" />
+    <Content Include="plugins\assets\css\font-icons\lg\lgd641.ttf" />
+    <Content Include="plugins\assets\css\font-icons\lg\lgd641.woff" />
+    <Content Include="plugins\assets\fonts\dripicons\dripicons-v2.eot" />
+    <Content Include="plugins\assets\fonts\dripicons\dripicons-v2.ttf" />
+    <Content Include="plugins\assets\fonts\dripicons\dripicons-v2.woff" />
+    <Content Include="plugins\assets\fonts\dripicons\dripicons-v2d41d.eot" />
+    <Content Include="plugins\assets\fonts\fontawesome\fontawesome-webfont5b62.eot" />
+    <Content Include="plugins\assets\fonts\fontawesome\fontawesome-webfont5b62.ttf" />
+    <Content Include="plugins\assets\fonts\fontawesome\fontawesome-webfont5b62.woff" />
+    <Content Include="plugins\assets\fonts\fontawesome\fontawesome-webfont5b62.woff2" />
+    <Content Include="plugins\assets\fonts\fontawesome\fontawesome-webfontd41d.eot" />
+    <Content Include="plugins\assets\fonts\material-design\materialdesignicons-webfontb675.eot" />
+    <Content Include="plugins\assets\fonts\material-design\materialdesignicons-webfontb675.ttf" />
+    <Content Include="plugins\assets\fonts\material-design\materialdesignicons-webfontb675.woff" />
+    <Content Include="plugins\assets\fonts\material-design\materialdesignicons-webfontb675.woff2" />
+    <Content Include="plugins\assets\fonts\material-design\materialdesignicons-webfontd41d.eot" />
+    <Content Include="plugins\assets\fonts\pe-icon-7\Pe-icon-7-strokebb1d.eot" />
+    <Content Include="plugins\assets\fonts\pe-icon-7\Pe-icon-7-strokebb1d.ttf" />
+    <Content Include="plugins\assets\fonts\pe-icon-7\Pe-icon-7-strokebb1d.woff" />
+    <Content Include="plugins\assets\fonts\pe-icon-7\Pe-icon-7-stroked41d.eot" />
+    <Content Include="plugins\assets\fonts\typicons\typicons.eot" />
+    <Content Include="plugins\assets\fonts\typicons\typicons.ttf" />
+    <Content Include="plugins\assets\fonts\typicons\typicons.woff" />
+    <Content Include="plugins\assets\fonts\typicons\typiconsd41d.eot" />
+    <Content Include="plugins\vendors\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="plugins\vendors\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="plugins\vendors\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="plugins\vendors\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="plugins\vendors\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="plugins\vendors\bower_components\dropify\dist\fonts\dropify.eot" />
+    <Content Include="plugins\vendors\bower_components\dropify\dist\fonts\dropify.ttf" />
+    <Content Include="plugins\vendors\bower_components\dropify\dist\fonts\dropify.woff" />
+    <Content Include="plugins\vendors\bower_components\footable\css\fonts\footable.eot" />
+    <Content Include="plugins\vendors\bower_components\footable\css\fonts\footable.ttf" />
+    <Content Include="plugins\vendors\bower_components\footable\css\fonts\footable.woff" />
+    <Content Include="plugins\vendors\bower_components\footable\css\fonts\footabled41d.eot" />
+    <Content Include="plugins\vendors\bower_components\summernote\dist\font\summernoted41d.eot" />
+    <Content Include="plugins\vendors\bower_components\summernote\dist\font\summernotef534.eot" />
+    <Content Include="plugins\vendors\bower_components\summernote\dist\font\summernotef534.ttf" />
+    <Content Include="plugins\vendors\bower_components\summernote\dist\font\summernotef534.woff" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Reports\RepCollBank.resx">
+      <DependentUpon>RepCollBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepAssessmentCummulativeSummaryChild.resx">
+      <DependentUpon>XtraRepAssessmentCummulativeSummaryChild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepAssessmentDetails.resx">
+      <DependentUpon>XtraRepAssessmentDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepAssessmentTaxOfficeYear.resx">
+      <DependentUpon>XtraRepAssessmentTaxOfficeYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepAssessmentYearSummary.resx">
+      <DependentUpon>XtraRepAssessmentYearSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepAssessmentYearSummaryChild.resx">
+      <DependentUpon>XtraRepAssessmentYearSummaryChild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepCollAgency.resx">
+      <DependentUpon>XtraRepCollAgency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepCollectionRanking.resx">
+      <DependentUpon>XtraRepCollectionRanking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepCummulativeSummary.resx">
+      <DependentUpon>XtraRepCummulativeSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepCummulativeSummaryChild.resx">
+      <DependentUpon>XtraRepCummulativeSummaryChild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepPayerlineSummary.resx">
+      <DependentUpon>XtraRepPayerlineSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepRevenue.resx">
+      <DependentUpon>XtraRepRevenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepTaxOfficeSummary.resx">
+      <DependentUpon>XtraRepTaxOfficeSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepTaxOfficeSummary2.resx">
+      <DependentUpon>XtraRepTaxOfficeSummary2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepTaxOfficeYear.resx">
+      <DependentUpon>XtraRepTaxOfficeYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepTCCDetailByYear.resx">
+      <DependentUpon>XtraRepTCCDetailByYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepTccDetails.resx">
+      <DependentUpon>XtraRepTccDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepTccDetails2.resx">
+      <DependentUpon>XtraRepTccDetails2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepTCCDetailsbyAll.resx">
+      <DependentUpon>XtraRepTCCDetailsbyAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepTCCDetailsbytaxoffice.resx">
+      <DependentUpon>XtraRepTCCDetailsbytaxoffice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepTCCGeneralSummaryTaxoffice.resx">
+      <DependentUpon>XtraRepTCCGeneralSummaryTaxoffice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepTCCGeneralSummaryTaxofficeChild.resx">
+      <DependentUpon>XtraRepTCCGeneralSummaryTaxofficeChild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepTccLineSummaryAll.resx">
+      <DependentUpon>XtraRepTccLineSummaryAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepTccLineYearSummary.resx">
+      <DependentUpon>XtraRepTccLineYearSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepTccYearSummary.resx">
+      <DependentUpon>XtraRepTccYearSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepTccYearSummaryChild.resx">
+      <DependentUpon>XtraRepTccYearSummaryChild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepTccYearSummaryChildDetails.resx">
+      <DependentUpon>XtraRepTccYearSummaryChildDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepViewdetailByTaxOffice.resx">
+      <DependentUpon>XtraRepViewdetailByTaxOffice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepViewDetailByYear.resx">
+      <DependentUpon>XtraRepViewDetailByYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepYearLineSummary.resx">
+      <DependentUpon>XtraRepYearLineSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepYearSummary.resx">
+      <DependentUpon>XtraRepYearSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraAgent.resx">
+      <DependentUpon>XtraAgent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraRepAssessment.resx">
+      <DependentUpon>XtraRepAssessment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraRepAssessmentCummulativeSummary.resx">
+      <DependentUpon>XtraRepAssessmentCummulativeSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraRepCertifi.resx">
+      <DependentUpon>XtraRepCertifi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraRepCertiificate.resx">
+      <DependentUpon>XtraRepCertiificate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraRepEmployed.resx">
+      <DependentUpon>XtraRepEmployed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport1.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraRepPayerledge.resx">
+      <DependentUpon>XtraRepPayerledge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraRepPayment.resx">
+      <DependentUpon>XtraRepPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraRepPayment2.resx">
+      <DependentUpon>XtraRepPayment2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraRepSelf.resx">
+      <DependentUpon>XtraRepSelf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepSummaryLedger.resx">
+      <DependentUpon>XtraRepSummaryLedger.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54261</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/ReportPortal</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
