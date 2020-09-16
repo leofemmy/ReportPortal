@@ -4,8 +4,7 @@
     <link href="Content/css/select2.min.css" rel="stylesheet" />
     <link href="plugins/vendors/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="plugins/vendors/bower_components/data-table/css/buttons.dataTables.min.css">
-    <link rel="stylesheet" type="text/css"
-        href="plugins/vendors/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="plugins/vendors/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
@@ -74,103 +73,102 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptContentHolder" runat="server">
+  
     <!-- data-table js -->
-    <script src="plugins/vendors/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="plugins/vendors/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="plugins/vendors/bower_components/data-table/js/jszip.min.js"></script>
-    <script src="plugins/vendors/bower_components/data-table/js/pdfmake.min.js"></script>
-    <script src="plugins/vendors/bower_components/data-table/js/vfs_fonts.js"></script>
-    <script src="plugins/vendors/bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="plugins/vendors/bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="plugins/vendors/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="plugins/vendors/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="plugins/vendors/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="plugins/vendors/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="plugins/vendors/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="plugins/vendors/bower_components/data-table/js/jszip.min.js"></script>
+    <script type="text/javascript" src="plugins/vendors/bower_components/data-table/js/pdfmake.min.js"></script>
+    <script type="text/javascript" src="plugins/vendors/bower_components/data-table/js/vfs_fonts.js"></script>
+    <script type="text/javascript" src="plugins/vendors/bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script type="text/javascript" src="plugins/vendors/bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="plugins/vendors/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="plugins/vendors/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="plugins/vendors/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
 
     <script type="text/javascript">
-        $(document).ready(function () {
-            document.getElementById('txtstartdate').value = '';
-            document.getElementById('txtenddate').value = '';
-            $("[id$=txtstartdate]").datepicker({
-                dateFormat: "dd/mm/yy",
-                changeMonth: true,
-                changeYear: true
+    $(document).ready(function () {
+        document.getElementById('txtstartdate').value = '';
+        document.getElementById('txtenddate').value = '';
+        $("[id$=txtstartdate]").datepicker({
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true
 
-            });
-
-            $("[id$=txtenddate]").datepicker({
-                dateFormat: "dd/mm/yy",
-                changeMonth: true,
-                changeYear: true
-            });
         });
 
-        function ClearTextboxes() {
-            document.getElementById('txtstartdate').value = '';
-        }
+        $("[id$=txtenddate]").datepicker({
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true
+        });
+    });
 
-        function ClearTextboxes1() {
-            document.getElementById('txtenddate').value = '';
-        }
+    function ClearTextboxes() {
+        document.getElementById('txtstartdate').value = '';
+    }
 
-        function ChangeCheckBoxState(id, checkState) {
-            var cb = document.getElementById(id);
-            if (cb != null)
-                cb.checked = checkState;
-        }
+    function ClearTextboxes1() {
+        document.getElementById('txtenddate').value = '';
+    }
 
-        function checkAll(objRef) {
+    function ChangeCheckBoxState(id, checkState) {
+        var cb = document.getElementById(id);
+        if (cb != null)
+            cb.checked = checkState;
+    }
 
-            var GridView = objRef.parentNode.parentNode.parentNode;
+    function checkAll(objRef) {
 
-            var inputList = GridView.getElementsByTagName("input");
+        var GridView = objRef.parentNode.parentNode.parentNode;
 
-            for (var i = 0; i < inputList.length; i++) {
+        var inputList = GridView.getElementsByTagName("input");
 
-                //Get the Cell To find out ColumnIndex
+        for (var i = 0; i < inputList.length; i++) {
 
-                var row = inputList[i].parentNode.parentNode;
+            //Get the Cell To find out ColumnIndex
 
-                if (inputList[i].type == "checkbox" && objRef != inputList[i]) {
+            var row = inputList[i].parentNode.parentNode;
 
-                    if (objRef.checked) {
+            if (inputList[i].type == "checkbox" && objRef != inputList[i]) {
 
-                        //If the header checkbox is checked
+                if (objRef.checked) {
 
-                        //check all checkboxes
+                    //If the header checkbox is checked
 
-                        //and highlight all rows
+                    //check all checkboxes
 
-                        //row.style.backgroundColor = "aqua";
+                    //and highlight all rows
 
-                        inputList[i].checked = true;
+                    //row.style.backgroundColor = "aqua";
 
-                    }
+                    inputList[i].checked = true;
 
-                    else {
+                }
 
-                        //If the header checkbox is checked
+                else {
 
-                        //uncheck all checkboxes
+                    //If the header checkbox is checked
 
-                        //and change rowcolor back to original
+                    //uncheck all checkboxes
 
-                        //if (row.rowIndex % 2 == 0) {
+                    //and change rowcolor back to original
 
-                        //    //Alternating Row Color
+                    //if (row.rowIndex % 2 == 0) {
 
-                        //    row.style.backgroundColor = "#C2D69B";
+                    //    //Alternating Row Color
 
-                        //}
+                    //    row.style.backgroundColor = "#C2D69B";
 
-                        //else {
+                    //}
 
-                        //    row.style.backgroundColor = "white";
+                    //else {
 
-                        //}
+                    //    row.style.backgroundColor = "white";
 
-                        inputList[i].checked = false;
+                    //}
 
-                    }
+                    inputList[i].checked = false;
 
                 }
 
@@ -178,86 +176,91 @@
 
         }
 
-        function Check_Click(objRef) {
+    }
 
-            //Get the Row based on checkbox
+    function Check_Click(objRef) {
 
-            var row = objRef.parentNode.parentNode;
+        //Get the Row based on checkbox
 
-            //if (objRef.checked) {
+        var row = objRef.parentNode.parentNode;
 
-            //    //If checked change color to Aqua
+        //if (objRef.checked) {
 
-            //    row.style.backgroundColor = "aqua";
+        //    //If checked change color to Aqua
 
-            //}
+        //    row.style.backgroundColor = "aqua";
 
-            //else {
+        //}
 
-            //    //If not checked change back to original color
+        //else {
 
-            //    if (row.rowIndex % 2 == 0) {
+        //    //If not checked change back to original color
 
-            //        //Alternating Row Color
+        //    if (row.rowIndex % 2 == 0) {
 
-            //        row.style.backgroundColor = "#C2D69B";
+        //        //Alternating Row Color
 
-            //    }
+        //        row.style.backgroundColor = "#C2D69B";
 
-            //    else {
+        //    }
 
-            //        row.style.backgroundColor = "white";
+        //    else {
 
-            //    }
+        //        row.style.backgroundColor = "white";
 
-            //}
+        //    }
 
-
-
-            //Get the reference of GridView
-
-            var GridView = row.parentNode;
+        //}
 
 
 
-            //Get all input elements in Gridview
+        //Get the reference of GridView
 
-            var inputList = GridView.getElementsByTagName("input");
-
-
-
-            for (var i = 0; i < inputList.length; i++) {
-
-                //The First element is the Header Checkbox
-
-                var headerCheckBox = inputList[0];
+        var GridView = row.parentNode;
 
 
 
-                //Based on all or none checkboxes
+        //Get all input elements in Gridview
 
-                //are checked check/uncheck Header Checkbox
+        var inputList = GridView.getElementsByTagName("input");
 
-                var checked = true;
 
-                if (inputList[i].type == "checkbox" && inputList[i] != headerCheckBox) {
 
-                    if (!inputList[i].checked) {
+        for (var i = 0; i < inputList.length; i++) {
 
-                        checked = false;
+            //The First element is the Header Checkbox
 
-                        break;
+            var headerCheckBox = inputList[0];
 
-                    }
+
+
+            //Based on all or none checkboxes
+
+            //are checked check/uncheck Header Checkbox
+
+            var checked = true;
+
+            if (inputList[i].type == "checkbox" && inputList[i] != headerCheckBox) {
+
+                if (!inputList[i].checked) {
+
+                    checked = false;
+
+                    break;
 
                 }
 
             }
 
-            headerCheckBox.checked = checked;
-
-
-
         }
+
+        headerCheckBox.checked = checked;
+
+
+
+    }
+ 
     </script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
 </asp:Content>

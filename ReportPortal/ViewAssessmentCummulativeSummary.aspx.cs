@@ -14,6 +14,7 @@ namespace ReportPortal
     public partial class ViewAssessmentCummulativeSummary : System.Web.UI.Page
     {
         SessionManager sessions = null;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             sessions = new SessionManager();
@@ -25,6 +26,7 @@ namespace ReportPortal
             }
             calReport();
         }
+
         void calReport()
         {
             var vryearfrom = Session["yearFrom"].ToString();

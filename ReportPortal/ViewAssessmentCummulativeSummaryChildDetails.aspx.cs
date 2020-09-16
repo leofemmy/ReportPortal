@@ -32,9 +32,10 @@ namespace ReportPortal
 
             var vryearto = Session["yearTo"].ToString();
 
+          //  var varyear = Session["TaxYear"].ToString();
+
             var varofficename = Session["Revenueoffice"].ToString();
 
-            //var varyear = Session["TaxYear"].ToString();
 
             XtraRepAssessmentDetails obj_Rpt = new XtraRepAssessmentDetails();
 

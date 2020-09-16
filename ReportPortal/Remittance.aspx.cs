@@ -13,6 +13,7 @@ namespace ReportPortal
     public partial class Remittance : System.Web.UI.Page
     {
         SessionManager sessions = null;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             sessions = new SessionManager();
@@ -29,6 +30,7 @@ namespace ReportPortal
 
             }
         }
+
         void setloadOffice()
         {
             sessions = new SessionManager();
@@ -38,7 +40,7 @@ namespace ReportPortal
             using (SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["Registration2ConnectionString"].ConnectionString))
             {
                 connect.Open();
-                _command = new SqlCommand(String.Format("SELECT DISTINCT TaxAgentUtin,RTRIM(LTRIM(TaxAgentName)) TaxAgentName FROM CentralRegistration.dbo.vwTaxAgents  WHERE MerchantCode='{0}' and TaxAgentName IS NOT NULL ORDER BY TaxAgentName ASC ", sessions.MerchantCode.ToString()), connect) { CommandType = CommandType.Text };
+                _command = new SqlCommand(String.Format("SELECT DISTINCT TaxAgentUtin,RTRIM(LTRIM(TaxAgentName)) TaxAgentName FROM vwTaxAgents  WHERE MerchantCode='{0}' and TaxAgentName IS NOT NULL ORDER BY TaxAgentName ASC ", sessions.MerchantCode.ToString()), connect) { CommandType = CommandType.Text };
                 _command.CommandTimeout = 0;
                 responses.Clear();
                 _adp = new SqlDataAdapter(_command);
@@ -92,9 +94,22 @@ namespace ReportPortal
 
             Session["Agencylist"] = strvalue;
 
-            Response.Write("<script>");
-            Response.Write("window.open('ViewRemittance.aspx' ,'_blank')");
-            Response.Write("</script>");
+            var strrevenue = Session["Agencylist"].ToString();
+
+            var startdate = Session["Startdate"].ToString();
+
+            var enddate = Session["Enddate"].ToString();
+
+            if (Encodings.IsValidUser(String.Format("SELECT PayerID, TaxAgentUtin, TaxAgentName,  address,  PaymentRefNumber, Amount, RevenueOfficeID, RevenueOfficeName, RevenueCode,  PaymentDate,AgencyName,BankName FROM vwRemittance WHERE PaymentDate BETWEEN '{0}' AND '{1}' AND TaxAgentUtin IN ({2}) ORDER BY TaxAgentName ASC", startdate, enddate, strrevenue)))
+            {
+                Response.Write("<script>");
+                Response.Write("window.open('ViewRemittance.aspx' ,'_blank')");
+                Response.Write("</script>");
+            }
+            else
+            {
+                Encodings.MsgBox("! No Record Found for the Selected Range !", this.Page, this);
+            }
         }
 
         protected void checkAll_OnCheckedChanged(object sender, EventArgs e)
@@ -117,9 +132,9 @@ namespace ReportPortal
             {
                 CheckBox chk = (CheckBox)row.FindControl("Chkid");
 
-                if (chk!= null)
+                if (chk != null)
                 {
-                   
+
                 }
             }
         }

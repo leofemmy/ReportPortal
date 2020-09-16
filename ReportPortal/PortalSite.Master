@@ -17,10 +17,12 @@
     <link rel="shortcut icon" href="<%:ResolveUrl("~/plugins/assets/img/favicon/favicon.png") %>">
     <link rel="icon" href="<%:ResolveUrl("~/plugins/assets/img/favicon/favicon.png") %>" type="image/x-icon">
 
-    <!-- Custom CSS -->
-    <link href="<%:ResolveUrl("~/plugins/assets/css/default.css") %>" rel="stylesheet" type="text/css">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+
+    <!-- Custom CSS -->
+    <link href="<%:ResolveUrl("~/plugins/assets/css/default.css") %>" rel="stylesheet" type="text/css">
+
 </head>
 <body>
     <!-- Preloader -->
@@ -80,6 +82,7 @@
                         <li><a href="<%:ResolveUrl("~/Payer.aspx") %>">PAYE Taxpayers</a></li>
                         <li><a href="<%:ResolveUrl("~/Self.aspx") %>">Self Employed Taxpayer</a></li>
                         <li><a href="<%:ResolveUrl("~/Cerificate.aspx") %>">Print Certificate</a></li>
+                        <li><a href="<%:ResolveUrl("~/Summary.aspx") %>">Summary</a></li>
                     </ul>
                 </li>
                 <li id="pagespayemts" runat="server"><a href="javascript:void(0);" data-toggle="collapse" data-target="#ui_element">
@@ -109,7 +112,7 @@
                     <div class="pull-right"><i class="mdi mdi-chevron-down"></i></div>
                     <div class="clearfix"></div>
                 </a>
-                    <ul class="collapse collapse-level-1 two-col-list">
+                    <ul id="pages_dr" class="collapse collapse-level-1 two-col-list">
                         <li class="navigation-header"><span>Assessment</span> <i class="mdi mdi-more"></i></li>
                         <li><a href="<%:ResolveUrl("~/AssessmentCummulativeSummary.aspx") %>">Summary (Cummulative)</a> </li>
                         <li><a href="<%:ResolveUrl("~/AssessmentTaxOfficeYear.aspx") %>">Summary (Years)</a> </li>
@@ -175,13 +178,15 @@
                         <div class="pull-right">
                             <%--<img src="plugins/assets/img/heartbeat.svg" alt="srgit" class="heart">--%>
                         Copyright
-                        <script language="javascript">
-                            today = new Date();
-                            y0 = today.getFullYear();
+                       
+                            <script language="javascript">
+                                today = new Date();
+                                y0 = today.getFullYear();
                         </script>
                             &copy; 2007-<script language="javascript">
                                             document.write(y0);</script>
                             <a href="http://www.icmaservices.com/" target="_blank">ICMA Professional Services</a>. All Rights Reserved
+                       
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -191,17 +196,21 @@
         </div>
         <!-- /Main Content -->
     </div>
+
     <!-- jQuery -->
     <script src="<%:ResolveUrl("~/plugins/vendors/bower_components/jquery/dist/jquery.min.js") %>"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<%:ResolveUrl("~/plugins/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js") %>"></script>
+    <script src="<%:ResolveUrl("~/plugins/vendors/bower_components/moment/moment.js") %>"></script>
+    <script src="<%:ResolveUrl("~/plugins/vendors/bower_components/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js") %>"></script>
 
-    <!-- Slimscroll JavaScript -->
-    <script src="<%:ResolveUrl("~/plugins/assets/js/jquery.slimscroll.js") %>"></script>
 
     <asp:ContentPlaceHolder ID="ScriptContentHolder" runat="server">
     </asp:ContentPlaceHolder>
+
+    <!-- Slimscroll JavaScript -->
+    <script src="<%:ResolveUrl("~/plugins/assets/js/jquery.slimscroll.js") %>"></script>
     <!-- Fancy Dropdown JS -->
     <script src="<%:ResolveUrl("~/plugins/assets/js/dropdown-bootstrap-extended.js") %>"></script>
 

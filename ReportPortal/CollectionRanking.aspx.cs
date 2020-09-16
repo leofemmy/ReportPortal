@@ -8,11 +8,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace ReportPortal
 {
     public partial class CollectionRanking : System.Web.UI.Page
     {
         SessionManager sessions = null;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             sessions = new SessionManager();
@@ -58,6 +60,7 @@ namespace ReportPortal
             }
 
         }
+
         void setload()
         {
             string strvalue = String.Empty;
@@ -150,9 +153,36 @@ namespace ReportPortal
 
             Session["RevenueofficeID"] = strvalue;
 
-            Response.Write("<script>");
-            Response.Write("window.open('ViewCollectionRanking.aspx' ,'_blank')");
-            Response.Write("</script>");
+            var strrevenue = Session["Revenuecode"].ToString();
+
+            var startdate = Session["Startdate"].ToString();
+
+            var enddate = Session["Enddate"].ToString();
+
+            var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("dd/MM/yyyy");
+
+            var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy");
+
+            var strrevenueofficeid = Session["RevenueofficeID"].ToString();
+
+            int nos = Convert.ToInt32(Session["nos"].ToString());
+
+            string strquery = String.Format(
+                "SELECT  DISTINCT TOP {0} TaxAgentUtin,TaxAgentName,SUM(Amount) Amount,RevenueOfficeID,RevenueOfficeName,RevenueCode,RevenueName,DATEPART(MONTH, PaymentDate) AS MONTH,DATEPART(YEAR, PaymentDate) AS YEAR,CONVERT(VARCHAR, DATEPART(MONTH, PaymentDate)) + '/' + CONVERT(VARCHAR, DATEPART(YEAR, PaymentDate)) AS Period FROM vwCollectionRanking WHERE PaymentDate BETWEEN '{1}' AND '{2}' AND RevenueCode ='{3}' AND RevenueOfficeID IN ({4}) GROUP BY TaxAgentUtin, TaxAgentName, RevenueOfficeID,RevenueOfficeName,RevenueCode, RevenueName,DATEPART(MONTH, PaymentDate), DATEPART(YEAR, PaymentDate) ORDER BY TaxAgentName ASC",
+                nos, startdate, enddate, strrevenue, strrevenueofficeid);
+
+            if (Encodings.IsValidUser(strquery))
+            {
+                Response.Write("<script>");
+                Response.Write("window.open('ViewCollectionRanking.aspx' ,'_blank')");
+                Response.Write("</script>");
+            }
+            else
+            {
+                Encodings.MsgBox("! No Record Found for the Selected Range !", this.Page, this);
+            }
+
+         
         }
     }
 }

@@ -14,6 +14,7 @@ namespace ReportPortal
     public partial class ViewAssessmentCummulativeSummaryChild : System.Web.UI.Page
     {
         SessionManager sessions = null;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             sessions = new SessionManager();
@@ -73,6 +74,7 @@ namespace ReportPortal
 
             var varRevenueoffice = Revenueoffice;
 
+            
             vp.callReport2(varRevenueoffice);
 
 

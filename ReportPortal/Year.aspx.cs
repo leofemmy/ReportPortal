@@ -88,9 +88,26 @@ namespace ReportPortal
 
             Session["Agencylist"] = strvalue;
 
-            Response.Write("<script>");
-            Response.Write("window.open('ViewYear.aspx' ,'_blank')");
-            Response.Write("</script>");
+            var strrevenue = Session["Agencylist"].ToString();
+
+            var startdate = Session["Startdate"].ToString();
+
+            var enddate = Session["Enddate"].ToString();
+
+            var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("dd/MM/yyyy");
+
+            var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy");
+
+            if (Encodings.IsValidUser(String.Format("SELECT AgencyName,AgencyCode,SUM(Amount) Amount,DATEPART(YEAR,PaymentDate) Year FROM vwCollectionRaw WHERE PaymentDate BETWEEN '{0}' AND '{1}' AND AgencyCode IN ({2}) GROUP BY AgencyName,AgencyCode,DATEPART(YEAR,PaymentDate) ORDER BY AgencyName ASC", startdate, enddate, strrevenue)))
+            {
+                Response.Write("<script>");
+                Response.Write("window.open('ViewYear.aspx' ,'_blank')");
+                Response.Write("</script>");
+            }
+            else
+            {
+                Encodings.MsgBox("! No Record Found for the Selected Range !", this.Page, this);
+            }
         }
     }
 }

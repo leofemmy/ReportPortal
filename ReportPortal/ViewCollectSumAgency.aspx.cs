@@ -15,6 +15,7 @@ namespace ReportPortal
     public partial class ViewCollectSumAgency : System.Web.UI.Page
     {
         SessionManager sessions = null; string strheader = String.Empty; private DateTime startdate, endate;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             sessions = new SessionManager();
@@ -27,6 +28,7 @@ namespace ReportPortal
 
             calReport();
         }
+
         void calReport()
         {
             var val = Session["Values"].ToString();
@@ -35,6 +37,7 @@ namespace ReportPortal
             CreateReports();
 
         }
+
         void CreateReports()
         {
             XtraRepCollAgency agency = new XtraRepCollAgency();

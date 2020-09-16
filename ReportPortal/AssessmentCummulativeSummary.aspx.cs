@@ -13,6 +13,7 @@ namespace ReportPortal
     public partial class AssessmentCummulativeSummary : System.Web.UI.Page
     {
         SessionManager sessions = null;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             sessions = new SessionManager();
@@ -27,6 +28,7 @@ namespace ReportPortal
                 loadAssementyear(); loadAssementyear2();
             }
         }
+
         void loadAssementyear()
         {
             //ViewAgency
@@ -58,6 +60,7 @@ namespace ReportPortal
             }
 
         }
+
         void loadAssementyear2()
         {
             //ViewAgency
@@ -89,9 +92,11 @@ namespace ReportPortal
             }
 
         }
+
         protected void btnpreview_Click(object sender, EventArgs e)
         {
             Session["yearFrom"] = ddlyear.SelectedValue.ToString();
+
             Session["yearTo"] = ddlto.SelectedValue.ToString();
 
             if (Convert.ToInt32(ddlto.SelectedValue.ToString()) < Convert.ToInt32(ddlyear.SelectedValue.ToString()))

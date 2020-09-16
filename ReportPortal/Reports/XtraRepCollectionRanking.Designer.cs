@@ -69,7 +69,7 @@
             // xrLabel1
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(249.9168F, 133.6667F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(284.2918F, 133.6667F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -81,7 +81,7 @@
             // xrlbsubHead2
             // 
             this.xrlbsubHead2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold);
-            this.xrlbsubHead2.LocationFloat = new DevExpress.Utils.PointFloat(263.4584F, 108.5834F);
+            this.xrlbsubHead2.LocationFloat = new DevExpress.Utils.PointFloat(297.8334F, 108.5834F);
             this.xrlbsubHead2.Multiline = true;
             this.xrlbsubHead2.Name = "xrlbsubHead2";
             this.xrlbsubHead2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -94,7 +94,7 @@
             // 
             this.xrlbsubHead.CanShrink = true;
             this.xrlbsubHead.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold);
-            this.xrlbsubHead.LocationFloat = new DevExpress.Utils.PointFloat(203.1668F, 61.20847F);
+            this.xrlbsubHead.LocationFloat = new DevExpress.Utils.PointFloat(237.5418F, 61.20847F);
             this.xrlbsubHead.Multiline = true;
             this.xrlbsubHead.Name = "xrlbsubHead";
             this.xrlbsubHead.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -106,7 +106,7 @@
             // xrPictureBox2
             // 
             this.xrPictureBox2.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("xrPictureBox2.ImageSource"));
-            this.xrPictureBox2.LocationFloat = new DevExpress.Utils.PointFloat(203.1668F, 22.83331F);
+            this.xrPictureBox2.LocationFloat = new DevExpress.Utils.PointFloat(20.14262F, 22.83331F);
             this.xrPictureBox2.Name = "xrPictureBox2";
             this.xrPictureBox2.SizeF = new System.Drawing.SizeF(162.5F, 132F);
             this.xrPictureBox2.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
@@ -114,7 +114,7 @@
             // xrPictureBox1
             // 
             this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("xrPictureBox1.ImageSource"));
-            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(40.6668F, 10.00001F);
+            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(20.14262F, 22.83331F);
             this.xrPictureBox1.Name = "xrPictureBox1";
             this.xrPictureBox1.SizeF = new System.Drawing.SizeF(162.5F, 132F);
             this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
@@ -130,7 +130,7 @@
             // xrlborghead
             // 
             this.xrlborghead.Font = new System.Drawing.Font("Arial Rounded MT Bold", 25F, System.Drawing.FontStyle.Bold);
-            this.xrlborghead.LocationFloat = new DevExpress.Utils.PointFloat(203.1668F, 22.83331F);
+            this.xrlborghead.LocationFloat = new DevExpress.Utils.PointFloat(237.5418F, 22.83331F);
             this.xrlborghead.Multiline = true;
             this.xrlborghead.Name = "xrlborghead";
             this.xrlborghead.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);

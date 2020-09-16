@@ -907,6 +907,7 @@
     <Content Include="plugins\vendors\jquery.sparkline\dist\jquery.sparkline.min.js" />
     <Content Include="Remittance.aspx" />
     <Content Include="ResetPassword.aspx" />
+    <Content Include="Summary.aspx" />
     <Content Include="TaxOfficeSummary.aspx" />
     <Content Include="TaxOfficeYear.aspx" />
     <Content Include="TCCDetailByYear.aspx" />
@@ -946,6 +947,10 @@
     <Content Include="ViewLineSummaryChild.aspx" />
     <Content Include="ViewLineSummaryTaxOffice.aspx" />
     <Content Include="ViewRemittance.aspx" />
+    <Content Include="ViewSummarylistChild.aspx" />
+    <Content Include="ViewSummarySelfemploye.aspx" />
+    <Content Include="ViewSummarySelfemployedetails.aspx" />
+    <Content Include="ViewSummaryTaxAgent.aspx" />
     <Content Include="ViewTaxofficeLinesummary.aspx" />
     <Content Include="ViewTaxOfficeSummary.aspx" />
     <Content Include="ViewTaxOfficeYear.aspx" />
@@ -968,6 +973,7 @@
     <Content Include="ViewYear.aspx" />
     <Content Include="ViewYearLineSummary.aspx" />
     <Content Include="ViewYearSummary.aspx" />
+    <Content Include="VwSummary.aspx" />
     <Content Include="Year.aspx" />
     <Content Include="YearlineSummaryViewChild.aspx" />
     <Content Include="YearSummary.aspx" />
@@ -1318,6 +1324,12 @@
     <Compile Include="Reports\XtraRepCummulativeSummaryChild.Designer.cs">
       <DependentUpon>XtraRepCummulativeSummaryChild.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\XtraRepEmployedPA.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepEmployedPA.Designer.cs">
+      <DependentUpon>XtraRepEmployedPA.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\XtraRepPayerlineSummary.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1335,6 +1347,24 @@
     </Compile>
     <Compile Include="Reports\XtraRepRevenue.Designer.cs">
       <DependentUpon>XtraRepRevenue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepSelfEmployed.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepSelfEmployed.Designer.cs">
+      <DependentUpon>XtraRepSelfEmployed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepSummary.Designer.cs">
+      <DependentUpon>XtraRepSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepTaxAgentlist.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepTaxAgentlist.Designer.cs">
+      <DependentUpon>XtraRepTaxAgentlist.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\XtraRepTaxOfficeSummary.cs">
       <SubType>Component</SubType>
@@ -1478,6 +1508,13 @@
     </Compile>
     <Compile Include="Signup.aspx.designer.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Summary.aspx.cs">
+      <DependentUpon>Summary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Summary.aspx.designer.cs">
+      <DependentUpon>Summary.aspx</DependentUpon>
     </Compile>
     <Compile Include="TaxOfficeSummary.aspx.cs">
       <DependentUpon>TaxOfficeSummary.aspx</DependentUpon>
@@ -1815,6 +1852,34 @@
     <Compile Include="Viewself.aspx.designer.cs">
       <DependentUpon>Viewself.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ViewSummarylistChild.aspx.cs">
+      <DependentUpon>ViewSummarylistChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSummarylistChild.aspx.designer.cs">
+      <DependentUpon>ViewSummarylistChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSummarySelfemploye.aspx.cs">
+      <DependentUpon>ViewSummarySelfemploye.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSummarySelfemploye.aspx.designer.cs">
+      <DependentUpon>ViewSummarySelfemploye.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSummarySelfemployedetails.aspx.cs">
+      <DependentUpon>ViewSummarySelfemployedetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSummarySelfemployedetails.aspx.designer.cs">
+      <DependentUpon>ViewSummarySelfemployedetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSummaryTaxAgent.aspx.cs">
+      <DependentUpon>ViewSummaryTaxAgent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSummaryTaxAgent.aspx.designer.cs">
+      <DependentUpon>ViewSummaryTaxAgent.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewTaxofficeLinesummary.aspx.cs">
       <DependentUpon>ViewTaxofficeLinesummary.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1968,6 +2033,13 @@
     </Compile>
     <Compile Include="ViewYearSummary.aspx.designer.cs">
       <DependentUpon>ViewYearSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VwSummary.aspx.cs">
+      <DependentUpon>VwSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VwSummary.aspx.designer.cs">
+      <DependentUpon>VwSummary.aspx</DependentUpon>
     </Compile>
     <Compile Include="XtraAgent.cs">
       <SubType>Component</SubType>
@@ -2137,6 +2209,9 @@
     <EmbeddedResource Include="Reports\XtraRepCummulativeSummaryChild.resx">
       <DependentUpon>XtraRepCummulativeSummaryChild.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepEmployedPA.resx">
+      <DependentUpon>XtraRepEmployedPA.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraRepPayerlineSummary.resx">
       <DependentUpon>XtraRepPayerlineSummary.cs</DependentUpon>
     </EmbeddedResource>
@@ -2145,6 +2220,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraRepRevenue.resx">
       <DependentUpon>XtraRepRevenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepSelfEmployed.resx">
+      <DependentUpon>XtraRepSelfEmployed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepSummary.resx">
+      <DependentUpon>XtraRepSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepTaxAgentlist.resx">
+      <DependentUpon>XtraRepTaxAgentlist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraRepTaxOfficeSummary.resx">
       <DependentUpon>XtraRepTaxOfficeSummary.cs</DependentUpon>
