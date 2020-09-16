@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using ReportPortal.Reports;
@@ -81,8 +82,6 @@ namespace ReportPortal
             //obj_Rpt.xrlborghead.Text = strheader;
             obj_Rpt.xrLabel1.Text = string.Format("INTERNAL REVENUE SERVICE");
             obj_Rpt.xrlbsubHead2.Text = string.Format("From {0:dd/MM/yyyy}  To {1:dd/MM/yyyy}", strat, end);
-
-            //string strquery = String.Format("SELECT PayerName,RevenueOfficeName, UTIN,DateCreated, TaxAgentReferenceNumber, Rec_Count FROM vwListTaxAgents WHERE DateCreated BETWEEN '{0}' AND '{1}' ORDER BY PayerName ASC, DateCreated ASC", startdate, enddate);
 
             string strquery = String.Format("SELECT PayerName, UTIN, RevenueOfficeName, DateCreated,TaxAgentReferenceNumber, MerchantCode, (SELECT COUNT(*) AS Expr1 FROM Registration.Taxpayer WHERE (TaxAgentReferenceNumber = vw.TaxAgentReferenceNumber)) AS Rec_Count FROM dbo.vwPayerInfo vw WHERE PayerName IS NOT NULL AND vw.PayerName <> ' ' AND TaxAgentReferenceNumber IS NOT NULL AND DateCreated BETWEEN '{0}' AND '{1}' AND MerchantCode='{2}' AND RegTypeCode = 'AG' GROUP BY PayerName, RevenueOfficeName, UTIN,DateCreated,TaxAgentReferenceNumber, MerchantCode ORDER BY Rec_Count DESC", startdate, enddate, sessions.MerchantCode.ToString());
 
@@ -252,6 +251,23 @@ namespace ReportPortal
             //}
             //Encodings.MsgBox(vrtypedreg, this.Page, this);
 
+
+
+        }
+
+        [WebMethod]
+        public static void loadchildreport(string stin)
+        {
+            ViewSummaryTaxAgent vp = new ViewSummaryTaxAgent();
+
+            var vartaxyear = stin;
+
+            vp.callReport2(vartaxyear);
+
+        }
+        void callReport2(string stin)
+        {
+            Session["STINAgent"] = stin;
 
 
         }

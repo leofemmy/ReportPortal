@@ -951,6 +951,7 @@
     <Content Include="ViewSummarySelfemploye.aspx" />
     <Content Include="ViewSummarySelfemployedetails.aspx" />
     <Content Include="ViewSummaryTaxAgent.aspx" />
+    <Content Include="ViewSummaryTaxAgentdetails.aspx" />
     <Content Include="ViewTaxofficeLinesummary.aspx" />
     <Content Include="ViewTaxOfficeSummary.aspx" />
     <Content Include="ViewTaxOfficeYear.aspx" />
@@ -1879,6 +1880,13 @@
     </Compile>
     <Compile Include="ViewSummaryTaxAgent.aspx.designer.cs">
       <DependentUpon>ViewSummaryTaxAgent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSummaryTaxAgentdetails.aspx.cs">
+      <DependentUpon>ViewSummaryTaxAgentdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSummaryTaxAgentdetails.aspx.designer.cs">
+      <DependentUpon>ViewSummaryTaxAgentdetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewTaxofficeLinesummary.aspx.cs">
       <DependentUpon>ViewTaxofficeLinesummary.aspx</DependentUpon>
