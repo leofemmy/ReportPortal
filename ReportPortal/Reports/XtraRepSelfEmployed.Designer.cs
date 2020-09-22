@@ -72,14 +72,14 @@
             // 
             // TopMargin
             // 
-            this.TopMargin.HeightF = 23.95833F;
+            this.TopMargin.HeightF = 24F;
             this.TopMargin.Name = "TopMargin";
             // 
             // BottomMargin
             // 
             this.BottomMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPageInfo1});
-            this.BottomMargin.HeightF = 29.16667F;
+            this.BottomMargin.HeightF = 29F;
             this.BottomMargin.Name = "BottomMargin";
             // 
             // xrPageInfo1
@@ -265,12 +265,12 @@
             // 
             // xrlborghead
             // 
-            this.xrlborghead.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold);
+            this.xrlborghead.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13F, System.Drawing.FontStyle.Bold);
             this.xrlborghead.LocationFloat = new DevExpress.Utils.PointFloat(198.5173F, 4.458332F);
             this.xrlborghead.Multiline = true;
             this.xrlborghead.Name = "xrlborghead";
             this.xrlborghead.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrlborghead.SizeF = new System.Drawing.SizeF(435.4167F, 48.00001F);
+            this.xrlborghead.SizeF = new System.Drawing.SizeF(435.4167F, 34.45835F);
             this.xrlborghead.StylePriority.UseFont = false;
             this.xrlborghead.StylePriority.UseTextAlignment = false;
             this.xrlborghead.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -278,36 +278,36 @@
             // xrLabel1
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(208.9343F, 52.45835F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(198.5173F, 38.91667F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(413.5416F, 43.83334F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(435.4167F, 35.50002F);
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.StylePriority.UseTextAlignment = false;
             this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrlbsubHead
             // 
-            this.xrlbsubHead.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold);
-            this.xrlbsubHead.LocationFloat = new DevExpress.Utils.PointFloat(208.9343F, 96.29173F);
+            this.xrlbsubHead.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Bold);
+            this.xrlbsubHead.LocationFloat = new DevExpress.Utils.PointFloat(198.5173F, 74.41669F);
             this.xrlbsubHead.Multiline = true;
             this.xrlbsubHead.Name = "xrlbsubHead";
             this.xrlbsubHead.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrlbsubHead.SizeF = new System.Drawing.SizeF(381.2499F, 43.83336F);
+            this.xrlbsubHead.SizeF = new System.Drawing.SizeF(435.4167F, 43.83336F);
             this.xrlbsubHead.StylePriority.UseFont = false;
             this.xrlbsubHead.StylePriority.UseTextAlignment = false;
-            this.xrlbsubHead.Text = "TaxPayers Registered Report(Self Empolyed) \r\nby Tax Office";
+            this.xrlbsubHead.Text = "TaxPayers Registered Report (Self Empolyed) \r\nby Tax Office";
             this.xrlbsubHead.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrlbsubHead2
             // 
             this.xrlbsubHead2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold);
-            this.xrlbsubHead2.LocationFloat = new DevExpress.Utils.PointFloat(212.0594F, 152.625F);
+            this.xrlbsubHead2.LocationFloat = new DevExpress.Utils.PointFloat(198.5173F, 118.2501F);
             this.xrlbsubHead2.Multiline = true;
             this.xrlbsubHead2.Name = "xrlbsubHead2";
             this.xrlbsubHead2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrlbsubHead2.SizeF = new System.Drawing.SizeF(410.4165F, 25.08337F);
+            this.xrlbsubHead2.SizeF = new System.Drawing.SizeF(435.4167F, 25.08337F);
             this.xrlbsubHead2.StylePriority.UseFont = false;
             this.xrlbsubHead2.StylePriority.UseTextAlignment = false;
             this.xrlbsubHead2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
@@ -324,7 +324,7 @@
             this.DataMember = "vwPayerInfo";
             this.DataSource = this.sqlDataSource1;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(100, 100, 24, 29);
+            this.Margins = new System.Drawing.Printing.Margins(100, 64, 24, 29);
             this.Version = "20.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();

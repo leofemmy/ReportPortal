@@ -269,11 +269,11 @@
             // xrLabel1
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13F, System.Drawing.FontStyle.Bold);
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(252.851F, 68.37503F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(252.851F, 62.37503F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(535.4166F, 43.83334F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(535.4166F, 35.83337F);
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.StylePriority.UseTextAlignment = false;
             this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -281,7 +281,7 @@
             // xrlbsubHead2
             // 
             this.xrlbsubHead2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold);
-            this.xrlbsubHead2.LocationFloat = new DevExpress.Utils.PointFloat(274.7261F, 148.0417F);
+            this.xrlbsubHead2.LocationFloat = new DevExpress.Utils.PointFloat(274.7262F, 120.5001F);
             this.xrlbsubHead2.Multiline = true;
             this.xrlbsubHead2.Name = "xrlbsubHead2";
             this.xrlbsubHead2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -293,11 +293,11 @@
             // xrlbsubHead
             // 
             this.xrlbsubHead.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold);
-            this.xrlbsubHead.LocationFloat = new DevExpress.Utils.PointFloat(256.851F, 104.2084F);
+            this.xrlbsubHead.LocationFloat = new DevExpress.Utils.PointFloat(256.851F, 92.2084F);
             this.xrlbsubHead.Multiline = true;
             this.xrlbsubHead.Name = "xrlbsubHead";
             this.xrlbsubHead.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrlbsubHead.SizeF = new System.Drawing.SizeF(535.4166F, 43.83334F);
+            this.xrlbsubHead.SizeF = new System.Drawing.SizeF(535.4166F, 30.29166F);
             this.xrlbsubHead.StylePriority.UseFont = false;
             this.xrlbsubHead.StylePriority.UseTextAlignment = false;
             this.xrlbsubHead.Text = "TaxPayers Registered Report (Tax Agents)";
@@ -310,7 +310,7 @@
             this.xrlborghead.Multiline = true;
             this.xrlborghead.Name = "xrlborghead";
             this.xrlborghead.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrlborghead.SizeF = new System.Drawing.SizeF(545.8335F, 48.00001F);
+            this.xrlborghead.SizeF = new System.Drawing.SizeF(545.8335F, 41.00005F);
             this.xrlborghead.StylePriority.UseFont = false;
             this.xrlborghead.StylePriority.UseTextAlignment = false;
             this.xrlborghead.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;

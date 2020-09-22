@@ -265,6 +265,7 @@ namespace ReportPortal
             vp.callReport2(vartaxyear);
 
         }
+       
         void callReport2(string stin)
         {
             Session["STINAgent"] = stin;

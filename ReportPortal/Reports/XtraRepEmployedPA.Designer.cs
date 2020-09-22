@@ -317,7 +317,7 @@
             this.xrlborghead.Multiline = true;
             this.xrlborghead.Name = "xrlborghead";
             this.xrlborghead.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrlborghead.SizeF = new System.Drawing.SizeF(592.7031F, 48.00001F);
+            this.xrlborghead.SizeF = new System.Drawing.SizeF(592.7031F, 40.00003F);
             this.xrlborghead.StylePriority.UseFont = false;
             this.xrlborghead.StylePriority.UseTextAlignment = false;
             this.xrlborghead.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -325,7 +325,7 @@
             // xrLabel1
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13F, System.Drawing.FontStyle.Bold);
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(227.6841F, 55.41674F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(227.6841F, 50.41674F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -349,7 +349,7 @@
             // xrlbsubHead2
             // 
             this.xrlbsubHead2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold);
-            this.xrlbsubHead2.LocationFloat = new DevExpress.Utils.PointFloat(227.6841F, 143.0834F);
+            this.xrlbsubHead2.LocationFloat = new DevExpress.Utils.PointFloat(227.6841F, 122.3334F);
             this.xrlbsubHead2.Multiline = true;
             this.xrlbsubHead2.Name = "xrlbsubHead2";
             this.xrlbsubHead2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
