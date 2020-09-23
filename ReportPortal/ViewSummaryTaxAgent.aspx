@@ -9,7 +9,7 @@
     <title></title>
     <script type="text/javascript" id="script">
         function previewClick(s, e) {
-            e.Brick && alert(e.GetBrickText())
+           // e.Brick && alert(e.GetBrickText())
             PageMethods.loadchildreport(e.Brick.text());
             if (e.Brick.text() != null) {
                 window.location.href = "ViewSummaryTaxAgentdetails.aspx"

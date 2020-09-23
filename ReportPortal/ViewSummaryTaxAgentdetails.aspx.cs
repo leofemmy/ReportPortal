@@ -84,7 +84,8 @@ namespace ReportPortal
             obj_Rpt.xrlbsubHead.Text = "Taxpayers Registered Report (Tax Agent)";
             obj_Rpt.xrlbsubHead2.Text = string.Format("From {0:dd/MM/yyyy}  To {1:dd/MM/yyyy}", strat, end);
 
-            string strquery = String.Format("SELECT PayerName, UTIN, Address, Email,TelephoneNumber, MerchantCode,LgaId, LgaName,PayerType,StaffNumber, CACNumber, RegTypeCode,RevenueOfficeID,RevenueOfficeName, DateCreated,  TaxAgentReferenceNumber FROM vwPayerInfo WHERE PayerName <>  ' ' AND PayerName IS NOT NULL AND RegTypeCode <> 'AG' AND DateCreated BETWEEN '{0}' AND '{1}' AND MerchantCode= '{2}' AND TaxAgentReferenceNumber =( SELECT TaxAgentReferenceNumber  FROM dbo.vwPayerInfo WHERE UTIN ='{3}') ORDER BY PayerName ASC, DateCreated ASC", startdate, enddate, sessions.MerchantCode.ToString(), stroffices);
+            string strquery = String.Format("SELECT PayerName, UTIN, Address, Email,TelephoneNumber, MerchantCode,LgaId, LgaName,PayerType,StaffNumber, CACNumber, RegTypeCode,RevenueOfficeID,RevenueOfficeName, DateCreated,  TaxAgentReferenceNumber FROM vwPayerInfo WHERE PayerName <>  ' ' AND PayerName IS NOT NULL AND RegTypeCode <> 'AG' AND MerchantCode= '{0}' AND TaxAgentReferenceNumber =( SELECT TaxAgentReferenceNumber  FROM dbo.vwPayerInfo WHERE UTIN ='{1}') ORDER BY PayerName ASC, DateCreated ASC", sessions.MerchantCode.ToString(), stroffices);
+
             using (SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["Registration2ConnectionString"].ConnectionString))
             {
                 connect.Open();
