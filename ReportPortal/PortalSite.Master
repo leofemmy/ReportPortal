@@ -49,6 +49,7 @@
                         <a href="<%:ResolveUrl("~/Index.aspx") %>">
                             <img class="brand-img" src="plugins/assets/img/logo.png" alt="brand" />
                             <span class="brand-text">[ Report<strong> P</strong>ortal ]</span> </a>
+                        <br/>
                         <asp:Label runat="server" Text="" ID="txtuser" ForeColor="White"></asp:Label>
                     </div>
                 </div>
@@ -56,7 +57,7 @@
             <div id="mobile_right_sidebar" class="mobile-right-sidebar pull-right">
                 <ul class="nav navbar-right top-nav pull-right">
                     <li class="dropdown auth-drp"><a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown">
-                        <img src="plugins/assets/img/users/avatar-2.jpg" alt="user_auth" class="user-auth-img img-circle" /><span class="user-online-status"></span>
+                        <%--<img src="plugins/assets/img/users/avatar-2.jpg" alt="user_auth" class="user-auth-img img-circle" /><span class="user-online-status"></span>--%>
                     </a>
                         <ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <li class="divider"></li>
