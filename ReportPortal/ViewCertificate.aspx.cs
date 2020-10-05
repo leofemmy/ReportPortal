@@ -15,6 +15,7 @@ namespace ReportPortal
     public partial class ViewCertificate : System.Web.UI.Page
     {
         SessionManager sessions = null; string strheader = String.Empty;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             sessions = new SessionManager();

@@ -29,38 +29,71 @@ namespace ReportPortal
                 loadAgency();
             }
 
-
         }
 
         protected void btnpreview_OnClick(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(ddlAgency.SelectedValue.ToString())) return;
+            txtiddisplay.Visible = true;
 
-            if (string.IsNullOrEmpty(ddlRevenue.SelectedValue.ToString())) return;
+            //  Encodings.MsgBox("You Need to Enable your Browser Pop-Up at the Top Right Corner to View the report", this.Page, "Report Not Showing?");
 
-            Session["Agency"] = ddlAgency.SelectedValue.ToString();
+            if (string.IsNullOrEmpty(ddlAgency.SelectedValue.ToString()))
+            {
+                //Encodings.MsgBox("! Criteria is Empty !", this.Page, this);
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Criteria is Empty !', 'error');", true);
+                return;
+            }
+            else if (string.IsNullOrEmpty(ddlRevenue.SelectedValue.ToString()))
+            {
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Criteria is Empty !', 'error');", true); return;
+            }
+            else if (string.IsNullOrWhiteSpace(txtstartdate.Text.ToString()) && string.IsNullOrWhiteSpace(txtenddate.Text.ToString()))
+            {
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Criteria is Empty !', 'error');", true);
+            }
+            else if (Convert.ToDateTime(txtenddate.Text.ToString()) < Convert.ToDateTime(txtstartdate.Text.ToString()))
+            {
+                //Encodings.MsgBox("End Date Greater Than Start Date !", this.Page, this);
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! End Date Greater Than Start Date !', 'error');", true);
+            }
+            else
+            {
 
-            Session["Revenue"] = ddlRevenue.SelectedValue.ToString();
+                Session["Agency"] = ddlAgency.SelectedValue.ToString();
 
-            Session["RevenueName"] = ddlRevenue.SelectedItem.ToString();
+                Session["Revenue"] = ddlRevenue.SelectedValue.ToString();
 
-            var gb = Convert.ToDateTime(txtstartdate.Text.ToString());
+                Session["RevenueName"] = ddlRevenue.SelectedItem.ToString();
 
-            Session["startdate1"] = Convert.ToDateTime(txtstartdate.Text.ToString());
+                var gb = Convert.ToDateTime(txtstartdate.Text.ToString());
 
-            Session["Enddate1"] = Convert.ToDateTime(txtenddate.Text.ToString());
+                Session["startdate1"] = Convert.ToDateTime(txtstartdate.Text.ToString());
 
-            //DateTime date = DateTime.ParseExact(Convert.ToDateTime(txtstartdate.Text.ToString()), "dd/MM/yyyy", null);
+                Session["Enddate1"] = Convert.ToDateTime(txtenddate.Text.ToString());
 
-            // DateTime date = DateTime.ParseExact(txtstartdate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                Session["Startdate"] = txtstartdate.Text.ToString();
 
-            Session["Startdate"] = txtstartdate.Text.ToString();
+                Session["Enddate"] = txtenddate.Text.ToString();
 
-            Session["Enddate"] = txtenddate.Text.ToString();
+                var strrevenue = Session["Revenue"].ToString();
 
-            Response.Write("<script>");
-            Response.Write("window.open('ViewPayment.aspx' ,'_blank')");
-            Response.Write("</script>");
+                var startdate = Session["Startdate"].ToString();
+
+                var enddate = Session["Enddate"].ToString();
+
+                string strquery = String.Format("SELECT * FROM ViewPayment WHERE PaymentDate BETWEEN '{0}' AND '{1}' and RevenueCode ='{2}'  ORDER BY PaymentDate ASC", startdate, enddate, strrevenue);
+
+                if (Encodings.IsValidUser(strquery))
+                {
+                    Response.Write("<script>");
+                    Response.Write("window.open('ViewPayment.aspx' ,'_blank')");
+                    Response.Write("</script>");
+                }
+                else
+                {
+                    this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', ' No Record Found for the Selected Range !', 'info');", true);
+                }
+            }
 
         }
 
@@ -93,6 +126,7 @@ namespace ReportPortal
                 ddlRevenue.Items.Insert(0, new ListItem("--- Select Revenue Name ---", "0"));
             }
         }
+
         void loadAgency()
         {
             //ViewAgency

@@ -109,7 +109,22 @@ namespace ReportPortal
 
         protected void btnpreview_OnClick(object sender, EventArgs e)
         {
+
+            txtiddisplay.Visible = true;
+
             string strvalue = String.Empty; int j = 0;
+
+            if (string.IsNullOrWhiteSpace(txtstartdate.Text.ToString()) || string.IsNullOrWhiteSpace(txtenddate.Text.ToString()))
+            {
+                //Encodings.MsgBox("! Criteria is Empty !", this.Page, this);
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Criteria is Empty !', 'error');", true);
+                return;
+            }
+            if (Convert.ToDateTime(txtenddate.Text.ToString()) < Convert.ToDateTime(txtstartdate.Text.ToString()))
+            {
+                //Encodings.MsgBox("End Date Greater Than Start Date !", this.Page, this);
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! End Date Greater Than Start Date !', 'error');", true); return;
+            }
 
             if (string.IsNullOrEmpty(ddlRevenue.SelectedValue.ToString())) return;
 
@@ -179,10 +194,10 @@ namespace ReportPortal
             }
             else
             {
-                Encodings.MsgBox("! No Record Found for the Selected Range !", this.Page, this);
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', ' No Record Found for the Selected Range !', 'info');", true);
             }
 
-         
+
         }
     }
 }

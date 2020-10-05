@@ -58,57 +58,74 @@ namespace ReportPortal
             int totalCount = gridOffence.Rows.Cast<GridViewRow>()
                            .Count(r => ((CheckBox)r.FindControl("CheckBox1")).Checked);
 
-
-            foreach (GridViewRow row in gridOffence.Rows)
+            if (string.IsNullOrWhiteSpace(txtstartdate.Text.ToString()) || string.IsNullOrWhiteSpace(txtenddate.Text.ToString()))
             {
-                CheckBox chk = (CheckBox)row.FindControl("CheckBox1");
-
-                Label lbltin = (Label)row.FindControl("lbltin");
-
-                if (chk != null & chk.Checked)
-                {
-                    strvalue += String.Format("{0}", lbltin.Text);
-
-                    if (j + 1 < totalCount)
-                    {
-                        strvalue += ",";
-                        ++j;
-                    }
-                }
-
+                //Encodings.MsgBox("! Criteria is Empty !", this.Page, this);
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Criteria is Empty !', 'error');", true);
             }
-
-            Session["Startdate"] = txtstartdate.Text.ToString();
-
-            Session["Enddate"] = txtenddate.Text.ToString();
-
-            Session["startdate1"] = Convert.ToDateTime(txtstartdate.Text.ToString());
-
-            Session["Enddate1"] = Convert.ToDateTime(txtenddate.Text.ToString());
-
-            Session["Agencylist"] = strvalue;
-
-
-            var strrevenue = Session["Agencylist"].ToString();
-
-            var startdate = Session["Startdate"].ToString();
-
-            var enddate = Session["Enddate"].ToString();
-
-            var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("dd/MM/yyyy");
-
-            var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy");
-
-
-            if (Encodings.IsValidUser(String.Format("SELECT BusinessTypeID, BusinessTypeName, SUM(Amount) AS Amount FROM dbo.vwBusinessSectors WHERE PaymentDate BETWEEN '{0}' AND '{1}' AND BusinessTypeID IN ({2}) GROUP BY BusinessTypeID, BusinessTypeName ORDER BY BusinessTypeName ASC", startdate, enddate, strrevenue)))
+            else if (Convert.ToDateTime(txtenddate.Text.ToString()) < Convert.ToDateTime(txtstartdate.Text.ToString()))
             {
-                Response.Write("<script>");
-                Response.Write("window.open('ViewBusiness.aspx' ,'_blank')");
-                Response.Write("</script>");
+                //Encodings.MsgBox("End Date Greater Than Start Date !", this.Page, this);
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! End Date Greater Than Start Date !', 'error');", true);
             }
             else
             {
-                Encodings.MsgBox("! No Record Found for the Selected Range !", this.Page, this);
+                foreach (GridViewRow row in gridOffence.Rows)
+                {
+                    CheckBox chk = (CheckBox)row.FindControl("CheckBox1");
+
+                    Label lbltin = (Label)row.FindControl("lbltin");
+
+                    if (chk != null & chk.Checked)
+                    {
+                        strvalue += String.Format("{0}", lbltin.Text);
+
+                        if (j + 1 < totalCount)
+                        {
+                            strvalue += ",";
+                            ++j;
+                        }
+                    }
+
+                }
+
+                txtiddisplay.Visible = true;
+
+
+                Session["Startdate"] = txtstartdate.Text.ToString();
+
+                Session["Enddate"] = txtenddate.Text.ToString();
+
+                Session["startdate1"] = Convert.ToDateTime(txtstartdate.Text.ToString());
+
+                Session["Enddate1"] = Convert.ToDateTime(txtenddate.Text.ToString());
+
+                Session["Agencylist"] = strvalue;
+
+
+                var strrevenue = Session["Agencylist"].ToString();
+
+                var startdate = Session["Startdate"].ToString();
+
+                var enddate = Session["Enddate"].ToString();
+
+                var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("dd/MM/yyyy");
+
+                var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy");
+
+
+                if (Encodings.IsValidUser(String.Format(
+                    "SELECT BusinessTypeID, BusinessTypeName, SUM(Amount) AS Amount FROM dbo.vwBusinessSectors WHERE PaymentDate BETWEEN '{0}' AND '{1}' AND BusinessTypeID IN ({2}) GROUP BY BusinessTypeID, BusinessTypeName ORDER BY BusinessTypeName ASC",
+                    startdate, enddate, strrevenue)))
+                {
+                    Response.Write("<script>");
+                    Response.Write("window.open('ViewBusiness.aspx' ,'_blank')");
+                    Response.Write("</script>");
+                }
+                else
+                {
+                    this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', ' No Record Found for the Selected Range !', 'info');", true);
+                }
             }
         }
     }

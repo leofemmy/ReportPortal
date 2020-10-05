@@ -25,34 +25,49 @@ namespace ReportPortal
 
         protected void btnpreview_OnClick(object sender, EventArgs e)
         {
+            txtiddisplay.Visible = true;
 
-            Session["Startdate"] = txtstartdate.Text.ToString();
-
-            Session["Enddate"] = txtenddate.Text.ToString();
-
-            Session["startdate1"] = Convert.ToDateTime(txtstartdate.Text.ToString());
-
-            Session["Enddate1"] = Convert.ToDateTime(txtenddate.Text.ToString());
-            
-
-            var startdate = Session["Startdate"].ToString();
-
-            var enddate = Session["Enddate"].ToString();
-
-            var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("dd/MM/yyyy");
-
-            var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy");
-
-
-            if (Encodings.IsValidUser(String.Format("SELECT RegTypeCode,  COUNT(RegTypeCode) Rec_Count, CASE WHEN RegTypeCode = 'AG' THEN 'Tax Agents' WHEN RegTypeCode = 'DA' THEN 'Self-Employed' WHEN RegTypeCode = 'PA' THEN  'Employed'  ELSE  'Adoch'  END Category FROM dbo.vwPayerInfo  WHERE PayerName IS NOT NULL AND MerchantCode='{0}' AND Datecreated BETWEEN '{1}' AND '{2}' GROUP BY RegTypeCode HAVING COUNT(RegTypeCode) > 0 ORDER BY Category asc", sessions.MerchantCode.ToString(), startdate, enddate)))
+            if (string.IsNullOrWhiteSpace(txtstartdate.Text.ToString()) || string.IsNullOrWhiteSpace(txtenddate.Text.ToString()))
             {
-                Response.Write("<script>");
-                Response.Write("window.open('VwSummary.aspx' ,'_blank')");
-                Response.Write("</script>");
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Criteria is Empty !', 'error');", true);
+            }
+            else if (Convert.ToDateTime(txtenddate.Text.ToString()) < Convert.ToDateTime(txtstartdate.Text.ToString()))
+            {
+                //Encodings.MsgBox("End Date Greater Than Start Date !", this.Page, this);
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! End Date Greater Than Start Date !', 'error');", true);
             }
             else
             {
-                Encodings.MsgBox("! No Record Found for the Selected Range !", this.Page, this);
+                Session["Startdate"] = txtstartdate.Text.ToString();
+
+                Session["Enddate"] = txtenddate.Text.ToString();
+
+                Session["startdate1"] = Convert.ToDateTime(txtstartdate.Text.ToString());
+
+                Session["Enddate1"] = Convert.ToDateTime(txtenddate.Text.ToString());
+
+
+                var startdate = Session["Startdate"].ToString();
+
+                var enddate = Session["Enddate"].ToString();
+
+                var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("dd/MM/yyyy");
+
+                var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy");
+
+
+                if (Encodings.IsValidUser(String.Format(
+                    "SELECT RegTypeCode,  COUNT(RegTypeCode) Rec_Count, CASE WHEN RegTypeCode = 'AG' THEN 'Tax Agents' WHEN RegTypeCode = 'DA' THEN 'Self-Employed' WHEN RegTypeCode = 'PA' THEN  'Employed'  ELSE  'Adoch'  END Category FROM dbo.vwPayerInfo  WHERE PayerName IS NOT NULL AND MerchantCode='{0}' AND Datecreated BETWEEN '{1}' AND '{2}' GROUP BY RegTypeCode HAVING COUNT(RegTypeCode) > 0 ORDER BY Category asc",
+                    sessions.MerchantCode.ToString(), startdate, enddate)))
+                {
+                    Response.Write("<script>");
+                    Response.Write("window.open('VwSummary.aspx' ,'_blank')");
+                    Response.Write("</script>");
+                }
+                else
+                {
+                    this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', ' No Record Found for the Selected Range !', 'info');", true);
+                }
             }
         }
     }

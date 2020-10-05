@@ -17,12 +17,15 @@
     <link rel="shortcut icon" href="<%:ResolveUrl("~/plugins/assets/img/favicon/favicon.png") %>">
     <link rel="icon" href="<%:ResolveUrl("~/plugins/assets/img/favicon/favicon.png") %>" type="image/x-icon">
 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.css"
+        rel="stylesheet" type="text/css" />
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
     <!-- Custom CSS -->
     <link href="<%:ResolveUrl("~/plugins/assets/css/default.css") %>" rel="stylesheet" type="text/css">
-
 </head>
 <body>
     <!-- Preloader -->
@@ -49,7 +52,7 @@
                         <a href="<%:ResolveUrl("~/Index.aspx") %>">
                             <img class="brand-img" src="plugins/assets/img/logo.png" alt="brand" />
                             <span class="brand-text">[ Report<strong> P</strong>ortal ]</span> </a>
-                        <br/>
+                        <br />
                         <asp:Label runat="server" Text="" ID="txtuser" ForeColor="White"></asp:Label>
                     </div>
                 </div>

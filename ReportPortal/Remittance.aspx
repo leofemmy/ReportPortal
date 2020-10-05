@@ -22,7 +22,7 @@
                                     <Columns>
                                         <asp:TemplateField>
                                             <HeaderTemplate>
-                                                <asp:CheckBox ID="checkAlls" runat="server" onclick="checkAll(this);"  />
+                                                <asp:CheckBox ID="checkAlls" runat="server" onclick="checkAll(this);" />
                                             </HeaderTemplate>
                                             <ItemTemplate>
                                                 <asp:CheckBox ID="Chkid" runat="server" />
@@ -52,13 +52,14 @@
                                     <asp:TextBox ID="txtenddate" runat="server" CausesValidation="false" autocomplete="off" ClientIDMode="Static" CssClass="form-control" TextMode="Date"></asp:TextBox>
                                     <asp:ImageButton ID="ImageButton1" runat="server" ClientIDMode="Static" ImageUrl="~/images/clearimage.jpeg" OnClientClick="ClearTextboxes1();" />
                                 </div>
-                                 <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <asp:Button ID="btnpreview" runat="server" Text="Preview" class="btn btn-primary btn-anim text-uppercas" OnClick="btnpreview_OnClick" />
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <asp:Button ID="btnpreview" runat="server" Text="Preview" class="btn btn-primary btn-anim text-uppercas" OnClick="btnpreview_OnClick" />
+                                    </div>
+                                    <asp:Label runat="server" ID="txtiddisplay" Text="You need to enable your browser pop-Up at the top right corner to view the report" ForeColor="red" Visible="False"></asp:Label>
                                 </div>
                             </div>
-                            </div>
-                           
+
 
                         </form>
                     </div>

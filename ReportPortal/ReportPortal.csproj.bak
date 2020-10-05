@@ -46,30 +46,30 @@
     <Reference Include="CryptSharp, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CryptSharpOfficial.2.1.0.0\lib\CryptSharp.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.CodeParser.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Pdf.v20.1.Drawing, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v20.1.Export, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.ASPxThemes.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.Resources.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Xpo.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v20.1.Web, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v20.1.Web.WebForms, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.1.Drawing, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Export, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.1.Web, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.1.Web.WebForms, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -102,6 +102,7 @@
     <Content Include="AssessmentTaxOfficeYear.aspx" />
     <Content Include="AssessmentYear.aspx" />
     <Content Include="AssessmentYearSummary.aspx" />
+    <Content Include="Business.aspx" />
     <Content Include="Cerificate.aspx" />
     <Content Include="CollectionRanking.aspx" />
     <Content Include="CollectionSummary.aspx" />
@@ -904,7 +905,9 @@
     <Content Include="plugins\vendors\bower_components\wizard\steps.css" />
     <Content Include="plugins\vendors\bower_components\wizard\steps.js" />
     <Content Include="plugins\vendors\jquery.sparkline\dist\jquery.sparkline.min.js" />
+    <Content Include="Remittance.aspx" />
     <Content Include="ResetPassword.aspx" />
+    <Content Include="Summary.aspx" />
     <Content Include="TaxOfficeSummary.aspx" />
     <Content Include="TaxOfficeYear.aspx" />
     <Content Include="TCCDetailByYear.aspx" />
@@ -916,6 +919,8 @@
     <Content Include="TCCLineSummaryTaxoffice.aspx" />
     <Content Include="TccLineYearSummary.aspx" />
     <Content Include="TccYearSummary.aspx" />
+    <Content Include="userreport.aspx" />
+    <Content Include="Users.aspx" />
     <Content Include="ViewAssessmentCummulativeSummary.aspx" />
     <Content Include="ViewAssessmentCummulativeSummaryChild.aspx" />
     <Content Include="ViewAssessmentCummulativeSummaryChildDetails.aspx" />
@@ -924,6 +929,7 @@
     <Content Include="ViewAssessmentYearSummary.aspx" />
     <Content Include="ViewAssessmentYearSummaryChild.aspx" />
     <Content Include="ViewAssessmentYearSummaryChildDetails.aspx" />
+    <Content Include="ViewBusiness.aspx" />
     <Content Include="ViewCollectionRanking.aspx" />
     <Content Include="ViewCollectSum.aspx" />
     <Content Include="ViewCollectSumAgency.aspx" />
@@ -940,6 +946,12 @@
     <Content Include="ViewLineSummaryAllChild.aspx" />
     <Content Include="ViewLineSummaryChild.aspx" />
     <Content Include="ViewLineSummaryTaxOffice.aspx" />
+    <Content Include="ViewRemittance.aspx" />
+    <Content Include="ViewSummarylistChild.aspx" />
+    <Content Include="ViewSummarySelfemploye.aspx" />
+    <Content Include="ViewSummarySelfemployedetails.aspx" />
+    <Content Include="ViewSummaryTaxAgent.aspx" />
+    <Content Include="ViewSummaryTaxAgentdetails.aspx" />
     <Content Include="ViewTaxofficeLinesummary.aspx" />
     <Content Include="ViewTaxOfficeSummary.aspx" />
     <Content Include="ViewTaxOfficeYear.aspx" />
@@ -959,8 +971,11 @@
     <Content Include="ViewTccYearSummary.aspx" />
     <Content Include="ViewTccYearSummaryChild.aspx" />
     <Content Include="ViewTccYearSummaryChildDetails.aspx" />
+    <Content Include="ViewYear.aspx" />
     <Content Include="ViewYearLineSummary.aspx" />
     <Content Include="ViewYearSummary.aspx" />
+    <Content Include="VwSummary.aspx" />
+    <Content Include="Year.aspx" />
     <Content Include="YearlineSummaryViewChild.aspx" />
     <Content Include="YearSummary.aspx" />
     <None Include="Scripts\jquery-1.7-vsdoc.js" />
@@ -1091,6 +1106,13 @@
     </Compile>
     <Compile Include="AssessmentYearSummary.aspx.designer.cs">
       <DependentUpon>AssessmentYearSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business.aspx.cs">
+      <DependentUpon>Business.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business.aspx.designer.cs">
+      <DependentUpon>Business.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cerificate.aspx.cs">
       <DependentUpon>Cerificate.aspx</DependentUpon>
@@ -1224,6 +1246,13 @@
       <DependentUpon>PortalSite.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Remittance.aspx.cs">
+      <DependentUpon>Remittance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Remittance.aspx.designer.cs">
+      <DependentUpon>Remittance.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reports\RepCollBank.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1248,6 +1277,12 @@
     <Compile Include="Reports\XtraRepAssessmentTaxOfficeYear.Designer.cs">
       <DependentUpon>XtraRepAssessmentTaxOfficeYear.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\XtraRepAssessmentTaxOfficeYearDetails.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepAssessmentTaxOfficeYearDetails.Designer.cs">
+      <DependentUpon>XtraRepAssessmentTaxOfficeYearDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\XtraRepAssessmentYearSummary.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1260,6 +1295,12 @@
     <Compile Include="Reports\XtraRepAssessmentYearSummaryChild.Designer.cs">
       <DependentUpon>XtraRepAssessmentYearSummaryChild.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\XtraRepBusiness.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepBusiness.Designer.cs">
+      <DependentUpon>XtraRepBusiness.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\XtraRepCollAgency.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1268,6 +1309,9 @@
     </Compile>
     <Compile Include="Reports\XtraRepCollectionRanking.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepCollectionRanking.Designer.cs">
+      <DependentUpon>XtraRepCollectionRanking.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\XtraRepCummulativeSummary.cs">
       <SubType>Component</SubType>
@@ -1281,17 +1325,47 @@
     <Compile Include="Reports\XtraRepCummulativeSummaryChild.Designer.cs">
       <DependentUpon>XtraRepCummulativeSummaryChild.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\XtraRepEmployedPA.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepEmployedPA.Designer.cs">
+      <DependentUpon>XtraRepEmployedPA.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\XtraRepPayerlineSummary.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\XtraRepPayerlineSummary.Designer.cs">
       <DependentUpon>XtraRepPayerlineSummary.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\XtraRepRemittance.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepRemittance.Designer.cs">
+      <DependentUpon>XtraRepRemittance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\XtraRepRevenue.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\XtraRepRevenue.Designer.cs">
       <DependentUpon>XtraRepRevenue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepSelfEmployed.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepSelfEmployed.Designer.cs">
+      <DependentUpon>XtraRepSelfEmployed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepSummary.Designer.cs">
+      <DependentUpon>XtraRepSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepTaxAgentlist.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepTaxAgentlist.Designer.cs">
+      <DependentUpon>XtraRepTaxAgentlist.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\XtraRepTaxOfficeSummary.cs">
       <SubType>Component</SubType>
@@ -1395,6 +1469,12 @@
     <Compile Include="Reports\XtraRepViewDetailByYear.Designer.cs">
       <DependentUpon>XtraRepViewDetailByYear.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\XtraRepYear.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepYear.Designer.cs">
+      <DependentUpon>XtraRepYear.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\XtraRepYearLineSummary.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1429,6 +1509,13 @@
     </Compile>
     <Compile Include="Signup.aspx.designer.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Summary.aspx.cs">
+      <DependentUpon>Summary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Summary.aspx.designer.cs">
+      <DependentUpon>Summary.aspx</DependentUpon>
     </Compile>
     <Compile Include="TaxOfficeSummary.aspx.cs">
       <DependentUpon>TaxOfficeSummary.aspx</DependentUpon>
@@ -1507,6 +1594,20 @@
     <Compile Include="TccYearSummary.aspx.designer.cs">
       <DependentUpon>TccYearSummary.aspx</DependentUpon>
     </Compile>
+    <Compile Include="userreport.aspx.cs">
+      <DependentUpon>userreport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userreport.aspx.designer.cs">
+      <DependentUpon>userreport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewAgent.aspx.cs">
       <DependentUpon>ViewAgent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1583,6 +1684,13 @@
     </Compile>
     <Compile Include="ViewAssessmentYearSummaryChildDetails.aspx.designer.cs">
       <DependentUpon>ViewAssessmentYearSummaryChildDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBusiness.aspx.cs">
+      <DependentUpon>ViewBusiness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewBusiness.aspx.designer.cs">
+      <DependentUpon>ViewBusiness.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewCertificate.aspx.cs">
       <DependentUpon>ViewCertificate.aspx</DependentUpon>
@@ -1731,12 +1839,54 @@
     <Compile Include="ViewPayment.aspx.designer.cs">
       <DependentUpon>ViewPayment.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ViewRemittance.aspx.cs">
+      <DependentUpon>ViewRemittance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewRemittance.aspx.designer.cs">
+      <DependentUpon>ViewRemittance.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Viewself.aspx.cs">
       <DependentUpon>Viewself.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Viewself.aspx.designer.cs">
       <DependentUpon>Viewself.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSummarylistChild.aspx.cs">
+      <DependentUpon>ViewSummarylistChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSummarylistChild.aspx.designer.cs">
+      <DependentUpon>ViewSummarylistChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSummarySelfemploye.aspx.cs">
+      <DependentUpon>ViewSummarySelfemploye.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSummarySelfemploye.aspx.designer.cs">
+      <DependentUpon>ViewSummarySelfemploye.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSummarySelfemployedetails.aspx.cs">
+      <DependentUpon>ViewSummarySelfemployedetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSummarySelfemployedetails.aspx.designer.cs">
+      <DependentUpon>ViewSummarySelfemployedetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSummaryTaxAgent.aspx.cs">
+      <DependentUpon>ViewSummaryTaxAgent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSummaryTaxAgent.aspx.designer.cs">
+      <DependentUpon>ViewSummaryTaxAgent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSummaryTaxAgentdetails.aspx.cs">
+      <DependentUpon>ViewSummaryTaxAgentdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSummaryTaxAgentdetails.aspx.designer.cs">
+      <DependentUpon>ViewSummaryTaxAgentdetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewTaxofficeLinesummary.aspx.cs">
       <DependentUpon>ViewTaxofficeLinesummary.aspx</DependentUpon>
@@ -1871,6 +2021,13 @@
     <Compile Include="ViewTccYearSummaryChildDetails.aspx.designer.cs">
       <DependentUpon>ViewTccYearSummaryChildDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ViewYear.aspx.cs">
+      <DependentUpon>ViewYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewYear.aspx.designer.cs">
+      <DependentUpon>ViewYear.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewYearLineSummary.aspx.cs">
       <DependentUpon>ViewYearLineSummary.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1884,6 +2041,13 @@
     </Compile>
     <Compile Include="ViewYearSummary.aspx.designer.cs">
       <DependentUpon>ViewYearSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VwSummary.aspx.cs">
+      <DependentUpon>VwSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VwSummary.aspx.designer.cs">
+      <DependentUpon>VwSummary.aspx</DependentUpon>
     </Compile>
     <Compile Include="XtraAgent.cs">
       <SubType>Component</SubType>
@@ -1941,6 +2105,13 @@
     </Compile>
     <Compile Include="Reports\XtraRepSummaryLedger.Designer.cs">
       <DependentUpon>XtraRepSummaryLedger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Year.aspx.cs">
+      <DependentUpon>Year.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Year.aspx.designer.cs">
+      <DependentUpon>Year.aspx</DependentUpon>
     </Compile>
     <Compile Include="YearlineSummaryViewChild.aspx.cs">
       <DependentUpon>YearlineSummaryViewChild.aspx</DependentUpon>
@@ -2022,11 +2193,17 @@
     <EmbeddedResource Include="Reports\XtraRepAssessmentTaxOfficeYear.resx">
       <DependentUpon>XtraRepAssessmentTaxOfficeYear.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepAssessmentTaxOfficeYearDetails.resx">
+      <DependentUpon>XtraRepAssessmentTaxOfficeYearDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraRepAssessmentYearSummary.resx">
       <DependentUpon>XtraRepAssessmentYearSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraRepAssessmentYearSummaryChild.resx">
       <DependentUpon>XtraRepAssessmentYearSummaryChild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepBusiness.resx">
+      <DependentUpon>XtraRepBusiness.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraRepCollAgency.resx">
       <DependentUpon>XtraRepCollAgency.cs</DependentUpon>
@@ -2040,11 +2217,26 @@
     <EmbeddedResource Include="Reports\XtraRepCummulativeSummaryChild.resx">
       <DependentUpon>XtraRepCummulativeSummaryChild.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepEmployedPA.resx">
+      <DependentUpon>XtraRepEmployedPA.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraRepPayerlineSummary.resx">
       <DependentUpon>XtraRepPayerlineSummary.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepRemittance.resx">
+      <DependentUpon>XtraRepRemittance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraRepRevenue.resx">
       <DependentUpon>XtraRepRevenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepSelfEmployed.resx">
+      <DependentUpon>XtraRepSelfEmployed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepSummary.resx">
+      <DependentUpon>XtraRepSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepTaxAgentlist.resx">
+      <DependentUpon>XtraRepTaxAgentlist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraRepTaxOfficeSummary.resx">
       <DependentUpon>XtraRepTaxOfficeSummary.cs</DependentUpon>
@@ -2096,6 +2288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraRepViewDetailByYear.resx">
       <DependentUpon>XtraRepViewDetailByYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepYear.resx">
+      <DependentUpon>XtraRepYear.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraRepYearLineSummary.resx">
       <DependentUpon>XtraRepYearLineSummary.cs</DependentUpon>

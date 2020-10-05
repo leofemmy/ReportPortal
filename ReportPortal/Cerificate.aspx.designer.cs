@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ReportPortal {
-    
-    
-    public partial class Cerificate {
-        
+namespace ReportPortal
+{
+
+
+    public partial class Cerificate
+    {
+
         /// <summary>
         /// Label16 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace ReportPortal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label16;
-        
+
         /// <summary>
         /// txtsearch control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace ReportPortal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtsearch;
-        
+
         /// <summary>
         /// btnpreview control.
         /// </summary>
@@ -38,5 +40,14 @@ namespace ReportPortal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnpreview;
+
+        /// <summary>
+        /// txtiddisplay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtiddisplay;
     }
 }

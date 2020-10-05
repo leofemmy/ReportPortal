@@ -27,6 +27,7 @@ namespace ReportPortal
                 loadAssementyear(); loadAssementyear2();
             }
         }
+
         void loadAssementyear()
         {
             //ViewAgency
@@ -58,6 +59,7 @@ namespace ReportPortal
             }
 
         }
+
         void loadAssementyear2()
         {
             //ViewAgency
@@ -89,6 +91,7 @@ namespace ReportPortal
             }
 
         }
+
         protected void btnpreview_Click(object sender, EventArgs e)
         {
             Session["yearFrom"] = ddlyear.SelectedValue.ToString();
@@ -96,28 +99,14 @@ namespace ReportPortal
 
             if (Convert.ToInt32(ddlto.SelectedValue.ToString()) < Convert.ToInt32(ddlyear.SelectedValue.ToString()))
             {
-                Response.Write("<script>alert('" + " Year To Can not be less than Year from" + "')</script>");
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '!Year To Can not be less than Year from !', 'error');", true);
             }
             else
             {
-                SqlCommand _command; SqlDataAdapter _adp; System.Data.DataSet responses = new System.Data.DataSet();
+                txtiddisplay.Visible = true;
 
-                string strquery = String.Format("SELECT a.RevenueOfficeId,a.RevenueOfficeName,a.AssessmentYear, COUNT(DISTINCT a.AssessmentNo) AS Reccount, SUM(a.TaxPayable) TotalPayable,   COUNT(DISTINCT CASE  WHEN a.IncomeSourceClassifyId = 1 THEN a.AssessmentNo END  ) AS DA, COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 2 THEN a.AssessmentNo END) AS PA, COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 3 THEN  a.AssessmentNo END ) AS PN,COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 4 THEN a.AssessmentNo  END ) AS ST, COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 5 THEN a.AssessmentNo END ) AS NR, COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 6 THEN a.AssessmentNo END) AS UE,COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 7 THEN a.AssessmentNo END) AS DU, COALESCE(SUM(   CASE WHEN a.IncomeSourceClassifyId = 1 THEN a.TaxPayable END), 0) DAAmount,COALESCE(SUM( CASE WHEN a.IncomeSourceClassifyId = 2 THEN a.TaxPayable END),0) PAAmount,COALESCE(SUM(   CASE WHEN a.IncomeSourceClassifyId = 3 THEN a.TaxPayable END ),  0) PNAmount,COALESCE(SUM( CASE WHEN a.IncomeSourceClassifyId = 4 THEN a.TaxPayable END   ),0  ) STAmount, COALESCE(SUM( CASE WHEN a.IncomeSourceClassifyId = 5 THEN a.TaxPayable END),0) NRAmount,COALESCE(SUM( CASE WHEN a.IncomeSourceClassifyId = 6 THEN a.TaxPayable END),0) UEAmount,COALESCE(SUM(   CASE WHEN a.IncomeSourceClassifyId = 7 THEN a.TaxPayable END),0) DUAmount FROM ViewAssessmentInfor a WHERE  a.AssessmentYear BETWEEN {0} AND {1} GROUP BY  a.RevenueOfficeName,a.RevenueOfficeId,a.AssessmentYear ORDER BY a.RevenueOfficeName asc", ddlyear.SelectedValue, ddlto.SelectedValue);
 
-                using (SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["Registration2ConnectionString"].ConnectionString))
-                {
-                    connect.Open();
-                    _command = new SqlCommand(strquery, connect) { CommandType = CommandType.Text };
-                    _command.CommandTimeout = 0;
-                    responses.Clear();
-                    _adp = new SqlDataAdapter(_command);
-                    _adp.Fill(responses);
-
-                    connect.Close();
-
-                }
-
-                if (responses.Tables[0] != null && responses.Tables[0].Rows.Count > 0)
+                if (Encodings.IsValidUser(String.Format("SELECT a.RevenueOfficeId,a.RevenueOfficeName,a.AssessmentYear, COUNT(DISTINCT a.AssessmentNo) AS Reccount, SUM(a.TaxPayable) TotalPayable,   COUNT(DISTINCT CASE  WHEN a.IncomeSourceClassifyId = 1 THEN a.AssessmentNo END  ) AS DA, COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 2 THEN a.AssessmentNo END) AS PA, COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 3 THEN  a.AssessmentNo END ) AS PN,COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 4 THEN a.AssessmentNo  END ) AS ST, COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 5 THEN a.AssessmentNo END ) AS NR, COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 6 THEN a.AssessmentNo END) AS UE,COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 7 THEN a.AssessmentNo END) AS DU, COALESCE(SUM(   CASE WHEN a.IncomeSourceClassifyId = 1 THEN a.TaxPayable END), 0) DAAmount,COALESCE(SUM( CASE WHEN a.IncomeSourceClassifyId = 2 THEN a.TaxPayable END),0) PAAmount,COALESCE(SUM(   CASE WHEN a.IncomeSourceClassifyId = 3 THEN a.TaxPayable END ),  0) PNAmount,COALESCE(SUM( CASE WHEN a.IncomeSourceClassifyId = 4 THEN a.TaxPayable END   ),0  ) STAmount, COALESCE(SUM( CASE WHEN a.IncomeSourceClassifyId = 5 THEN a.TaxPayable END),0) NRAmount,COALESCE(SUM( CASE WHEN a.IncomeSourceClassifyId = 6 THEN a.TaxPayable END),0) UEAmount,COALESCE(SUM(   CASE WHEN a.IncomeSourceClassifyId = 7 THEN a.TaxPayable END),0) DUAmount FROM ViewAssessmentInfor a WHERE  a.AssessmentYear BETWEEN {0} AND {1} GROUP BY  a.RevenueOfficeName,a.RevenueOfficeId,a.AssessmentYear ORDER BY a.RevenueOfficeName asc", ddlyear.SelectedValue, ddlto.SelectedValue)))
                 {
                     Response.Write("<script>");
                     Response.Write("window.open('ViewAssessmentTaxOfficeYear.aspx' ,'_blank')");
@@ -125,7 +114,8 @@ namespace ReportPortal
                 }
                 else
                 {
-                    Response.Write("<script>alert('" + " No record for the Selected Year " + "')</script>");
+
+                    this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! No record for the Selected Year  !', 'error');", true);
                 }
 
 

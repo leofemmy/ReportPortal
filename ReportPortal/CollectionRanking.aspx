@@ -38,8 +38,8 @@
                                     <asp:ImageButton ID="ImageButton1" runat="server" ClientIDMode="Static" ImageUrl="~/images/clearimage.jpeg" OnClientClick="ClearTextboxes1();" />
                                 </div>
                             </div>
-                            <div >
-                               <asp:Label ID="Label1" class="control-label mb-10 col-sm-2" runat="server" Text="Revenue Office"></asp:Label>
+                            <div>
+                                <asp:Label ID="Label1" class="control-label mb-10 col-sm-2" runat="server" Text="Revenue Office"></asp:Label>
                                 <div style="height: 350px; width: 700px; overflow: auto; position: relative; overflow-x: hidden; overflow-y: auto;">
                                     <asp:GridView ID="gridOffence" runat="server" Width="50%" Height="50%" CssClass="table table-bordered mb-0" AutoGenerateColumns="False">
                                         <Columns>
@@ -49,12 +49,12 @@
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField HeaderText="Revenue office">
-                                               <ItemTemplate>
+                                                <ItemTemplate>
                                                     <asp:Label ID="lblrevenue" runat="server" Text='<%# Bind("RevenueOfficeName") %>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField HeaderText="Office ID" Visible="False">
-                                               <ItemTemplate>
+                                                <ItemTemplate>
                                                     <asp:Label ID="lbloffice" runat="server" Text='<%# Bind("RevenueOfficeID") %>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
@@ -66,6 +66,7 @@
                                 <div class="col-sm-offset-2 col-sm-10">
                                     <asp:Button ID="btnpreview" runat="server" Text="Preview" class="btn btn-primary btn-anim text-uppercas" OnClick="btnpreview_OnClick" />
                                 </div>
+                                <asp:Label runat="server" ID="txtiddisplay" Text="You need to enable your browser pop-Up at the top right corner to view the report" ForeColor="red" Visible="False"></asp:Label>
                             </div>
 
                         </form>

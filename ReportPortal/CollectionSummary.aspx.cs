@@ -9,7 +9,8 @@ namespace ReportPortal
 {
     public partial class CollectionSummary : System.Web.UI.Page
     {
-        SessionManager sessions = null; string strheader = String.Empty; 
+        SessionManager sessions = null; string strheader = String.Empty;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             sessions = new SessionManager();
@@ -22,9 +23,24 @@ namespace ReportPortal
         }
         protected void btnpreview_Click(object sender, EventArgs e)
         {
+            //Encodings.MsgBox("You Need to Enable your Browser Pop-Up at the Top Right Corner to View the report", this.Page, this);
+
+            txtiddisplay.Visible = true;
+
             Session["Startdate"] = txtstartdate.Text.ToString();
             Session["Enddate"] = txtenddate.Text.ToString();
             Session["Values"] = rdbReport.SelectedValue.ToString();
+
+            if (string.IsNullOrWhiteSpace(txtstartdate.Text.ToString()) || string.IsNullOrWhiteSpace(txtenddate.Text.ToString()))
+            {
+                //Encodings.MsgBox("! Criteria is Empty !", this.Page, this);
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Criteria is Empty !', 'error');", true);
+            }
+            if (Convert.ToDateTime(txtenddate.Text.ToString()) < Convert.ToDateTime(txtstartdate.Text.ToString()))
+            {
+                //Encodings.MsgBox("End Date Greater Than Start Date !", this.Page, this);
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! End Date Greater Than Start Date !', 'error');", true);
+            }
 
             if (rdbReport.SelectedValue.ToString() == "1")//bank options
             {

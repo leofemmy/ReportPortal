@@ -26,10 +26,6 @@
                             <div class="form-group">
                                 <asp:Label ID="Label16" class="control-label mb-10 col-sm-2" runat="server" Text="Start Date:"></asp:Label>
                                 <div class="col-sm-10">
-                                    <%--   <input type="text" id="txtstartdate" runat="server" class="form-control mydatepicker" placeholder="mm/dd/yyyy">
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>--%>
-                                    <%--  <asp:TextBox ID="txtstartdate" runat="server" CausesValidation="false" autocomplete="off" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
-                                    <asp:ImageButton ID="ImageButton2" runat="server" ClientIDMode="Static" ImageUrl="~/images/clearimage.jpeg" OnClientClick="ClearTextboxes1();" />--%>
                                     <asp:TextBox ID="txtstartdate" runat="server" CausesValidation="false" autocomplete="off" ClientIDMode="Static" CssClass="form-control" TextMode="Date"></asp:TextBox>
                                     <asp:ImageButton ID="ImageButton2" runat="server" ClientIDMode="Static" ImageUrl="~/images/clearimage.jpeg" OnClientClick="ClearTextboxes1();" />
                                 </div>
@@ -37,10 +33,6 @@
                             <div class="form-group">
                                 <asp:Label ID="Label1" runat="server" class="control-label mb-10 col-sm-2" Text="End Date: "></asp:Label>
                                 <div class="col-sm-10">
-                                    <%--   <asp:TextBox ID="txtenddate" runat="server" CausesValidation="false" autocomplete="off" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
-                                    <asp:ImageButton ID="ImageButton1" runat="server" ClientIDMode="Static" ImageUrl="~/images/clearimage.jpeg" OnClientClick="ClearTextboxes1();" />--%>
-                                    <%--   <input type="text" id="txtenddate" runat="server" class="form-control mydatepicker" placeholder="mm/dd/yyyy">
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>--%>
                                     <asp:TextBox ID="txtenddate" runat="server" CausesValidation="false" autocomplete="off" ClientIDMode="Static" CssClass="form-control" TextMode="Date"></asp:TextBox>
                                     <asp:ImageButton ID="ImageButton1" runat="server" ClientIDMode="Static" ImageUrl="~/images/clearimage.jpeg" OnClientClick="ClearTextboxes1();" />
                                 </div>
@@ -50,6 +42,7 @@
                                 <div class="col-sm-offset-2 col-sm-10">
                                     <asp:Button ID="btnpreview" runat="server" Text="Preview" class="btn btn-primary btn-anim text-uppercas" OnClick="btnpreview_OnClick" />
                                 </div>
+                                <asp:Label runat="server" ID="txtiddisplay" Text="You need to enable your browser pop-Up at the top right corner to view the report" ForeColor="red" Visible="False"></asp:Label>
                             </div>
                         </form>
                     </div>
@@ -59,19 +52,6 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptContentHolder" runat="server">
-
-    <%--  <!-- Date Picker Plugin JavaScript -->
-    <script src="<%:ResolveUrl("~/plugins/vendors/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js") %>"></script>
-    <!-- Clock Plugin JavaScript -->
-    <script src="<%:ResolveUrl("~/plugins/vendors/bower_components/clockpicker/dist/jquery-clockpicker.min.js") %>"></script>
-    <!-- Color Picker Plugin JavaScript -->
-    <script src="<%:ResolveUrl("~/plugins/vendors/bower_components/jquery-asColorPicker-master/libs/jquery-asColor.js") %>" ></script>
-    <script src="<%:ResolveUrl("~/plugins/vendors/bower_components/jquery-asColorPicker-master/libs/jquery-asGradient.js") %>"></script>
-    <script src="<%:ResolveUrl("~/plugins/vendors/bower_components/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js") %>" ></script>
-    <!-- Date range Plugin JavaScript -->
-    <script src="<%:ResolveUrl("~/plugins/vendors/bower_components/timepicker/bootstrap-timepicker.min.js") %>"></script>
-    <script src="<%:ResolveUrl("~/plugins/vendors/bower_components/bootstrap-daterangepicker/daterangepicker.js") %>"></script>
-    <script src="<%:ResolveUrl("~/plugins/assets/js/form-picker-data.js") %>"></script>--%>
 
     <!-- data-table js -->
     <script type="text/javascript" src="plugins/vendors/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
@@ -102,7 +82,7 @@
                 changeYear: true
             });
         });
-    
+
     </script>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
