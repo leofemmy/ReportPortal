@@ -55,7 +55,7 @@ namespace ReportPortal
                 var gb = dt.ToString("yyyy-MM-dd");
                 var gb2 = dt2.ToString("yyyy-MM-dd");
 
-                if (Encodings.IsValidUser(String.Format("SELECT * FROM ViewTaxPayer WHERE MerchantCode='{0}' AND Datecreated BETWEEN '{1}' AND '{2}' ORDER BY OrganizationName ASC",
+                if (Encodings.IsValidUser(String.Format("SELECT * FROM ViewTaxPayer WHERE MerchantCode='{0}' AND Datecreated BETWEEN '{1}' AND '{2}'AND TaxAgentReferenceNumber IS NULL  ORDER BY Surname ASC",
                     sessions.MerchantCode.ToString(), gb, gb2)))
                 {
                     Response.Write("<script>");

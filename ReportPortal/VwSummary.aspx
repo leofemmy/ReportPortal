@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VwSummary.aspx.cs" Inherits="ReportPortal.VwSummary" %>
 
-<%@ Register Assembly="DevExpress.XtraReports.v20.1.Web.WebForms, Version=20.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraReports.Web" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.XtraReports.v20.1.Web.WebForms, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraReports.Web" TagPrefix="dx" %>
 
 <!DOCTYPE html>
 
@@ -13,7 +13,8 @@
             //document.getElementById("<=hdvalue.ClientID >").value = e.GetBrickText();
             e.Brick && alert(e.GetBrickText())
 
-            PageMethods.loadchildreport(e.Brick.text());
+            //PageMethods.loadchildreport(e.Brick.text());
+
             if (e.Brick.text() != null) {
                 if (e.Brick.text() == "Tax Agents") {
                     window.location.href = "ViewSummaryTaxAgent.aspx"

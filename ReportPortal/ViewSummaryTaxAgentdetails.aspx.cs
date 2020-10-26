@@ -32,7 +32,7 @@ namespace ReportPortal
         {
             sessions = new SessionManager();
 
-            var startdate = Session["Startdate"].ToString();
+   var startdate = Session["Startdate"].ToString();
 
             var enddate = Session["Enddate"].ToString();
 

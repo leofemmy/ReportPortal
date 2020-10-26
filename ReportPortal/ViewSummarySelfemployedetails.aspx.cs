@@ -33,6 +33,8 @@ namespace ReportPortal
         {
             sessions = new SessionManager();
 
+            var grt = lblid.Text;
+
             var startdate = Session["Startdate"].ToString();
 
             var enddate = Session["Enddate"].ToString();

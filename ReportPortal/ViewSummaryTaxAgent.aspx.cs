@@ -105,167 +105,21 @@ namespace ReportPortal
                 ASPxWebDocumentViewer1.OpenReport(obj_Rpt);
             }
 
-            //if (!string.IsNullOrEmpty(Session["RegisterTyped"] as string))
-            //{
-            //    if (Session["RegisterTyped"].ToString() == "Tax Agent")
-            //    {
-
-
-
-
-            //    }
-            //    else if (Session["RegisterTyped"].ToString() == "Self Employed")
-            //    {
-            //        XtraRepSelfEmployed obj_Rpt = new XtraRepSelfEmployed();
-            //        if (sessions.MerchantCode.ToString() == "DTSS")
-            //        {
-            //            strheader = "DELTA STATE GOVERNMENT";
-
-            //            obj_Rpt.xrPictureBox1.Visible = true;
-
-            //            obj_Rpt.xrPictureBox2.Visible = false;
-
-            //            obj_Rpt.xrPictureBox3.Visible = false;
-
-            //        }
-
-            //        if (sessions.MerchantCode.ToString() == "OGSS")
-            //        {
-            //            strheader = "OGUN STATE GOVERNMENT";
-
-            //            obj_Rpt.xrPictureBox1.Visible = false;
-
-            //            obj_Rpt.xrPictureBox2.Visible = true;
-
-            //            obj_Rpt.xrPictureBox3.Visible = false;
-            //        }
-
-            //        if (sessions.MerchantCode.ToString() == "OYSS")
-            //        {
-            //            strheader = "OYO STATE GOVERNMENT";
-
-            //            obj_Rpt.xrPictureBox1.Visible = false;
-
-            //            obj_Rpt.xrPictureBox2.Visible = false;
-
-            //            obj_Rpt.xrPictureBox3.Visible = true;
-            //        }
-
-
-            //        obj_Rpt.xrlborghead.Text = strheader;
-            //        obj_Rpt.xrLabel1.Text = string.Format("INTERNAL REVENUE SERVICE");
-            //        obj_Rpt.xrlbsubHead2.Text = string.Format("From {0:dd/MM/yyyy}  To {1:dd/MM/yyyy}", strat, end);
-
-            //        string strquery = String.Format("SELECT RevenueOfficeID, RevenueOfficeName, COUNT(*) AS Rec_Count FROM dbo.vwPayerInfo WHERE RevenueOfficeName IS NOT NULL AND RegTypeCode = 'DA' AND DateCreated BETWEEN '{0}' AND '{1}' GROUP BY RevenueOfficeID, RevenueOfficeName HAVING COUNT(*) > 0 ORDER BY RevenueOfficeName ASC", startdate, enddate);
-            //        using (SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["Registration2ConnectionString"].ConnectionString))
-            //        {
-            //            connect.Open();
-            //            _command = new SqlCommand(strquery, connect) { CommandType = CommandType.Text };
-            //            _command.CommandTimeout = 0;
-            //            responses.Clear();
-            //            _adp = new SqlDataAdapter(_command);
-            //            _adp.Fill(responses);
-
-            //            connect.Close();
-
-            //        }
-            //        if (responses.Tables[0] != null && responses.Tables[0].Rows.Count > 0)
-            //        {
-            //            obj_Rpt.Report.DataSource = responses;
-            //            obj_Rpt.Report.DataMember = responses.Tables[0].TableName;
-
-            //            ASPxWebDocumentViewer1.OpenReport(obj_Rpt);
-            //        }
-            //    }
-            //    else if (Session["RegisterTyped"].ToString() == "Employed")
-            //    {
-            //        XtraRepEmployedPA obj_Rpt = new XtraRepEmployedPA();
-
-            //        if (sessions.MerchantCode.ToString() == "DTSS")
-            //        {
-            //            strheader = "DELTA STATE GOVERNMENT";
-
-            //            obj_Rpt.xrPictureBox1.Visible = true;
-
-            //            obj_Rpt.xrPictureBox2.Visible = false;
-
-            //            obj_Rpt.xrPictureBox3.Visible = false;
-
-            //        }
-
-            //        if (sessions.MerchantCode.ToString() == "OGSS")
-            //        {
-            //            strheader = "OGUN STATE GOVERNMENT";
-
-            //            obj_Rpt.xrPictureBox1.Visible = false;
-
-            //            obj_Rpt.xrPictureBox2.Visible = true;
-
-            //            obj_Rpt.xrPictureBox3.Visible = false;
-            //        }
-
-            //        if (sessions.MerchantCode.ToString() == "OYSS")
-            //        {
-            //            strheader = "OYO STATE GOVERNMENT";
-
-            //            obj_Rpt.xrPictureBox1.Visible = false;
-
-            //            obj_Rpt.xrPictureBox2.Visible = false;
-
-            //            obj_Rpt.xrPictureBox3.Visible = true;
-            //        }
-
-
-            //        obj_Rpt.xrlborghead.Text = strheader;
-            //        obj_Rpt.xrLabel1.Text = string.Format("INTERNAL REVENUE SERVICE");
-            //        obj_Rpt.xrlbsubHead2.Text = string.Format("From {0:dd/MM/yyyy}  To {1:dd/MM/yyyy}", strat, end);
-
-            //        string strquery = String.Format("SELECT PayerName, UTIN, Address, Email,TelephoneNumber, MerchantCode,LgaId, LgaName,PayerType,StaffNumber, CACNumber, RegTypeCode,RevenueOfficeID,RevenueOfficeName, DateCreated,  TaxAgentReferenceNumber FROM vwPayerInfo WHERE PayerName <>  ' ' AND PayerName IS NOT NULL AND RegTypeCode='PA' AND DateCreated BETWEEN '{0}' AND '{1}' ORDER BY PayerName ASC, DateCreated ASC", startdate, enddate);
-
-            //        using (SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["Registration2ConnectionString"].ConnectionString))
-            //        {
-            //            connect.Open();
-            //            _command = new SqlCommand(strquery, connect) { CommandType = CommandType.Text };
-            //            _command.CommandTimeout = 0;
-            //            responses.Clear();
-            //            _adp = new SqlDataAdapter(_command);
-            //            _adp.Fill(responses);
-
-            //            connect.Close();
-
-            //        }
-            //        if (responses.Tables[0] != null && responses.Tables[0].Rows.Count > 0)
-            //        {
-            //            obj_Rpt.Report.DataSource = responses;
-            //            obj_Rpt.Report.DataMember = responses.Tables[0].TableName;
-
-            //            ASPxWebDocumentViewer1.OpenReport(obj_Rpt);
-            //        }
-
-            //    }
-            //}
-            //else
-            //{
-            //    Response.Redirect("~/VwSummary.aspx");
-
-            //}
-            //Encodings.MsgBox(vrtypedreg, this.Page, this);
-
-
-
         }
 
         [WebMethod]
-        public static void loadchildreport(string stin)
+        public static void Loadchildreport(string stin)
         {
             ViewSummaryTaxAgent vp = new ViewSummaryTaxAgent();
+
+            HttpContext.Current.Session["STINAgent"] = stin;
 
             var vartaxyear = stin;
 
             vp.callReport2(vartaxyear);
 
         }
-       
+
         void callReport2(string stin)
         {
             Session["STINAgent"] = stin;

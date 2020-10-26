@@ -28,6 +28,7 @@ namespace ReportPortal
             }
 
         }
+
         void loadAssementyear()
         {
             //ViewAgency
@@ -59,6 +60,7 @@ namespace ReportPortal
             }
 
         }
+
         void loadAssementyear2()
         {
             //ViewAgency
@@ -90,40 +92,38 @@ namespace ReportPortal
             }
 
         }
+
         protected void btnpreview_Click(object sender, EventArgs e)
         {
-            Session["yearFrom"] = ddlyear.SelectedValue.ToString();
-            Session["yearTo"] = ddlto.SelectedValue.ToString();
 
-            if (Convert.ToInt32(ddlto.SelectedValue.ToString()) < Convert.ToInt32(ddlyear.SelectedValue.ToString()))
+
+            if ((ddlto.SelectedValue.ToString() == "0") || (ddlyear.SelectedValue.ToString() == "0"))
             {
-                Response.Write("<script>alert('" + " Year To Can not be less than Year from" + "')</script>");
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Criteria is Empty !', 'error');", true);
+            }
+            else if (Convert.ToInt32(ddlto.SelectedValue.ToString()) < Convert.ToInt32(ddlyear.SelectedValue.ToString()))
+            {
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Year To Can not be less than Year from!', 'error');", true);
             }
             else
             {
+                txtiddisplay.Visible = true;
+
+                Session["yearFrom"] = ddlyear.SelectedValue.ToString();
+                Session["yearTo"] = ddlto.SelectedValue.ToString();
+
                 SqlCommand _command; SqlDataAdapter _adp; System.Data.DataSet responses = new System.Data.DataSet();
 
-                string strquery = String.Format("SELECT  TaxYear, COUNT(DISTINCT TccNo) Reccount, COUNT(DISTINCT CASE WHEN IncomeSourceClassifyId = 1 THEN TccNo  END) AS DA, COUNT(DISTINCT CASE WHEN IncomeSourceClassifyId = 2 THEN TccNo  END) AS PA, COUNT(DISTINCT CASE WHEN IncomeSourceClassifyId = 3 THEN TccNo  END) AS PN, COUNT(DISTINCT CASE WHEN IncomeSourceClassifyId = 4 THEN TccNo  END) AS ST, COUNT(DISTINCT CASE WHEN IncomeSourceClassifyId = 5 THEN TccNo END ) AS NR, COUNT(DISTINCT CASE WHEN IncomeSourceClassifyId = 6 THEN  TccNo END ) AS UE, COUNT(DISTINCT CASE WHEN IncomeSourceClassifyId = 7 THEN TccNo END) AS DU  FROM dbo.ViewTccDetails  WHERE YEAR(IssuedDate) BETWEEN {0} AND {1} AND AssessmentYear = YEAR(IssuedDate) - 1  GROUP BY TaxYear ORDER BY TaxYear", ddlyear.SelectedValue, ddlto.SelectedValue);
-
-                using (SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["Registration2ConnectionString"].ConnectionString))
-                {
-                    connect.Open();
-                    _command = new SqlCommand(strquery, connect) { CommandType = CommandType.Text };
-                    _command.CommandTimeout = 0;
-                    responses.Clear();
-                    _adp = new SqlDataAdapter(_command);
-                    _adp.Fill(responses);
-
-                    connect.Close();
-
-                }
-
-                if (responses.Tables[0] != null && responses.Tables[0].Rows.Count > 0)
+                if (Encodings.IsValidUser(String.Format("SELECT  TaxYear, COUNT(DISTINCT TccNo) Reccount, COUNT(DISTINCT CASE WHEN IncomeSourceClassifyId = 1 THEN TccNo  END) AS DA, COUNT(DISTINCT CASE WHEN IncomeSourceClassifyId = 2 THEN TccNo  END) AS PA, COUNT(DISTINCT CASE WHEN IncomeSourceClassifyId = 3 THEN TccNo  END) AS PN, COUNT(DISTINCT CASE WHEN IncomeSourceClassifyId = 4 THEN TccNo  END) AS ST, COUNT(DISTINCT CASE WHEN IncomeSourceClassifyId = 5 THEN TccNo END ) AS NR, COUNT(DISTINCT CASE WHEN IncomeSourceClassifyId = 6 THEN  TccNo END ) AS UE, COUNT(DISTINCT CASE WHEN IncomeSourceClassifyId = 7 THEN TccNo END) AS DU  FROM dbo.ViewTccDetails  WHERE YEAR(IssuedDate) BETWEEN {0} AND {1} AND AssessmentYear = YEAR(IssuedDate) - 1  GROUP BY TaxYear ORDER BY TaxYear", ddlyear.SelectedValue, ddlto.SelectedValue)))
                 {
                     Response.Write("<script>");
                     Response.Write("window.open('ViewTccYearSummary.aspx' ,'_blank')");
                     Response.Write("</script>");
 
+                }
+                else
+                {
+                    this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', ' No Record Found for the Selected Year !', 'info');", true);
                 }
 
             }

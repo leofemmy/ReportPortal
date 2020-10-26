@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -45,7 +46,6 @@ namespace ReportPortal
             var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy");
 
             
-
             XtraRepBusiness obj_Rpt = new XtraRepBusiness();
 
             if (sessions.MerchantCode.ToString() == "DTSS")
@@ -87,12 +87,10 @@ namespace ReportPortal
             obj_Rpt.xrlbsubHead.Text = string.Format("INTERNAL REVENUE SERVICE");
             obj_Rpt.xrLabel3.Text = string.Format("From {0:dd/MM/yyyy}  To {1:dd/MM/yyyy}", strat, end);
 
-            string strquery = String.Format("SELECT BusinessTypeID, BusinessTypeName, SUM(Amount) AS Amount FROM dbo.vwBusinessSectors WHERE PaymentDate BETWEEN '{0}' AND '{1}' AND BusinessTypeID IN ({2}) GROUP BY BusinessTypeID, BusinessTypeName ORDER BY BusinessTypeName ASC", startdate, enddate, strrevenue);
-
             using (SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["Registration2ConnectionString"].ConnectionString))
             {
                 connect.Open();
-                _command = new SqlCommand(strquery, connect) { CommandType = CommandType.Text };
+                _command = new SqlCommand(String.Format("SELECT BusinessTypeID, BusinessTypeName, SUM(Amount) AS Amount FROM dbo.vwBusinessSectors WHERE PaymentDate BETWEEN '{0}' AND '{1}' AND BusinessTypeID IN ({2}) GROUP BY BusinessTypeID, BusinessTypeName ORDER BY BusinessTypeName ASC", startdate, enddate, strrevenue), connect) { CommandType = CommandType.Text };
                 _command.CommandTimeout = 0;
                 responses.Clear();
                 _adp = new SqlDataAdapter(_command);
@@ -109,6 +107,12 @@ namespace ReportPortal
 
                 ASPxWebDocumentViewer1.OpenReport(obj_Rpt);
             }
+        }
+
+        [WebMethod]
+        public static void LoadDetailsReport(string strvalue)
+        {
+            HttpContext.Current.Session["STINAgent"] = strvalue;
         }
     }
 }

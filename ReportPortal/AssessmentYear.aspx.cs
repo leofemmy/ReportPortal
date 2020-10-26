@@ -59,6 +59,7 @@ namespace ReportPortal
             }
 
         }
+       
         void loadAssementyear2()
         {
             //ViewAgency
@@ -90,6 +91,7 @@ namespace ReportPortal
             }
 
         }
+      
         protected void btnpreview_Click(object sender, EventArgs e)
         {
             Session["yearFrom"] = ddlyear.SelectedValue.ToString();
