@@ -143,6 +143,7 @@
     <Content Include="Logo\deltalogo.jpg" />
     <Content Include="Logo\ogunlogo.jpg" />
     <Content Include="Logo\oyostate logo.jpg" />
+    <Content Include="Normalisation.aspx" />
     <Content Include="Payer.aspx" />
     <Content Include="Payerledger.aspx" />
     <Content Include="Payment.aspx" />
@@ -947,6 +948,7 @@
     <Content Include="ViewLineSummaryAllChild.aspx" />
     <Content Include="ViewLineSummaryChild.aspx" />
     <Content Include="ViewLineSummaryTaxOffice.aspx" />
+    <Content Include="ViewNormalisation.aspx" />
     <Content Include="ViewRemittance.aspx" />
     <Content Include="ViewSummarylistChild.aspx" />
     <Content Include="ViewSummarySelfemploye.aspx" />
@@ -1218,6 +1220,13 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Normalisation.aspx.cs">
+      <DependentUpon>Normalisation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Normalisation.aspx.designer.cs">
+      <DependentUpon>Normalisation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Payer.aspx.cs">
       <DependentUpon>Payer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1337,6 +1346,12 @@
     </Compile>
     <Compile Include="Reports\XtraRepEmployedPA.Designer.cs">
       <DependentUpon>XtraRepEmployedPA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepNormalisation.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepNormalisation.Designer.cs">
+      <DependentUpon>XtraRepNormalisation.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\XtraRepPayerlineSummary.cs">
       <SubType>Component</SubType>
@@ -1832,6 +1847,13 @@
     <Compile Include="ViewLineSummaryTaxOffice.aspx.designer.cs">
       <DependentUpon>ViewLineSummaryTaxOffice.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ViewNormalisation.aspx.cs">
+      <DependentUpon>ViewNormalisation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewNormalisation.aspx.designer.cs">
+      <DependentUpon>ViewNormalisation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewPay.aspx.cs">
       <DependentUpon>ViewPay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2236,6 +2258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraRepEmployedPA.resx">
       <DependentUpon>XtraRepEmployedPA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepNormalisation.resx">
+      <DependentUpon>XtraRepNormalisation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraRepPayerlineSummary.resx">
       <DependentUpon>XtraRepPayerlineSummary.cs</DependentUpon>

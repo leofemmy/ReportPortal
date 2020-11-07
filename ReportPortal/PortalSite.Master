@@ -108,6 +108,7 @@
                         <li><a href="<%:ResolveUrl("~/CollectionRanking.aspx") %>">Agent Ranking</a> </li>
                         <li><a href="<%:ResolveUrl("~/Remittance.aspx") %>">Agent Remittance Statement</a> </li>
                         <li><a href="<%:ResolveUrl("~/Business.aspx") %>">Business Sector</a> </li>
+                        <li><a href="<%:ResolveUrl("~/Normalisation.aspx") %>">Payment Normalisation</a> </li>
                         <li><a href="<%:ResolveUrl("~/Year.aspx") %>">Collection Year</a> </li>
                     </ul>
                 </li>
