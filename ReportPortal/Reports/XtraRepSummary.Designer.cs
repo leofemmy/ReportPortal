@@ -85,12 +85,14 @@
             // 
             // xrTable1
             // 
+            this.xrTable1.Font = new System.Drawing.Font("Arial Black", 11F);
             this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(202.25F, 0F);
             this.xrTable1.Name = "xrTable1";
             this.xrTable1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1});
             this.xrTable1.SizeF = new System.Drawing.SizeF(286.4583F, 25F);
+            this.xrTable1.StylePriority.UseFont = false;
             // 
             // xrTableRow1
             // 
@@ -138,12 +140,14 @@
             // 
             // xrTable2
             // 
+            this.xrTable2.Font = new System.Drawing.Font("Arial", 11F);
             this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(202.25F, 197.6267F);
             this.xrTable2.Name = "xrTable2";
             this.xrTable2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow2});
             this.xrTable2.SizeF = new System.Drawing.SizeF(286.4583F, 25F);
+            this.xrTable2.StylePriority.UseFont = false;
             // 
             // xrTableRow2
             // 
@@ -271,7 +275,7 @@
             this.DataSource = this.sqlDataSource1;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
             this.Margins = new System.Drawing.Printing.Margins(100, 35, 38, 27);
-            this.Version = "20.1";
+            this.Version = "20.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();

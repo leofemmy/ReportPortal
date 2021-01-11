@@ -29,9 +29,8 @@ namespace ReportPortal
 
             txtiddisplay.Visible = true;
             //test if the date is empty
-            if (string.IsNullOrWhiteSpace(txtstartdate.Text.ToString()) && string.IsNullOrWhiteSpace(txtenddate.Text.ToString()))
+            if (string.IsNullOrWhiteSpace(txtstartdate.Text.ToString()) || string.IsNullOrWhiteSpace(txtenddate.Text.ToString()))
             {
-                //Encodings.MsgBox("! Criteria is Empty !", this.Page, this);
                 this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Criteria is Empty !', 'error');", true);
             }
             else if (Convert.ToDateTime(txtenddate.Text.ToString()) < Convert.ToDateTime(txtstartdate.Text.ToString()))
@@ -42,21 +41,23 @@ namespace ReportPortal
             else
             {
                 Session["Startdate"] = txtstartdate.Text.ToString();
+
                 Session["Enddate"] = txtenddate.Text.ToString();
+
+                Session["startdate1"] = Convert.ToDateTime(txtstartdate.Text.ToString());
+
+                Session["Enddate1"] = Convert.ToDateTime(txtenddate.Text.ToString());
+
 
                 var startdate = Session["Startdate"].ToString();
 
                 var enddate = Session["Enddate"].ToString();
 
-                DateTime dt = DateTime.ParseExact(startdate, "dd/mm/yyyy", CultureInfo.InvariantCulture);
+                var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("dd/MM/yyyy");
 
-                DateTime dt2 = DateTime.ParseExact(enddate, "dd/mm/yyyy", CultureInfo.InvariantCulture);
+                var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy");
 
-
-                var gb = dt.ToString("yyyy-MM-dd");
-                var gb2 = dt2.ToString("yyyy-MM-dd");
-
-                if (Encodings.IsValidUser(String.Format("SELECT * FROM ViewPaye WHERE MerchantCode='{0}' AND Datecreated BETWEEN '{1}' AND '{2}' ORDER BY OrganizationName ASC", sessions.MerchantCode.ToString(), gb, gb2)))
+                if (Encodings.IsValidUser(String.Format("SELECT * FROM ViewPaye WHERE MerchantCode='{0}' AND Datecreated BETWEEN '{1}' AND '{2}' ORDER BY OrganizationName ASC", sessions.MerchantCode.ToString(), startdate, enddate)))
                 {
                     Response.Write("<script>");
                     Response.Write("window.open('ViewPay.aspx' ,'_blank')");

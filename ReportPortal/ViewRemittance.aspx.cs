@@ -14,6 +14,7 @@ namespace ReportPortal
     public partial class ViewRemittance : System.Web.UI.Page
     {
         SessionManager sessions = null; string strheader = String.Empty; private DateTime startdate, endate;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             sessions = new SessionManager();

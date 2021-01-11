@@ -15,6 +15,7 @@ namespace ReportPortal
     public partial class Viewself : System.Web.UI.Page
     {
         SessionManager sessions = null; string strheader = String.Empty; private DateTime startdate, endate;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -28,6 +29,7 @@ namespace ReportPortal
 
             calReport();
         }
+
         void calReport()
         {
             ASPxDocumentViewer1.Report = CreateReport();
@@ -40,20 +42,16 @@ namespace ReportPortal
 
             SqlCommand _command; SqlDataAdapter _adp; System.Data.DataSet responses = new System.Data.DataSet();
 
+
             var startdate = Session["Startdate"].ToString();
 
             var enddate = Session["Enddate"].ToString();
 
+            var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("dd/MM/yyyy");
 
-            DateTime dt = DateTime.ParseExact(startdate, "dd/mm/yyyy", CultureInfo.InvariantCulture);
-            DateTime dt2 = DateTime.ParseExact(enddate, "dd/mm/yyyy", CultureInfo.InvariantCulture);
+            var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy");
 
-            //Console.WriteLine(dt.ToString("yyyy-MM-dd"));
-
-            var gb = dt.ToString("yyyy-MM-dd");
-            var gb2 = dt2.ToString("yyyy-MM-dd");
-
-            string strquery = String.Format("SELECT * FROM ViewTaxPayer WHERE MerchantCode='{0}' AND Datecreated BETWEEN '{1}' AND '{2}' AND TaxAgentReferenceNumber IS NULL  ORDER BY Surname ASC ", sessions.MerchantCode.ToString(), gb, gb2);
+            string strquery = String.Format("SELECT * FROM ViewTaxPayer WHERE MerchantCode='{0}' AND Datecreated BETWEEN '{1}' AND '{2}' AND TaxAgentReferenceNumber IS NULL  ORDER BY Surname ASC ", sessions.MerchantCode.ToString(), startdate, enddate);
 
 
             using (SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["Registration2ConnectionString"].ConnectionString))
@@ -80,6 +78,15 @@ namespace ReportPortal
         {
             sessions = new SessionManager();
 
+            var startdate = Session["Startdate"].ToString();
+
+            var enddate = Session["Enddate"].ToString();
+
+            var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("dd/MM/yyyy");
+
+            var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy");
+
+
             XtraRepSelf self = new XtraRepSelf();
 
 
@@ -93,6 +100,7 @@ namespace ReportPortal
 
                 self.xrPictureBox3.Visible = false;
             }
+
             if (sessions.MerchantCode.ToString() == "OGSS")
             {
                 strheader = "OGUN STATE GOVERNMENT";
@@ -103,6 +111,7 @@ namespace ReportPortal
 
                 self.xrPictureBox3.Visible = false;
             }
+            
             if (sessions.MerchantCode.ToString() == "OYSS")
             {
                 strheader = "OYO STATE GOVERNMENT";
@@ -118,7 +127,7 @@ namespace ReportPortal
 
             self.xrlborghead.Text = strheader;
 
-            self.xrlbsubHead2.Text = String.Format(" From {0:dd/MM/yyyy} To {1:dd/MM/yyyy} ", Session["Startdate"].ToString(), Session["Enddate"].ToString());
+            self.xrlbsubHead2.Text = String.Format(" From {0:dd/MM/yyyy} To {1:dd/MM/yyyy} ", strat, end);
 
             self.DataSource = dts();
             self.DataMember = "ViewTaxPayer";

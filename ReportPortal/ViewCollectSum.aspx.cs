@@ -16,6 +16,7 @@ namespace ReportPortal
     public partial class ViewCollectSum : System.Web.UI.Page
     {
         SessionManager sessions = null; string strheader = String.Empty; private DateTime startdate, endate;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             sessions = new SessionManager();
@@ -28,6 +29,7 @@ namespace ReportPortal
 
             calReport();
         }
+
         void calReport()
         {
             var val = Session["Values"].ToString();
@@ -43,6 +45,14 @@ namespace ReportPortal
         {
             sessions = new SessionManager();
 
+            var startdate = Session["Startdate"].ToString();
+
+            var enddate = Session["Enddate"].ToString();
+
+            var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("dd/MM/yyyy");
+
+            var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy");
+
             //XtraAgent agent = new XtraAgent();
             RepCollBank collBank = new RepCollBank();
 
@@ -57,6 +67,7 @@ namespace ReportPortal
                 collBank.xrPictureBox3.Visible = false;
 
             }
+           
             if (sessions.MerchantCode.ToString() == "OGSS")
             {
                 strheader = "OGUN STATE GOVERNMENT";
@@ -67,6 +78,7 @@ namespace ReportPortal
 
                 collBank.xrPictureBox3.Visible = false;
             }
+           
             if (sessions.MerchantCode.ToString() == "OYSS")
             {
                 strheader = "OYO STATE GOVERNMENT";
@@ -81,7 +93,7 @@ namespace ReportPortal
 
             collBank.xrlborghead.Text = strheader;
 
-            collBank.xrLabel1.Text = String.Format(" From {0:dd/MM/yyyy} To {1:dd/MM/yyyy} ", Session["Startdate"].ToString(), Session["Enddate"].ToString());
+            collBank.xrLabel1.Text = String.Format(" From {0:dd/MM/yyyy} To {1:dd/MM/yyyy} ", strat, end);
 
             sessions = new SessionManager();
 
@@ -91,19 +103,19 @@ namespace ReportPortal
 
             var val = Session["Values"].ToString();
 
-            var startdate = Session["Startdate"].ToString();
+            //var startdate = Session["Startdate"].ToString();
 
-            var enddate = Session["Enddate"].ToString();
+            //var enddate = Session["Enddate"].ToString();
 
-            DateTime dt = DateTime.ParseExact(startdate, "dd/mm/yyyy", CultureInfo.InvariantCulture);
-            DateTime dt2 = DateTime.ParseExact(enddate, "dd/mm/yyyy", CultureInfo.InvariantCulture);
+            //DateTime dt = DateTime.ParseExact(startdate, "dd/mm/yyyy", CultureInfo.InvariantCulture);
+            //DateTime dt2 = DateTime.ParseExact(enddate, "dd/mm/yyyy", CultureInfo.InvariantCulture);
 
-            //Console.WriteLine(dt.ToString("yyyy-MM-dd"));
+            ////Console.WriteLine(dt.ToString("yyyy-MM-dd"));
 
-            var gb = dt.ToString("yyyy-MM-dd");
-            var gb2 = dt2.ToString("yyyy-MM-dd");
+            //var gb = dt.ToString("yyyy-MM-dd");
+            //var gb2 = dt2.ToString("yyyy-MM-dd");
 
-            strquery = String.Format("SELECT BankName,BankCode,SUM(Amount) Amount FROM dbo.vwCollection WHERE PaymentDate BETWEEN '{0}' AND '{1}' GROUP BY BankName,  BankCode ORDER BY BankName ASC", gb, gb2);
+            strquery = String.Format("SELECT BankName,BankCode,SUM(Amount) Amount FROM dbo.vwCollection WHERE PaymentDate BETWEEN '{0}' AND '{1}' GROUP BY BankName,  BankCode ORDER BY BankName ASC", startdate, enddate);
 
 
             using (SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["Registration2ConnectionString"].ConnectionString))
@@ -142,21 +154,17 @@ namespace ReportPortal
 
             var enddate = Session["Enddate"].ToString();
 
-            DateTime dt = DateTime.ParseExact(startdate, "dd/mm/yyyy", CultureInfo.InvariantCulture);
-            DateTime dt2 = DateTime.ParseExact(enddate, "dd/mm/yyyy", CultureInfo.InvariantCulture);
+            var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("dd/MM/yyyy");
 
-            //Console.WriteLine(dt.ToString("yyyy-MM-dd"));
-
-            var gb = dt.ToString("yyyy-MM-dd");
-            var gb2 = dt2.ToString("yyyy-MM-dd");
+            var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy");
 
             if (val == "1")// banks options
             {
-                strquery = String.Format("SELECT BankName,BankCode,SUM(Amount) Amount FROM dbo.vwCollection WHERE PaymentDate BETWEEN '{0}' AND '{1}' GROUP BY BankName,  BankCode ORDER BY BankName ASC", gb, gb2);
+                strquery = String.Format("SELECT BankName,BankCode,SUM(Amount) Amount FROM dbo.vwCollection WHERE PaymentDate BETWEEN '{0}' AND '{1}' GROUP BY BankName,  BankCode ORDER BY BankName ASC", startdate, enddate);
             }
             else // agency options
             {
-                strquery = String.Format("SELECT AgencyName, AgencyCode,SUM(Amount) Amount FROM dbo.vwCollection WHERE PaymentDate BETWEEN '{0}' AND '{1}' GROUP BY AgencyName, AgencyCode ORDER BY AgencyName ASC", gb, gb2);
+                strquery = String.Format("SELECT AgencyName, AgencyCode,SUM(Amount) Amount FROM dbo.vwCollection WHERE PaymentDate BETWEEN '{0}' AND '{1}' GROUP BY AgencyName, AgencyCode ORDER BY AgencyName ASC", startdate, enddate);
             }
 
 

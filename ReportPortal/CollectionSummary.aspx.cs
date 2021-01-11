@@ -27,13 +27,31 @@ namespace ReportPortal
 
             txtiddisplay.Visible = true;
 
-            Session["Startdate"] = txtstartdate.Text.ToString();
-            Session["Enddate"] = txtenddate.Text.ToString();
+            //Session["Startdate"] = txtstartdate.Text.ToString();
+            //Session["Enddate"] = txtenddate.Text.ToString();
+
             Session["Values"] = rdbReport.SelectedValue.ToString();
+
+            Session["Startdate"] = txtstartdate.Text.ToString();
+
+            Session["Enddate"] = txtenddate.Text.ToString();
+
+            Session["startdate1"] = Convert.ToDateTime(txtstartdate.Text.ToString());
+
+            Session["Enddate1"] = Convert.ToDateTime(txtenddate.Text.ToString());
+
+
+            var startdate = Session["Startdate"].ToString();
+
+            var enddate = Session["Enddate"].ToString();
+
+            var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("dd/MM/yyyy");
+
+            var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy");
+
 
             if (string.IsNullOrWhiteSpace(txtstartdate.Text.ToString()) || string.IsNullOrWhiteSpace(txtenddate.Text.ToString()))
             {
-                //Encodings.MsgBox("! Criteria is Empty !", this.Page, this);
                 this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Criteria is Empty !', 'error');", true);
             }
             if (Convert.ToDateTime(txtenddate.Text.ToString()) < Convert.ToDateTime(txtstartdate.Text.ToString()))

@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewSummaryTaxAgent.aspx.cs" Inherits="ReportPortal.ViewSummaryTaxAgent" %>
 
-<%@ Register Assembly="DevExpress.XtraReports.v20.1.Web.WebForms, Version=20.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraReports.Web" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.XtraReports.v20.1.Web.WebForms, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraReports.Web" TagPrefix="dx" %>
 
 <!DOCTYPE html>
 
@@ -10,12 +10,19 @@
     <script type="text/javascript" id="script">
         function previewClick(s, e) {
            // e.Brick && alert(e.GetBrickText())
-            PageMethods.loadchildreport(e.Brick.text());
+          
+            sessionStorage.setItem("STINAgent", e.Brick.text());
+
             if (e.Brick.text() != null) {
+                PageMethods.Loadchildreport(e.Brick.text(), onSuccess, onFailure);
                 window.location.href = "ViewSummaryTaxAgentdetails.aspx"
             }
         }
+        function onSuccess(result, usercontext, methodname) {
+            alert(result)
+        }
 
+        function onFailure(error, usercontext, methodname) { alert("failed: " + error.get_message()); }
     </script>
 </head>
 <body>

@@ -57,74 +57,21 @@ namespace ReportPortal
 
         }
 
-        protected void btnpreview_OnClick(object sender, EventArgs e)
-        {
-            string strvalue = String.Empty; int j = 0;
+        //protected void btnpreview_OnClick(object sender, EventArgs e)
+        //{
 
-            int totalCount = gridOffence.Rows.Cast<GridViewRow>()
-                .Count(r => ((CheckBox)r.FindControl("Chkid")).Checked);
-            
-            if (string.IsNullOrWhiteSpace(txtstartdate.Text.ToString()) || string.IsNullOrWhiteSpace(txtenddate.Text.ToString()))
-            {
-                //Encodings.MsgBox("! Criteria is Empty !", this.Page, this);
-                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Criteria is Empty !', 'error');", true);
-            }
-            else if (Convert.ToDateTime(txtenddate.Text.ToString()) < Convert.ToDateTime(txtstartdate.Text.ToString()))
-            {
-                //Encodings.MsgBox("End Date Greater Than Start Date !", this.Page, this);
-                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! End Date Greater Than Start Date !', 'error');", true);
-            }
-            else
-            {
-                txtiddisplay.Visible = true;
 
-                foreach (GridViewRow row in gridOffence.Rows)
-                {
-                    CheckBox chk = (CheckBox)row.FindControl("Chkid");
+        //    if (string.IsNullOrWhiteSpace(txtstartdate.Text.ToString()) || string.IsNullOrWhiteSpace(txtenddate.Text.ToString()))
+        //    {
+        //        this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Criteria is Empty !', 'error');", true);
+        //}
+        //    else if (Convert.ToDateTime(txtenddate.Text.ToString()) < Convert.ToDateTime(txtstartdate.Text.ToString()))
+        //    {
+        //        //Encodings.MsgBox("End Date Greater Than Start Date !", this.Page, this);
+        //        this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! End Date Greater Than Start Date !', 'error');", true);
+        //}
 
-                    Label lbltin = (Label)row.FindControl("lbltin");
-
-                    if (chk != null & chk.Checked)
-                    {
-                        strvalue += String.Format("'{0}'", lbltin.Text);
-
-                        if (j + 1 < totalCount)
-                        {
-                            strvalue += ",";
-                            ++j;
-                        }
-                    }
-
-                }
-
-                Session["Startdate"] = txtstartdate.Text.ToString();
-
-                Session["Enddate"] = txtenddate.Text.ToString();
-
-                Session["startdate1"] = Convert.ToDateTime(txtstartdate.Text.ToString());
-
-                Session["Enddate1"] = Convert.ToDateTime(txtenddate.Text.ToString());
-
-                Session["Agencylist"] = strvalue;
-
-                var strrevenue = Session["Agencylist"].ToString();
-
-                var startdate = Session["Startdate"].ToString();
-
-                var enddate = Session["Enddate"].ToString();
-
-                if (Encodings.IsValidUser(String.Format("SELECT PayerID, TaxAgentUtin, TaxAgentName,  address,  PaymentRefNumber, Amount, RevenueOfficeID, RevenueOfficeName, RevenueCode,  PaymentDate,AgencyName,BankName FROM vwRemittance WHERE PaymentDate BETWEEN '{0}' AND '{1}' AND TaxAgentUtin IN ({2}) ORDER BY TaxAgentName ASC", startdate, enddate, strrevenue)))
-                {
-                    Response.Write("<script>");
-                    Response.Write("window.open('ViewRemittance.aspx' ,'_blank')");
-                    Response.Write("</script>");
-                }
-                else
-                {
-                    this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', ' No Record Found for the Selected Range !', 'info');", true);
-                }
-            }
-        }
+        //}
 
         protected void checkAll_OnCheckedChanged(object sender, EventArgs e)
         {
@@ -149,6 +96,115 @@ namespace ReportPortal
                 if (chk != null)
                 {
 
+                }
+            }
+        }
+
+        protected void btnpreview_OnClick(object sender, EventArgs e)
+        {
+            string strvalue = String.Empty; int j = 0;
+
+            //int totalCount = gridOffence.Rows.Cast<GridViewRow>()
+            //    .Count(r => ((CheckBox)r.FindControl("Chkid")).Checked);
+
+            int totalCount = gridOffence.Rows.Cast<GridViewRow>()
+                .Count(r => ((CheckBox)r.FindControl("CheckBox1")).Checked);
+
+            if (string.IsNullOrWhiteSpace(txtstartdate.Text.ToString()) || string.IsNullOrWhiteSpace(txtenddate.Text.ToString()))
+            {
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Criteria is Empty !', 'error');", true);
+            }
+            else if (Convert.ToDateTime(txtenddate.Text.ToString()) < Convert.ToDateTime(txtstartdate.Text.ToString()))
+            {
+                //Encodings.MsgBox("End Date Greater Than Start Date !", this.Page, this);
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! End Date Greater Than Start Date !', 'error');", true);
+            }
+            else
+            {
+                txtiddisplay.Visible = true;
+
+                //foreach (GridViewRow row in gridOffence.Rows)
+                //{
+                //    CheckBox chk = (CheckBox)row.FindControl("Chkid");
+
+                //    Label lbltin = (Label)row.FindControl("lbltin");
+
+                //    if (chk != null & chk.Checked)
+                //    {
+                //        strvalue += String.Format("'{0}'", lbltin.Text);
+
+                //        if (j + 1 < totalCount)
+                //        {
+                //            strvalue += ",";
+                //            ++j;
+                //        }
+                //    }
+
+                //}
+
+                foreach (GridViewRow row in gridOffence.Rows)
+                {
+                    CheckBox chk = (CheckBox)row.FindControl("CheckBox1");
+
+                    Label lbltin = (Label)row.FindControl("lbltin");
+
+                    if (chk != null & chk.Checked)
+                    {
+                        strvalue += String.Format("'{0}'", lbltin.Text);
+
+                        if (j + 1 < totalCount)
+                        {
+                            strvalue += ",";
+                            ++j;
+                        }
+                    }
+
+                }
+
+
+                //Session["Startdate"] = txtstartdate.Text.ToString();
+
+                //Session["Enddate"] = txtenddate.Text.ToString();
+
+                //Session["startdate1"] = Convert.ToDateTime(txtstartdate.Text.ToString());
+
+                //Session["Enddate1"] = Convert.ToDateTime(txtenddate.Text.ToString());
+
+                Session["Agencylist"] = strvalue;
+
+                var strrevenue = Session["Agencylist"].ToString();
+
+                //var startdate = Session["Startdate"].ToString();
+
+                //var enddate = Session["Enddate"].ToString();
+
+                Session["Startdate"] = txtstartdate.Text.ToString();
+
+                Session["Enddate"] = txtenddate.Text.ToString();
+
+                Session["startdate1"] = Convert.ToDateTime(txtstartdate.Text.ToString());
+
+                Session["Enddate1"] = Convert.ToDateTime(txtenddate.Text.ToString());
+
+
+                var startdate = Session["Startdate"].ToString();
+
+                var enddate = Session["Enddate"].ToString();
+
+                var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("dd/MM/yyyy");
+
+                var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy");
+
+
+                if (Encodings.IsValidUser(String.Format("SELECT PayerID, TaxAgentUtin, TaxAgentName,  address,  PaymentRefNumber, Amount, RevenueOfficeID, RevenueOfficeName, RevenueCode,  PaymentDate,AgencyName,BankName FROM vwRemittance WHERE PaymentDate BETWEEN '{0}' AND '{1}' AND TaxAgentUtin IN ({2}) ORDER BY TaxAgentName ASC", startdate, enddate, strrevenue)))
+                {
+                    Response.Write("<script>");
+                    Response.Write("window.open('ViewRemittance.aspx' ,'_blank')");
+                    Response.Write("</script>");
+                }
+                else
+                {
+                    this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', ' No Record Found for the Selected Range !', 'info');", true);
                 }
             }
         }

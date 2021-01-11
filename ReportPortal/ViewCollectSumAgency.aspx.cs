@@ -42,6 +42,14 @@ namespace ReportPortal
         {
             XtraRepCollAgency agency = new XtraRepCollAgency();
 
+            var startdate = Session["Startdate"].ToString();
+
+            var enddate = Session["Enddate"].ToString();
+
+            var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("dd/MM/yyyy");
+
+            var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy");
+
             if (sessions.MerchantCode.ToString() == "DTSS")
             {
                 strheader = "DELTA STATE GOVERNMENT";
@@ -53,6 +61,7 @@ namespace ReportPortal
                 agency.xrPictureBox3.Visible = false;
 
             }
+          
             if (sessions.MerchantCode.ToString() == "OGSS")
             {
                 strheader = "OGUN STATE GOVERNMENT";
@@ -63,6 +72,7 @@ namespace ReportPortal
 
                 agency.xrPictureBox3.Visible = false;
             }
+           
             if (sessions.MerchantCode.ToString() == "OYSS")
             {
                 strheader = "OYO STATE GOVERNMENT";
@@ -76,28 +86,28 @@ namespace ReportPortal
 
             agency.xrlborghead.Text = strheader;
 
-            agency.xrLabel1.Text = String.Format(" From {0:dd/MM/yyyy} To {1:dd/MM/yyyy} ", Session["Startdate"].ToString(), Session["Enddate"].ToString());
+            agency.xrLabel1.Text = String.Format(" From {0:dd/MM/yyyy} To {1:dd/MM/yyyy} ", strat, end);
 
             sessions = new SessionManager();
 
             SqlCommand _command; SqlDataAdapter _adp; System.Data.DataSet responses = new System.Data.DataSet(); string strquery = String.Empty;
 
-            var val = Session["Values"].ToString();
+            //var val = Session["Values"].ToString();
 
-            var startdate = Session["Startdate"].ToString();
+            //var startdate = Session["Startdate"].ToString();
 
-            var enddate = Session["Enddate"].ToString();
+            //var enddate = Session["Enddate"].ToString();
 
-            DateTime dt = DateTime.ParseExact(startdate, "dd/mm/yyyy", CultureInfo.InvariantCulture);
-            DateTime dt2 = DateTime.ParseExact(enddate, "dd/mm/yyyy", CultureInfo.InvariantCulture);
+            //DateTime dt = DateTime.ParseExact(startdate, "dd/mm/yyyy", CultureInfo.InvariantCulture);
+            //DateTime dt2 = DateTime.ParseExact(enddate, "dd/mm/yyyy", CultureInfo.InvariantCulture);
 
-            //Console.WriteLine(dt.ToString("yyyy-MM-dd"));
+            ////Console.WriteLine(dt.ToString("yyyy-MM-dd"));
 
-            var gb = dt.ToString("yyyy-MM-dd");
-            var gb2 = dt2.ToString("yyyy-MM-dd");
+            //var gb = dt.ToString("yyyy-MM-dd");
+            //var gb2 = dt2.ToString("yyyy-MM-dd");
 
 
-            strquery = String.Format("SELECT AgencyName, AgencyCode,SUM(Amount) Amount FROM dbo.vwCollection WHERE PaymentDate BETWEEN '{0}' AND '{1}' GROUP BY AgencyName, AgencyCode ORDER BY AgencyName ASC", gb, gb2);
+            strquery = String.Format("SELECT AgencyName, AgencyCode,SUM(Amount) Amount FROM dbo.vwCollection WHERE PaymentDate BETWEEN '{0}' AND '{1}' GROUP BY AgencyName, AgencyCode ORDER BY AgencyName ASC", startdate, enddate);
 
             using (SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["Registration2ConnectionString"].ConnectionString))
             {
