@@ -92,7 +92,7 @@ namespace ReportPortal
             Session["Fromyear"] = ddlyear.SelectedValue.ToString();
             Session["Toyear"] = ddlto.SelectedValue.ToString();
             //Session["Revenueoffice"] = ddlRevenue.SelectedValue.ToString();
-            txtiddisplay.Visible = 1;
+            txtiddisplay.Visible = true;
 
             Response.Write("<script>");
             Response.Write("window.open('ViewDetailByYear.aspx' ,'_blank')");
