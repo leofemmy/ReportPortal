@@ -1,13 +1,8 @@
 ﻿using ReportPortal.Reports;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace ReportPortal
 {
@@ -38,6 +33,40 @@ namespace ReportPortal
             XtraRepAssessmentTaxOfficeYearDetails obj_Rpt = new XtraRepAssessmentTaxOfficeYearDetails();
 
             SqlCommand _command; SqlDataAdapter _adp; System.Data.DataSet responses = new System.Data.DataSet();
+
+            if (sessions.MerchantCode.ToString() == "DTSS")
+            {
+                //obj_Rpt = "DELTA STATE GOVERNMENT";
+
+                obj_Rpt.xrPictureBox1.Visible = true;
+
+                obj_Rpt.xrPictureBox2.Visible = false;
+
+                obj_Rpt.xrPictureBox3.Visible = false;
+
+            }
+
+            if (sessions.MerchantCode.ToString() == "OGSS")
+            {
+                //strheader = "OGUN STATE GOVERNMENT";
+
+                obj_Rpt.xrPictureBox1.Visible = false;
+
+                obj_Rpt.xrPictureBox2.Visible = true;
+
+                obj_Rpt.xrPictureBox3.Visible = false;
+            }
+
+            if (sessions.MerchantCode.ToString() == "OYSS")
+            {
+                //strheader = "OYO STATE GOVERNMENT";
+
+                obj_Rpt.xrPictureBox1.Visible = false;
+
+                obj_Rpt.xrPictureBox2.Visible = false;
+
+                obj_Rpt.xrPictureBox3.Visible = true;
+            }
 
             string strquery = String.Format("SELECT * FROM dbo.ViewAssessmentInfor WHERE AssessmentYear BETWEEN {0} AND {1} AND RevenueOfficeName='{2}' ORDER BY PayerName ASC", vryearfrom, vryearto, varofficename);
 

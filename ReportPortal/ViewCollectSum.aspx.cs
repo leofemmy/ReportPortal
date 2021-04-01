@@ -1,15 +1,8 @@
-﻿using DevExpress.XtraReports.UI;
-using ReportPortal.Reports;
+﻿using ReportPortal.Reports;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Globalization;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace ReportPortal
 {
@@ -67,7 +60,7 @@ namespace ReportPortal
                 collBank.xrPictureBox3.Visible = false;
 
             }
-           
+
             if (sessions.MerchantCode.ToString() == "OGSS")
             {
                 strheader = "OGUN STATE GOVERNMENT";
@@ -78,7 +71,7 @@ namespace ReportPortal
 
                 collBank.xrPictureBox3.Visible = false;
             }
-           
+
             if (sessions.MerchantCode.ToString() == "OYSS")
             {
                 strheader = "OYO STATE GOVERNMENT";

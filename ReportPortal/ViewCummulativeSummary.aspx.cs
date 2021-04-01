@@ -1,13 +1,8 @@
 ﻿using ReportPortal.Reports;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace ReportPortal
 {
@@ -34,6 +29,41 @@ namespace ReportPortal
             XtraRepCummulativeSummary obj_Rpt = new XtraRepCummulativeSummary();
 
             SqlCommand _command; SqlDataAdapter _adp; System.Data.DataSet responses = new System.Data.DataSet();
+
+            if (sessions.MerchantCode.ToString() == "DTSS")
+            {
+                //obj_Rpt = "DELTA STATE GOVERNMENT";
+
+                obj_Rpt.xrPictureBox1.Visible = true;
+
+                obj_Rpt.xrPictureBox2.Visible = false;
+
+                obj_Rpt.xrPictureBox3.Visible = false;
+
+            }
+
+            if (sessions.MerchantCode.ToString() == "OGSS")
+            {
+                //strheader = "OGUN STATE GOVERNMENT";
+
+                obj_Rpt.xrPictureBox1.Visible = false;
+
+                obj_Rpt.xrPictureBox2.Visible = true;
+
+                obj_Rpt.xrPictureBox3.Visible = false;
+            }
+
+            if (sessions.MerchantCode.ToString() == "OYSS")
+            {
+                //strheader = "OYO STATE GOVERNMENT";
+
+                obj_Rpt.xrPictureBox1.Visible = false;
+
+                obj_Rpt.xrPictureBox2.Visible = false;
+
+                obj_Rpt.xrPictureBox3.Visible = true;
+            }
+
 
             string strquery = String.Format("SELECT COUNT( DISTINCT TccNo) Reccount,   COUNT(DISTINCT CASE WHEN IncomeSourceClassifyId = 1 THEN TccNo END) AS DA, COUNT(DISTINCT CASE WHEN IncomeSourceClassifyId = 2 THEN TccNo END) AS PA, COUNT(DISTINCT CASE WHEN IncomeSourceClassifyId = 3 THEN TccNo END) AS PN, COUNT(DISTINCT CASE WHEN IncomeSourceClassifyId = 4 THEN TccNo END) AS ST, COUNT(DISTINCT CASE WHEN IncomeSourceClassifyId = 5 THEN TccNo END ) AS NR, COUNT(DISTINCT CASE WHEN IncomeSourceClassifyId = 6 THEN  TccNo END ) AS UE, COUNT(DISTINCT CASE WHEN IncomeSourceClassifyId = 7 THEN TccNo END) AS DU FROM dbo.ViewTccDetails WHERE YEAR(IssuedDate) BETWEEN {0} AND {1} AND AssessmentYear = YEAR(IssuedDate) - 1 ", vryearfrom, vryearto);
 

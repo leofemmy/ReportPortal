@@ -15,6 +15,8 @@
                         <h6 class="panel-title txt-dark">Payment Normalisation  </h6>
                     </div>
                     <div class="clearfix"></div>
+                    <br />
+                    <asp:Label runat="server" ID="txtiddisplay" Text="You need to enable your browser pop-Up at the top right corner to view the report" ForeColor="red" Visible="False" style="text-align: right;"></asp:Label>
                 </div>
             </div>
             <div class="panel-wrapper collapse in">
@@ -35,7 +37,7 @@
                                 <div class="col-sm-offset-2 col-sm-10">
                                     <asp:Button ID="btnpreview" runat="server" Text="Preview" class="btn btn-primary btn-anim text-uppercas" OnClick="btnpreview_OnClick"/>
                                 </div>
-                                <asp:Label runat="server" ID="txtiddisplay" Text="You need to enable your browser pop-Up at the top right corner to view the report" ForeColor="red" Visible="False"></asp:Label>
+                                
                             </div>
                         </div>
                     </form>

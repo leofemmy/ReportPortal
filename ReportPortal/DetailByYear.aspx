@@ -11,6 +11,8 @@
                     <h6 class="panel-title txt-dark">Detail By Year </h6>
                 </div>
                 <div class="clearfix"></div>
+                <br />
+                <asp:Label runat="server" ID="txtiddisplay" Text="You need to enable your browser pop-Up at the top right corner to view the report" ForeColor="red" Visible="False"></asp:Label>
             </div>
             <div class="panel-wrapper collapse in">
                 <div class="panel-body">

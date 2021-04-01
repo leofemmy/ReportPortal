@@ -1,10 +1,4 @@
-﻿using System;
-using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
-using DevExpress.XtraReports.UI;
-
-namespace ReportPortal.Reports
+﻿namespace ReportPortal.Reports
 {
     public partial class XtraRepTCCDetailsbytaxoffice : DevExpress.XtraReports.UI.XtraReport
     {

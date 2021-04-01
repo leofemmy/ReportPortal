@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DevExpress.XtraReports.UI;
+using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Globalization;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using DevExpress.XtraReports.UI;
 
 namespace ReportPortal
 {
@@ -32,8 +26,86 @@ namespace ReportPortal
 
         void calReport()
         {
-            ASPxDocumentViewer1.Report = CreateReport();
-            ASPxDocumentViewer1.DataBind();
+            //ASPxDocumentViewer1.Report = CreateReport();
+            //ASPxDocumentViewer1.DataBind();
+
+            sessions = new SessionManager();
+
+            SqlCommand _command; SqlDataAdapter _adp; System.Data.DataSet responses = new System.Data.DataSet();
+
+
+            var startdate = Session["Startdate"].ToString();
+
+            var enddate = Session["Enddate"].ToString();
+
+            var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("dd/MM/yyyy");
+
+            var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy");
+
+            XtraRepSelf self = new XtraRepSelf();
+
+
+            if (sessions.MerchantCode.ToString() == "DTSS")
+            {
+                strheader = "DELTA STATE GOVERNMENT";
+
+                self.xrPictureBox1.Visible = true;
+
+                self.xrPictureBox2.Visible = false;
+
+                self.xrPictureBox3.Visible = false;
+            }
+
+            if (sessions.MerchantCode.ToString() == "OGSS")
+            {
+                strheader = "OGUN STATE GOVERNMENT";
+
+                self.xrPictureBox1.Visible = false;
+
+                self.xrPictureBox2.Visible = true;
+
+                self.xrPictureBox3.Visible = false;
+            }
+
+            if (sessions.MerchantCode.ToString() == "OYSS")
+            {
+                strheader = "OYO STATE GOVERNMENT";
+
+                self.xrPictureBox1.Visible = false;
+
+                self.xrPictureBox2.Visible = false;
+
+                self.xrPictureBox3.Visible = true;
+            }
+
+            string strquery = String.Format("SELECT * FROM ViewTaxPayer WHERE MerchantCode='{0}' AND Datecreated BETWEEN '{1}' AND '{2}' AND TaxAgentReferenceNumber IS NULL  ORDER BY Surname ASC ", sessions.MerchantCode.ToString(), startdate, enddate);
+
+
+            using (SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["Registration2ConnectionString"].ConnectionString))
+            {
+                connect.Open();
+                _command = new SqlCommand(strquery, connect) { CommandType = CommandType.Text };
+                _command.CommandTimeout = 0;
+                responses.Clear();
+                _adp = new SqlDataAdapter(_command);
+                _adp.Fill(responses);
+
+                connect.Close();
+
+            }
+
+            if (responses.Tables[0] != null && responses.Tables[0].Rows.Count > 1)
+            {
+                self.xrlborghead.Text = strheader;
+
+                self.xrlbsubHead2.Text = String.Format(" From {0:dd/MM/yyyy} To {1:dd/MM/yyyy} ", strat, end);
+
+                self.DataSource = responses;
+
+                self.DataMember = responses.Tables[0].TableName;
+
+                ASPxWebDocumentViewer1.OpenReport(self);
+            }
         }
 
         DataSet dts()
@@ -111,7 +183,7 @@ namespace ReportPortal
 
                 self.xrPictureBox3.Visible = false;
             }
-            
+
             if (sessions.MerchantCode.ToString() == "OYSS")
             {
                 strheader = "OYO STATE GOVERNMENT";

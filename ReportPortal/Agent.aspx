@@ -18,26 +18,15 @@
                     <h6 class="panel-title txt-dark">Agent Report</h6>
                 </div>
                 <div class="clearfix"></div>
+                <br/>
+                <asp:Label runat="server" ID="txtiddisplay" Text="You need to enable your browser pop-Up at the top right corner to view the report" ForeColor="red" Visible="False"></asp:Label>
             </div>
             <div class="panel-wrapper collapse in">
                 <div class="panel-body">
                     <div class="form-wrap">
                         <form class="form-horizontal" runat="server">
-                            <%--       <div class="form-group">
-                                <asp:Label ID="Label16" class="control-label mb-10 col-sm-2" runat="server" Text="Start Date:"></asp:Label>
-                                <div class="col-sm-10">
-                                    <asp:TextBox ID="txtstartdate" runat="server" CausesValidation="false" autocomplete="off" ClientIDMode="Static" CssClass="form-control" TextMode="Date"></asp:TextBox>
-                                    <asp:ImageButton ID="ImageButton2" runat="server" ClientIDMode="Static" ImageUrl="~/images/clearimage.jpeg" OnClientClick="ClearTextboxes1();" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <asp:Label ID="Label1" runat="server" class="control-label mb-10 col-sm-2" Text="End Date: "></asp:Label>
-                                <div class="col-sm-10">
-                                    <asp:TextBox ID="txtenddate" runat="server" CausesValidation="false" autocomplete="off" ClientIDMode="Static" CssClass="form-control" TextMode="Date"></asp:TextBox>
-                                    <asp:ImageButton ID="ImageButton1" runat="server" ClientIDMode="Static" ImageUrl="~/images/clearimage.jpeg" OnClientClick="ClearTextboxes1();" />
-                                </div>
-                            </div>--%>
-                            <div class="form-group">
+
+                           <div class="form-group">
                                 <asp:Label ID="Label16" class="control-label mb-10 col-sm-2" runat="server" Text="Start Date:"></asp:Label>
                                 <div class="col-sm-10">
                                     <asp:TextBox ID="txtstartdate" runat="server" CausesValidation="false" autocomplete="off" ClientIDMode="Static" CssClass="form-control" TextMode="Date"></asp:TextBox>
@@ -53,11 +42,11 @@
                             </div>
                             <div class="form-group mb-0">
                                 <div class="col-sm-offset-2 col-sm-10">
-                                    <%--<button type="button" class="btn btn-primary btn-anim"><i class="fa fa-paper-plane"></i><span class="btn-text text-uppercase">submit</span></button>--%>
+                           
                                     <asp:Button ID="btnpreview" runat="server" Text="Preview" class="btn btn-primary btn-anim text-uppercas" OnClick="btnpreview_OnClick" />
 
                                 </div>
-                                <asp:Label runat="server" ID="txtiddisplay" Text="You need to enable your browser pop-Up at the top right corner to view the report" ForeColor="red" Visible="False"></asp:Label>
+                              
                             </div>
                         </form>
                     </div>
@@ -81,10 +70,6 @@
     <script type="text/javascript" src="plugins/vendors/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
     <script type="text/javascript" src="plugins/vendors/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
 
-    <%--    <link href="<%: ResolveUrl("~/js/1.8/jquery-ui.css") %>" rel="stylesheet" />
-    <script src="<%:ResolveUrl("~/js/jquery-1.11.3.min.js") %>"></script>
-    <script src="<%: ResolveUrl("~/js/1.6/jquery-ui.min.js") %>"></script>
-    <script src="<%:ResolveUrl("~/js/1.8/jquery-ui.min.js") %>"></script>--%>
 
     <script type="text/javascript">
         $(document).ready(function () {

@@ -1,14 +1,8 @@
 ﻿using ReportPortal.Reports;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Globalization;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace ReportPortal
 {
@@ -80,7 +74,7 @@ namespace ReportPortal
 
                 obj_Rpt.xrPictureBox3.Visible = true;
             }
-            
+
             obj_Rpt.xrlborghead.Text = strheader; obj_Rpt.xrlbsubHead.Text = String.Format("Revenue Collection Analysed by {0}", Session["AgencyName"].ToString());
 
             obj_Rpt.xrLabel1.Text = String.Format(" From {0:dd/MM/yyyy} To {1:dd/MM/yyyy} ", strat, end);

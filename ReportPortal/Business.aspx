@@ -13,68 +13,70 @@
                 <div class="panel-heading">
                     <div class="pull-left">
                         <h6 class="panel-title txt-dark">Bussiness Sectors  </h6>
+                        <div class="clearfix"></div>
+                        <br />
+                        <asp:Label runat="server" ID="txtiddisplay" Text="You need to enable your browser pop-Up at the top right corner to view the report" ForeColor="red" Visible="False"></asp:Label>
                     </div>
-                    <div class="clearfix"></div>
                 </div>
-            </div>
-            <div class="panel-wrapper collapse in">
-                <div class="panel-body">
-                    <form class="form-horizontal" runat="server">
-                        <div class="col-sm-6 col-xs-12 form-group" style="height: 650px; width: 500px; overflow: auto; position: relative; overflow-x: hidden; overflow-y: auto;">
-                            <asp:Label ID="Label1" class="control-label mb-10 col-sm-2" runat="server" Text="Business List" Width="200px"></asp:Label>
-                            <asp:GridView ID="gridOffence" runat="server" CssClass="table table-striped table-bordered nowrap" AutoGenerateColumns="false">
-                                <Columns>
-                                    <asp:TemplateField>
-                                        <HeaderTemplate>
-                                            <asp:CheckBox ID="checkAll" runat="server" onclick="checkAll(this);" />
-                                        </HeaderTemplate>
-                                        <ItemTemplate>
-                                            <asp:CheckBox ID="CheckBox1" runat="server" onclick="Check_Click(this)" />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Business Name">
-                                        <ItemTemplate>
-                                            <asp:Label ID="lbname" runat="server" Text='<%# Bind("BusinessTypeName") %>'></asp:Label>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="TaxAgentUtin" Visible="False">
-                                        <ItemTemplate>
-                                            <asp:Label ID="lbltin" runat="server" Text='<%# Bind("BusinessTypeId") %>'></asp:Label>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                </Columns>
-                            </asp:GridView>
-                        </div>
-                        <div class="col-sm-6 col-xs-12 form-group">
-                            <asp:Label ID="Label16" class="control-label col-sm-3" runat="server" Text="Start Date:"></asp:Label>
-                            <div class="col-sm-3">
-                                <asp:TextBox ID="txtstartdate" runat="server" CausesValidation="false" autocomplete="off" ClientIDMode="Static" CssClass="form-control" TextMode="Date"></asp:TextBox>
-                                <asp:ImageButton ID="ImageButton2" runat="server" ClientIDMode="Static" ImageUrl="~/images/clearimage.jpeg" OnClientClick="ClearTextboxes1();" />
+
+                <div class="panel-wrapper collapse in">
+                    <div class="panel-body">
+                        <form class="form-horizontal" runat="server">
+                            <div class="col-sm-6 col-xs-12 form-group" style="height: 650px; width: 500px; overflow: auto; position: relative; overflow-x: hidden; overflow-y: auto;">
+                                <asp:Label ID="Label1" class="control-label mb-10 col-sm-2" runat="server" Text="Business List" Width="200px"></asp:Label>
+                                <asp:GridView ID="gridOffence" runat="server" CssClass="table table-striped table-bordered nowrap" AutoGenerateColumns="false">
+                                    <Columns>
+                                        <asp:TemplateField>
+                                            <HeaderTemplate>
+                                                <asp:CheckBox ID="checkAll" runat="server" onclick="checkAll(this);" />
+                                            </HeaderTemplate>
+                                            <ItemTemplate>
+                                                <asp:CheckBox ID="CheckBox1" runat="server" onclick="Check_Click(this)" />
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Business Name">
+                                            <ItemTemplate>
+                                                <asp:Label ID="lbname" runat="server" Text='<%# Bind("BusinessTypeName") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="TaxAgentUtin" Visible="False">
+                                            <ItemTemplate>
+                                                <asp:Label ID="lbltin" runat="server" Text='<%# Bind("BusinessTypeId") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                    </Columns>
+                                </asp:GridView>
                             </div>
-                            <asp:Label ID="Label4" runat="server" class="control-label col-sm-3" Text="End Date: "></asp:Label>
-                            <div class="col-sm-3">
-                                <asp:TextBox ID="txtenddate" runat="server" CausesValidation="false" autocomplete="off" ClientIDMode="Static" CssClass="form-control" TextMode="Date"></asp:TextBox>
-                                <asp:ImageButton ID="ImageButton1" runat="server" ClientIDMode="Static" ImageUrl="~/images/clearimage.jpeg" OnClientClick="ClearTextboxes1();" />
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <asp:Button ID="btnpreview" runat="server" Text="Preview" class="btn btn-primary btn-anim text-uppercas" OnClick="btnpreview_Click" />
+                            <div class="col-sm-6 col-xs-12 form-group">
+                                <asp:Label ID="Label16" class="control-label col-sm-3" runat="server" Text="Start Date:"></asp:Label>
+                                <div class="col-sm-3">
+                                    <asp:TextBox ID="txtstartdate" runat="server" CausesValidation="false" autocomplete="off" ClientIDMode="Static" CssClass="form-control" TextMode="Date"></asp:TextBox>
+                                    <asp:ImageButton ID="ImageButton2" runat="server" ClientIDMode="Static" ImageUrl="~/images/clearimage.jpeg" OnClientClick="ClearTextboxes1();" />
                                 </div>
-                                <asp:Label runat="server" ID="txtiddisplay" Text="You need to enable your browser pop-Up at the top right corner to view the report" ForeColor="red" Visible="False"></asp:Label>
+                                <asp:Label ID="Label4" runat="server" class="control-label col-sm-3" Text="End Date: "></asp:Label>
+                                <div class="col-sm-3">
+                                    <asp:TextBox ID="txtenddate" runat="server" CausesValidation="false" autocomplete="off" ClientIDMode="Static" CssClass="form-control" TextMode="Date"></asp:TextBox>
+                                    <asp:ImageButton ID="ImageButton1" runat="server" ClientIDMode="Static" ImageUrl="~/images/clearimage.jpeg" OnClientClick="ClearTextboxes1();" />
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <asp:Button ID="btnpreview" runat="server" Text="Preview" class="btn btn-primary btn-anim text-uppercas" OnClick="btnpreview_Click" />
+                                    </div>
+
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
 
+                    </div>
                 </div>
+
+
             </div>
-
-
-
         </div>
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptContentHolder" runat="server">
-  
+
     <!-- data-table js -->
     <script type="text/javascript" src="plugins/vendors/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="plugins/vendors/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
@@ -88,88 +90,90 @@
     <script type="text/javascript" src="plugins/vendors/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
 
     <script type="text/javascript">
-    $(document).ready(function () {
-        document.getElementById('txtstartdate').value = '';
-        document.getElementById('txtenddate').value = '';
-        $("[id$=txtstartdate]").datepicker({
-            dateFormat: "dd/mm/yy",
-            changeMonth: true,
-            changeYear: true
+        $(document).ready(function () {
+            document.getElementById('txtstartdate').value = '';
+            document.getElementById('txtenddate').value = '';
+            $("[id$=txtstartdate]").datepicker({
+                dateFormat: "dd/mm/yy",
+                changeMonth: true,
+                changeYear: true
 
+            });
+
+            $("[id$=txtenddate]").datepicker({
+                dateFormat: "dd/mm/yy",
+                changeMonth: true,
+                changeYear: true
+            });
         });
 
-        $("[id$=txtenddate]").datepicker({
-            dateFormat: "dd/mm/yy",
-            changeMonth: true,
-            changeYear: true
-        });
-    });
+        function ClearTextboxes() {
+            document.getElementById('txtstartdate').value = '';
+        }
 
-    function ClearTextboxes() {
-        document.getElementById('txtstartdate').value = '';
-    }
+        function ClearTextboxes1() {
+            document.getElementById('txtenddate').value = '';
+        }
 
-    function ClearTextboxes1() {
-        document.getElementById('txtenddate').value = '';
-    }
+        function ChangeCheckBoxState(id, checkState) {
+            var cb = document.getElementById(id);
+            if (cb != null)
+                cb.checked = checkState;
+        }
 
-    function ChangeCheckBoxState(id, checkState) {
-        var cb = document.getElementById(id);
-        if (cb != null)
-            cb.checked = checkState;
-    }
+        function checkAll(objRef) {
 
-    function checkAll(objRef) {
+            var GridView = objRef.parentNode.parentNode.parentNode;
 
-        var GridView = objRef.parentNode.parentNode.parentNode;
+            var inputList = GridView.getElementsByTagName("input");
 
-        var inputList = GridView.getElementsByTagName("input");
+            for (var i = 0; i < inputList.length; i++) {
 
-        for (var i = 0; i < inputList.length; i++) {
+                //Get the Cell To find out ColumnIndex
 
-            //Get the Cell To find out ColumnIndex
+                var row = inputList[i].parentNode.parentNode;
 
-            var row = inputList[i].parentNode.parentNode;
+                if (inputList[i].type == "checkbox" && objRef != inputList[i]) {
 
-            if (inputList[i].type == "checkbox" && objRef != inputList[i]) {
+                    if (objRef.checked) {
 
-                if (objRef.checked) {
+                        //If the header checkbox is checked
 
-                    //If the header checkbox is checked
+                        //check all checkboxes
 
-                    //check all checkboxes
+                        //and highlight all rows
 
-                    //and highlight all rows
+                        //row.style.backgroundColor = "aqua";
 
-                    //row.style.backgroundColor = "aqua";
+                        inputList[i].checked = true;
 
-                    inputList[i].checked = true;
+                    }
 
-                }
+                    else {
 
-                else {
+                        //If the header checkbox is checked
 
-                    //If the header checkbox is checked
+                        //uncheck all checkboxes
 
-                    //uncheck all checkboxes
+                        //and change rowcolor back to original
 
-                    //and change rowcolor back to original
+                        //if (row.rowIndex % 2 == 0) {
 
-                    //if (row.rowIndex % 2 == 0) {
+                        //    //Alternating Row Color
 
-                    //    //Alternating Row Color
+                        //    row.style.backgroundColor = "#C2D69B";
 
-                    //    row.style.backgroundColor = "#C2D69B";
+                        //}
 
-                    //}
+                        //else {
 
-                    //else {
+                        //    row.style.backgroundColor = "white";
 
-                    //    row.style.backgroundColor = "white";
+                        //}
 
-                    //}
+                        inputList[i].checked = false;
 
-                    inputList[i].checked = false;
+                    }
 
                 }
 
@@ -177,90 +181,88 @@
 
         }
 
-    }
+        function Check_Click(objRef) {
 
-    function Check_Click(objRef) {
+            //Get the Row based on checkbox
 
-        //Get the Row based on checkbox
+            var row = objRef.parentNode.parentNode;
 
-        var row = objRef.parentNode.parentNode;
+            //if (objRef.checked) {
 
-        //if (objRef.checked) {
+            //    //If checked change color to Aqua
 
-        //    //If checked change color to Aqua
+            //    row.style.backgroundColor = "aqua";
 
-        //    row.style.backgroundColor = "aqua";
+            //}
 
-        //}
+            //else {
 
-        //else {
+            //    //If not checked change back to original color
 
-        //    //If not checked change back to original color
+            //    if (row.rowIndex % 2 == 0) {
 
-        //    if (row.rowIndex % 2 == 0) {
+            //        //Alternating Row Color
 
-        //        //Alternating Row Color
+            //        row.style.backgroundColor = "#C2D69B";
 
-        //        row.style.backgroundColor = "#C2D69B";
+            //    }
 
-        //    }
+            //    else {
 
-        //    else {
+            //        row.style.backgroundColor = "white";
 
-        //        row.style.backgroundColor = "white";
+            //    }
 
-        //    }
-
-        //}
+            //}
 
 
 
-        //Get the reference of GridView
+            //Get the reference of GridView
 
-        var GridView = row.parentNode;
-
-
-
-        //Get all input elements in Gridview
-
-        var inputList = GridView.getElementsByTagName("input");
+            var GridView = row.parentNode;
 
 
 
-        for (var i = 0; i < inputList.length; i++) {
+            //Get all input elements in Gridview
 
-            //The First element is the Header Checkbox
-
-            var headerCheckBox = inputList[0];
+            var inputList = GridView.getElementsByTagName("input");
 
 
 
-            //Based on all or none checkboxes
+            for (var i = 0; i < inputList.length; i++) {
 
-            //are checked check/uncheck Header Checkbox
+                //The First element is the Header Checkbox
 
-            var checked = true;
+                var headerCheckBox = inputList[0];
 
-            if (inputList[i].type == "checkbox" && inputList[i] != headerCheckBox) {
 
-                if (!inputList[i].checked) {
 
-                    checked = false;
+                //Based on all or none checkboxes
 
-                    break;
+                //are checked check/uncheck Header Checkbox
+
+                var checked = true;
+
+                if (inputList[i].type == "checkbox" && inputList[i] != headerCheckBox) {
+
+                    if (!inputList[i].checked) {
+
+                        checked = false;
+
+                        break;
+
+                    }
 
                 }
 
             }
 
+            headerCheckBox.checked = checked;
+
+
+
         }
 
-        headerCheckBox.checked = checked;
-
-
-
-    }
- 
     </script>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>

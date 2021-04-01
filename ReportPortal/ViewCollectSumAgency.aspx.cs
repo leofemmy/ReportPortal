@@ -1,14 +1,8 @@
 ﻿using ReportPortal.Reports;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Globalization;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace ReportPortal
 {
@@ -61,7 +55,7 @@ namespace ReportPortal
                 agency.xrPictureBox3.Visible = false;
 
             }
-          
+
             if (sessions.MerchantCode.ToString() == "OGSS")
             {
                 strheader = "OGUN STATE GOVERNMENT";
@@ -72,7 +66,7 @@ namespace ReportPortal
 
                 agency.xrPictureBox3.Visible = false;
             }
-           
+
             if (sessions.MerchantCode.ToString() == "OYSS")
             {
                 strheader = "OYO STATE GOVERNMENT";
@@ -133,7 +127,7 @@ namespace ReportPortal
             }
 
         }
-       
+
         [System.Web.Services.WebMethod]
         public static void loadchildreport(string stragency)
         {

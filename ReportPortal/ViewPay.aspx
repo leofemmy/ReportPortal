@@ -11,8 +11,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <dx:ASPxDocumentViewer ID="ASPxDocumentViewer1" runat="server" Height="1100px" Width="100%">
-            </dx:ASPxDocumentViewer>
+            <%--  <dx:ASPxDocumentViewer ID="ASPxDocumentViewer1" runat="server" Height="1100px" Width="100%">
+            </dx:ASPxDocumentViewer>--%>
+            <dx:ASPxWebDocumentViewer ID="ASPxWebDocumentViewer1" runat="server"></dx:ASPxWebDocumentViewer>
         </div>
     </form>
 </body>

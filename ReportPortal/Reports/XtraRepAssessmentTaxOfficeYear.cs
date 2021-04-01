@@ -1,8 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraReports.UI;
 using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
-using DevExpress.XtraReports.UI;
 using System.Windows.Forms;
 
 namespace ReportPortal.Reports

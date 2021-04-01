@@ -1,13 +1,8 @@
 ﻿using ReportPortal.Reports;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace ReportPortal
 {
@@ -53,7 +48,7 @@ namespace ReportPortal
 
             }
 
-            if (responses.Tables[0] != null && responses.Tables[0].Rows.Count >0)
+            if (responses.Tables[0] != null && responses.Tables[0].Rows.Count > 0)
             {
                 obj_Rpt.xrLabel10.Text = string.Format("From {0}  To: {1} ", vryearfrom, vryearto);
                 obj_Rpt.Report.DataSource = responses;

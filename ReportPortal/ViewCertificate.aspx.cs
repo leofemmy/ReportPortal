@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DevExpress.XtraReports.UI;
+using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Globalization;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using DevExpress.XtraReports.UI;
 
 namespace ReportPortal
 {
@@ -75,7 +69,7 @@ namespace ReportPortal
 
 
 
-           
+
 
             //self.xrlborghead.Text = strheader;
 
@@ -97,7 +91,7 @@ namespace ReportPortal
 
             var stringstin = Session["STIN"].ToString();
 
-        
+
             string strquery = String.Format("SELECT * FROM ViewCertificateInformation WHERE MerchantCode='{0}' AND PayerUtin= '{1}'", sessions.MerchantCode.ToString(), stringstin.ToString());
 
 

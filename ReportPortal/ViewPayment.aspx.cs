@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Globalization;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using DevExpress.XtraReports.Web;
 
 namespace ReportPortal
 {
@@ -42,19 +35,46 @@ namespace ReportPortal
             //var strat = Session["startdate1"].ToString();
             var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy");
 
-            //DateTime dt = DateTime.ParseExact(startdate, "dd/mm/yyyy", CultureInfo.InvariantCulture);
-            //DateTime dt2 = DateTime.ParseExact(enddate, "dd/mm/yyyy", CultureInfo.InvariantCulture);
-
-            //Console.WriteLine(dt.ToString("yyyy-MM-dd"));
-
-            //var gb = dt.ToString("yyyy-MM-dd");
-            //var gb2 = dt2.ToString("yyyy-MM-dd");
-
-            //XtraRepPayment obj_Rpt = new XtraRepPayment();
-
+       
             XtraRepPayment2 obj_Rpt = new XtraRepPayment2();
 
             SqlCommand _command; SqlDataAdapter _adp; System.Data.DataSet responses = new System.Data.DataSet();
+
+
+            if (sessions.MerchantCode.ToString() == "DTSS")
+            {
+                //obj_Rpt = "DELTA STATE GOVERNMENT";
+
+                obj_Rpt.xrPictureBox1.Visible = true;
+
+                obj_Rpt.xrPictureBox2.Visible = false;
+
+                obj_Rpt.xrPictureBox3.Visible = false;
+
+            }
+
+            if (sessions.MerchantCode.ToString() == "OGSS")
+            {
+                //strheader = "OGUN STATE GOVERNMENT";
+
+                obj_Rpt.xrPictureBox1.Visible = false;
+
+                obj_Rpt.xrPictureBox2.Visible = true;
+
+                obj_Rpt.xrPictureBox3.Visible = false;
+            }
+
+            if (sessions.MerchantCode.ToString() == "OYSS")
+            {
+                //strheader = "OYO STATE GOVERNMENT";
+
+                obj_Rpt.xrPictureBox1.Visible = false;
+
+                obj_Rpt.xrPictureBox2.Visible = false;
+
+                obj_Rpt.xrPictureBox3.Visible = true;
+            }
+
 
             string strquery = String.Format("SELECT * FROM ViewPayment WHERE PaymentDate BETWEEN '{0}' AND '{1}' and RevenueCode ='{2}'  ORDER BY PaymentDate ASC", startdate, enddate, strrevenue);
 

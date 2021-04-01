@@ -1,9 +1,6 @@
-﻿using System;
+﻿using DevExpress.XtraReports.UI;
 using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
 using System.Windows.Forms;
-using DevExpress.XtraReports.UI;
 
 namespace ReportPortal.Reports
 {
@@ -16,8 +13,8 @@ namespace ReportPortal.Reports
 
         private void xrTableCell1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
-            xrTableCell1.ForeColor=Color.Blue;
-            
+            xrTableCell1.ForeColor = Color.Blue;
+
         }
 
         private void xrTableCell1_PreviewMouseMove(object sender, PreviewMouseEventArgs e)

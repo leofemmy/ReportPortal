@@ -1,10 +1,4 @@
-﻿using System;
-using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
-using DevExpress.XtraReports.UI;
-
-namespace ReportPortal.Reports
+﻿namespace ReportPortal.Reports
 {
     public partial class XtraRepTccDetails2 : DevExpress.XtraReports.UI.XtraReport
     {
@@ -16,7 +10,7 @@ namespace ReportPortal.Reports
 
         private void groupHeaderBand1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
-            
+
         }
 
         private void groupHeaderBand1_BeforePrint_1(object sender, System.Drawing.Printing.PrintEventArgs e)

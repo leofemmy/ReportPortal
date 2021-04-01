@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace ReportPortal
@@ -105,7 +101,7 @@ namespace ReportPortal
             {
                 txtiddisplay.Visible = true;
 
-              if (Encodings.IsValidUser(String.Format("SELECT a.AssessmentYear, COUNT(DISTINCT a.AssessmentNo) AS Reccount, SUM(a.TaxPayable) TotalPayable, COUNT(DISTINCT CASE  WHEN a.IncomeSourceClassifyId = 1 THEN a.AssessmentNo END ) AS DA, COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 2 THEN a.AssessmentNo END) AS PA, COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 3 THEN  a.AssessmentNo END ) AS PN,COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 4 THEN a.AssessmentNo  END ) AS ST, COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 5 THEN a.AssessmentNo END ) AS NR, COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 6 THEN a.AssessmentNo END) AS UE,COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 7 THEN a.AssessmentNo END) AS DU, COALESCE(SUM( CASE WHEN a.IncomeSourceClassifyId = 1 THEN a.TaxPayable END), 0) DAAmount,COALESCE(SUM(CASE WHEN a.IncomeSourceClassifyId = 2 THEN a.TaxPayable END),0) PAAmount,COALESCE(SUM(CASE WHEN a.IncomeSourceClassifyId = 3 THEN a.TaxPayable END ), 0) PNAmount,COALESCE(SUM( CASE WHEN a.IncomeSourceClassifyId = 4 THEN a.TaxPayable END ),0 ) STAmount, COALESCE(SUM(CASE WHEN a.IncomeSourceClassifyId = 5 THEN a.TaxPayable END),0) NRAmount,COALESCE(SUM( CASE WHEN a.IncomeSourceClassifyId = 6 THEN a.TaxPayable END),0) UEAmount,COALESCE(SUM( CASE WHEN a.IncomeSourceClassifyId = 7 THEN a.TaxPayable END),0) DUAmount FROM ViewAssessmentInfor a WHERE a.AssessmentYear BETWEEN {0} AND {1} GROUP BY AssessmentYear ORDER BY AssessmentYear ASC", ddlyear.SelectedValue, ddlto.SelectedValue)))
+                if (Encodings.IsValidUser(String.Format("SELECT a.AssessmentYear, COUNT(DISTINCT a.AssessmentNo) AS Reccount, SUM(a.TaxPayable) TotalPayable, COUNT(DISTINCT CASE  WHEN a.IncomeSourceClassifyId = 1 THEN a.AssessmentNo END ) AS DA, COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 2 THEN a.AssessmentNo END) AS PA, COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 3 THEN  a.AssessmentNo END ) AS PN,COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 4 THEN a.AssessmentNo  END ) AS ST, COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 5 THEN a.AssessmentNo END ) AS NR, COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 6 THEN a.AssessmentNo END) AS UE,COUNT(DISTINCT CASE WHEN a.IncomeSourceClassifyId = 7 THEN a.AssessmentNo END) AS DU, COALESCE(SUM( CASE WHEN a.IncomeSourceClassifyId = 1 THEN a.TaxPayable END), 0) DAAmount,COALESCE(SUM(CASE WHEN a.IncomeSourceClassifyId = 2 THEN a.TaxPayable END),0) PAAmount,COALESCE(SUM(CASE WHEN a.IncomeSourceClassifyId = 3 THEN a.TaxPayable END ), 0) PNAmount,COALESCE(SUM( CASE WHEN a.IncomeSourceClassifyId = 4 THEN a.TaxPayable END ),0 ) STAmount, COALESCE(SUM(CASE WHEN a.IncomeSourceClassifyId = 5 THEN a.TaxPayable END),0) NRAmount,COALESCE(SUM( CASE WHEN a.IncomeSourceClassifyId = 6 THEN a.TaxPayable END),0) UEAmount,COALESCE(SUM( CASE WHEN a.IncomeSourceClassifyId = 7 THEN a.TaxPayable END),0) DUAmount FROM ViewAssessmentInfor a WHERE a.AssessmentYear BETWEEN {0} AND {1} GROUP BY AssessmentYear ORDER BY AssessmentYear ASC", ddlyear.SelectedValue, ddlto.SelectedValue)))
                 {
                     Response.Write("<script>");
                     Response.Write("window.open('ViewAssessmentYearSummary.aspx' ,'_blank')");

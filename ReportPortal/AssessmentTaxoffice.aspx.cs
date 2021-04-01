@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace ReportPortal
@@ -29,7 +25,7 @@ namespace ReportPortal
                 loadAssementTaxofice();
             }
         }
-    
+
         void loadAssementTaxofice()
         {
             SqlCommand _command; SqlDataAdapter _adp; System.Data.DataSet responses = new System.Data.DataSet();
@@ -58,7 +54,7 @@ namespace ReportPortal
                 ddlRevenue.Items.Insert(0, new ListItem("--- Select Revenue / Tax Office ---", "0"));
             }
         }
-       
+
         void loadAssementyear()
         {
             //ViewAgency

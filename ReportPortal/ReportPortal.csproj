@@ -144,6 +144,7 @@
     <Content Include="Logo\ogunlogo.jpg" />
     <Content Include="Logo\oyostate logo.jpg" />
     <Content Include="Normalisation.aspx" />
+    <Content Include="Organization.aspx" />
     <Content Include="Payer.aspx" />
     <Content Include="Payerledger.aspx" />
     <Content Include="Payment.aspx" />
@@ -921,6 +922,7 @@
     <Content Include="TCCLineSummaryTaxoffice.aspx" />
     <Content Include="TccLineYearSummary.aspx" />
     <Content Include="TccYearSummary.aspx" />
+    <Content Include="TrendAnalysis.aspx" />
     <Content Include="userreport.aspx" />
     <Content Include="Users.aspx" />
     <Content Include="ViewAssessmentCummulativeSummary.aspx" />
@@ -1227,6 +1229,13 @@
     </Compile>
     <Compile Include="Normalisation.aspx.designer.cs">
       <DependentUpon>Normalisation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Organization.aspx.cs">
+      <DependentUpon>Organization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Organization.aspx.designer.cs">
+      <DependentUpon>Organization.aspx</DependentUpon>
     </Compile>
     <Compile Include="Payer.aspx.cs">
       <DependentUpon>Payer.aspx</DependentUpon>
@@ -1623,6 +1632,13 @@
     </Compile>
     <Compile Include="TccYearSummary.aspx.designer.cs">
       <DependentUpon>TccYearSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrendAnalysis.aspx.cs">
+      <DependentUpon>TrendAnalysis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrendAnalysis.aspx.designer.cs">
+      <DependentUpon>TrendAnalysis.aspx</DependentUpon>
     </Compile>
     <Compile Include="userreport.aspx.cs">
       <DependentUpon>userreport.aspx</DependentUpon>

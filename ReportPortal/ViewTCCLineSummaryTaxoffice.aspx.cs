@@ -1,13 +1,8 @@
 ﻿using ReportPortal.Reports;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace ReportPortal
 {
@@ -34,7 +29,7 @@ namespace ReportPortal
             var vryearfrom = Session["Fromyear"].ToString();
 
             var vryearto = Session["Toyear"].ToString();
-            
+
             var vroffice = Session["Revenueoffice"].ToString();
 
             XtraRepTccLineYearSummary obj_Rpt = new XtraRepTccLineYearSummary();
@@ -70,7 +65,7 @@ namespace ReportPortal
 
 
         }
-       
+
         [System.Web.Services.WebMethod]
         public static void loadchildreport(string stin)
         {

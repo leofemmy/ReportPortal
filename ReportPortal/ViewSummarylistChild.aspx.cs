@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ReportPortal.Reports;
+using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Globalization;
-using System.Linq;
-using System.Web;
 using System.Web.Services;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using DevExpress.XtraRichEdit.Import.OpenXml;
-using ReportPortal.Reports;
 
 namespace ReportPortal
 {

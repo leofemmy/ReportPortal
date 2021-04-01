@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ReportPortal {
-    
-    
-    public partial class ViewAgent {
-        
+namespace ReportPortal
+{
+
+
+    public partial class ViewAgent
+    {
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,14 +22,14 @@ namespace ReportPortal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
-        /// ASPxDocumentViewer1 control.
+        /// ASPxWebDocumentViewer1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.XtraReports.Web.ASPxDocumentViewer ASPxDocumentViewer1;
+        protected global::DevExpress.XtraReports.Web.ASPxWebDocumentViewer ASPxWebDocumentViewer1;
     }
 }

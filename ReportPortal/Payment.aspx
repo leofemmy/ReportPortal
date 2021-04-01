@@ -4,6 +4,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Content/css/select2.min.css" rel="stylesheet" />
+    <link href="plugins/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet" />
     <!-- Date picker plugins css -->
     <%--    <link href="plugins/vendors/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />--%>
 </asp:Content>
@@ -53,7 +54,7 @@
                                 <div class="col-sm-offset-2 col-sm-10">
                                     <asp:Button ID="btnpreview" runat="server" Text="Preview" class="btn btn-primary btn-anim text-uppercas" OnClick="btnpreview_OnClick" />
                                 </div>
-                                <asp:Label runat="server" ID="txtiddisplay" Text="You need to enable your browser pop-Up at the top right corner to view the report" ForeColor="red" Visible="False"></asp:Label>
+                                <asp:Label runat="server" ID="txtiddisplay" Text="You need to enable your browser pop-Up at the top right corner to view the report" ForeColor="red" Visible="False" style="text-align: right;"></asp:Label>
                             </div>
 
                         </form>

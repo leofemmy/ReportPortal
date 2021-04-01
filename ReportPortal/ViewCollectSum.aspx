@@ -2,6 +2,8 @@
 
 <%@ Register Assembly="DevExpress.XtraReports.v20.2.Web.WebForms, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraReports.Web" TagPrefix="dx" %>
 
+<%--<%@ Register Assembly="DevExpress.XtraReports.v20.2.Web.WebForms, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraReports.Web" TagPrefix="dx" %>--%>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -21,9 +23,9 @@
         <div>
             <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
             </asp:ScriptManager>
-            <dx:ASPxWebDocumentViewer ID="ASPxWebDocumentViewer1" runat="server">
-                <%--   <ClientSideEvents PreviewClick="previewClick" />--%>
-            </dx:ASPxWebDocumentViewer>
+
+            <%-- <dx:ASPxWebDocumentViewer ID="ASPxWebDocumentViewer1" runat="server">
+            </dx:ASPxWebDocumentViewer>--%><dx:ASPxWebDocumentViewer ID="ASPxWebDocumentViewer1" runat="server"></dx:ASPxWebDocumentViewer>
         </div>
     </form>
 </body>

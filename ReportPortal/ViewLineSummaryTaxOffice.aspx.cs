@@ -1,13 +1,8 @@
 ﻿using ReportPortal.Reports;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace ReportPortal
 {
@@ -60,7 +55,7 @@ namespace ReportPortal
                 ASPxWebDocumentViewer1.OpenReport(obj_Rpt);
             }
         }
-      
+
         [System.Web.Services.WebMethod]
         public static void loadchildreport(string stin)
         {
@@ -80,6 +75,6 @@ namespace ReportPortal
 
         }
 
-       
+
     }
 }
