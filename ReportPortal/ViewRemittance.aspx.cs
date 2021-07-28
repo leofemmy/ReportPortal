@@ -33,9 +33,9 @@ namespace ReportPortal
 
             var enddate = Session["Enddate"].ToString();
 
-            var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("dd/MM/yyyy");
+            var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("yyyy/MM/dd");
 
-            var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy");
+            var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("yyyy/MM/dd");
 
             //var strrevenueofficeid = Session["RevenueofficeID"].ToString();
 
@@ -81,7 +81,7 @@ namespace ReportPortal
             obj_Rpt.xrlborghead.Text = strheader;
             obj_Rpt.xrlbsubHead.Text = string.Format("INTERNAL REVENUE SERVICE");
 
-            string strquery = String.Format("SELECT PayerID, TaxAgentUtin, TaxAgentName,  address,  PaymentRefNumber, Amount, RevenueOfficeID, RevenueOfficeName, RevenueCode,  PaymentDate,AgencyName,BankName FROM vwRemittance WHERE PaymentDate BETWEEN '{0}' AND '{1}' AND TaxAgentUtin IN ({2}) ORDER BY TaxAgentName ASC", startdate, enddate, strrevenue);
+            string strquery = String.Format("SELECT PayerID, TaxAgentUtin, TaxAgentName,  address,  PaymentRefNumber, Amount, RevenueOfficeID, RevenueOfficeName, RevenueCode,  PaymentDate,AgencyName,BankName FROM vwRemittance WHERE PaymentDate BETWEEN '{0}' AND '{1}' AND TaxAgentUtin IN ({2}) ORDER BY TaxAgentName ASC", strat, end, strrevenue);
 
             using (SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["Registration2ConnectionString"].ConnectionString))
             {

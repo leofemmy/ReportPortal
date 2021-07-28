@@ -19,6 +19,8 @@ namespace ReportPortal
 
         protected void btnpreview_OnClick(object sender, EventArgs e)
         {
+            txtiddisplay.Visible = true;
+
             if (string.IsNullOrWhiteSpace(txtstartdate.Text.ToString()) || string.IsNullOrWhiteSpace(txtenddate.Text.ToString()))
             {
                 this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Criteria is Empty !', 'error');", true);

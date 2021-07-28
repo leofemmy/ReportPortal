@@ -35,9 +35,9 @@ namespace ReportPortal
 
             var enddate = Session["Enddate"].ToString();
 
-            var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("dd/MM/yyyy");
+            var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("yyyy/MM/dd");
 
-            var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy");
+            var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("yyyy/MM/dd");
 
             XtraRepYear obj_Rpt = new XtraRepYear();
 
@@ -80,7 +80,7 @@ namespace ReportPortal
             obj_Rpt.xrlbsubHead.Text = string.Format("INTERNAL REVENUE SERVICE");
             //obj_Rpt.xrLabel3.Text = string.Format("From {0:dd/MM/yyyy}  To {1:dd/MM/yyyy}", strat, end);
 
-            string strquery = String.Format("SELECT AgencyName,AgencyCode,SUM(Amount) Amount,DATEPART(YEAR,PaymentDate) Year FROM vwCollectionRaw WHERE PaymentDate BETWEEN '{0}' AND '{1}' AND AgencyCode IN ({2}) GROUP BY AgencyName,AgencyCode,DATEPART(YEAR,PaymentDate) ORDER BY AgencyName ASC", startdate, enddate, strrevenue);
+            string strquery = String.Format("SELECT AgencyName,AgencyCode,SUM(Amount) Amount,DATEPART(YEAR,PaymentDate) Year FROM vwCollectionRaw WHERE PaymentDate BETWEEN '{0}' AND '{1}' AND AgencyCode IN ({2}) GROUP BY AgencyName,AgencyCode,DATEPART(YEAR,PaymentDate) ORDER BY AgencyName ASC", strat, end, strrevenue);
 
             using (SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["Registration2ConnectionString"].ConnectionString))
             {

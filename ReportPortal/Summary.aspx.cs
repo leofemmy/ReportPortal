@@ -21,15 +21,20 @@ namespace ReportPortal
         {
             txtiddisplay.Visible = true;
 
-            if (string.IsNullOrWhiteSpace(txtstartdate.Text.ToString()) || string.IsNullOrWhiteSpace(txtenddate.Text.ToString()))
+            if (string.IsNullOrWhiteSpace(txtstartdate.Text.ToString()))
             {
-                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Criteria is Empty !', 'error');", true);
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Start Date is Empty !', 'error');", true);
+            }
+            else if (string.IsNullOrWhiteSpace(txtenddate.Text.ToString()))
+            {
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! End Date is Empty !', 'error');", true);
             }
             else if (Convert.ToDateTime(txtenddate.Text.ToString()) < Convert.ToDateTime(txtstartdate.Text.ToString()))
             {
                 //Encodings.MsgBox("End Date Greater Than Start Date !", this.Page, this);
                 this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! End Date Greater Than Start Date !', 'error');", true);
             }
+
             else
             {
                 Session["Startdate"] = txtstartdate.Text.ToString();

@@ -13,11 +13,15 @@
     <meta name="keywords" content="admin, admin dashboard, report portal" />
     <meta name="author" content="SRGIT" />
 
+    <!-- jQuery -->
+    <script src="<%:ResolveUrl("~/plugins/vendors/bower_components/jquery/dist/jquery.min.js") %>"></script>
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="<%:ResolveUrl("~/plugins/assets/img/favicon/favicon.png") %>">
     <link rel="icon" href="<%:ResolveUrl("~/plugins/assets/img/favicon/favicon.png") %>" type="image/x-icon">
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.js"></script>
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.css"
         rel="stylesheet" type="text/css" />
 
@@ -96,6 +100,7 @@
                 </a>
                     <ul id="ui_element" class="collapse collapse-level-1">
                         <li><a href="<%:ResolveUrl("~/Payment.aspx") %>" class="active">Payment </a></li>
+                        <li><a href="<%:ResolveUrl("~/Normalized.aspx") %>" class="active">Normalized Payment </a></li>
                     </ul>
                 </li>
                 <li id="pagescollection" runat="server"><a href="javascript:void(0);" data-toggle="collapse" data-target="#pages_drs">
@@ -106,7 +111,7 @@
                     <ul id="pages_drs" class="collapse collapse-level-1 two-col-list">
                         <li><a href="<%:ResolveUrl("~/CollectionSummary.aspx") %>">Summary</a> </li>
                         <li><a href="<%:ResolveUrl("~/CollectionRanking.aspx") %>">Agent Ranking</a> </li>
-                        <li><a href="<%:ResolveUrl("~/Remittance.aspx") %>">Agent Remittance Statement</a> </li>
+                        <li><a href="<%:ResolveUrl("~/Remit.aspx") %>">Agent Remittance Statement</a> </li>
                         <li><a href="<%:ResolveUrl("~/Business.aspx") %>">Business Sector</a> </li>
                         <li><a href="<%:ResolveUrl("~/Normalisation.aspx") %>">Payment Normalisation</a> </li>
                         <li><a href="<%:ResolveUrl("~/Year.aspx") %>">Collection Year</a> </li>
@@ -118,7 +123,7 @@
                     <div class="clearfix"></div>
                 </a>
                     <ul id="pages_drstor" class="collapse collapse-level-1 two-col-list">
-                        <%--<li><a href="<%:ResolveUrl("#") %>">Tax Defaulter Report</a> </li>--%>
+                        <li><a href="<%:ResolveUrl("~/Defaulter.aspx") %>">Tax Defaulter Report</a> </li>
                         <li><a href="<%:ResolveUrl("~/TrendAnalysis.aspx") %>">Trend Analysis</a> </li>
 
                     </ul>
@@ -213,8 +218,8 @@
         <!-- /Main Content -->
     </div>
 
-    <!-- jQuery -->
-    <script src="<%:ResolveUrl("~/plugins/vendors/bower_components/jquery/dist/jquery.min.js") %>"></script>
+
+
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<%:ResolveUrl("~/plugins/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js") %>"></script>

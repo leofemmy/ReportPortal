@@ -30,10 +30,46 @@ namespace ReportPortal
             var varofficename = Session["Revenueoffice"].ToString();
 
             //var varyear = Session["TaxYear"].ToString();
+            string strheader = String.Empty;
 
             XtraRepTccDetails2 obj_Rpt = new XtraRepTccDetails2();
 
             SqlCommand _command; SqlDataAdapter _adp; System.Data.DataSet responses = new System.Data.DataSet();
+
+            if (sessions.MerchantCode.ToString() == "DTSS")
+            {
+                strheader = "DELTA STATE GOVERNMENT";
+
+                obj_Rpt.xrPictureBox1.Visible = true;
+
+                obj_Rpt.xrPictureBox2.Visible = false;
+
+                obj_Rpt.xrPictureBox3.Visible = false;
+
+            }
+
+            if (sessions.MerchantCode.ToString() == "OGSS")
+            {
+                strheader = "OGUN STATE GOVERNMENT";
+
+                obj_Rpt.xrPictureBox1.Visible = false;
+
+                obj_Rpt.xrPictureBox2.Visible = true;
+
+                obj_Rpt.xrPictureBox3.Visible = false;
+            }
+
+            if (sessions.MerchantCode.ToString() == "OYSS")
+            {
+                strheader = "OYO STATE GOVERNMENT";
+
+                obj_Rpt.xrPictureBox1.Visible = false;
+
+                obj_Rpt.xrPictureBox2.Visible = false;
+
+                obj_Rpt.xrPictureBox3.Visible = true;
+            }
+
 
             string strquery = String.Format("SELECT * FROM dbo.ViewTccDetailsInfors WHERE YEAR(IssuedDate) BETWEEN {0} AND {1} AND RevenueOfficeName='{2}' ORDER BY PayerName ASC, TccNo ASC, TaxYear DESC", vryearfrom, vryearto, varofficename);
 

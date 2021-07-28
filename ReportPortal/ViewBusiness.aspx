@@ -10,18 +10,20 @@
     <script type="text/javascript" id="script">
         function previewClick(s, e) {
 
-            e.Brick && alert(e.GetBrickText())
+          /*  e.Brick && alert(e.GetBrickText())*/
 
             if (e.Brick.text() != null) {
                 PageMethods.LoadDetailsReport(e.Brick.text(), onSuccess, onFailure);
-                window.location.href = "ViewBusinessdetails.aspx"
+                window.location.href = "ViewBusinessdetails.aspx";
             }
         }
         function onSuccess(result, usercontext, methodname) {
-            alert(result)
+            //alert(result);
         }
 
-        function onFailure(error, usercontext, methodname) { alert("failed: " + error.get_message()); }
+        function onFailure(error, usercontext, methodname) {
+           /*  alert("failed: " + error.get_message());*/
+        }
     </script>
 </head>
 <body>

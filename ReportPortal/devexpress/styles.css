@@ -1,0 +1,5 @@
+﻿#gridContainer {
+    display: inline-block;
+    margin-right: 5px;
+    max-height: 800px;
+}

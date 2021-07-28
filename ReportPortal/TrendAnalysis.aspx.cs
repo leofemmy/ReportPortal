@@ -9,7 +9,7 @@ namespace ReportPortal
 {
     public partial class TrendAnalysis : System.Web.UI.Page
     {
-        SessionManager sessions = null;
+        SessionManager sessions = null; string strvalue = String.Empty; int j = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -99,6 +99,93 @@ namespace ReportPortal
                 gridOffence.DataBind();
             }
 
+        }
+
+        protected void btnpreview_OnClick(object sender, EventArgs e)
+        {
+            int totalCount = gridOffence.Rows.Cast<GridViewRow>()
+                .Count(r => ((CheckBox)r.FindControl("CheckBox1")).Checked);
+
+            if (string.IsNullOrWhiteSpace(txtstartdate.Text.ToString()) || string.IsNullOrWhiteSpace(txtenddate.Text.ToString()))
+            {
+                //Encodings.MsgBox("! Criteria is Empty !", this.Page, this);
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Criteria is Empty !', 'error');", true);
+            }
+            else if (Convert.ToDateTime(txtenddate.Text.ToString()) < Convert.ToDateTime(txtstartdate.Text.ToString()))
+            {
+                //Encodings.MsgBox("End Date Greater Than Start Date !", this.Page, this);
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! End Date Greater Than Start Date !', 'error');", true);
+            }
+            else if (ddlRevenue.Items.Count == 0)
+            {
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Select Revenue Type !', 'error');", true);
+            }
+            else
+            {
+                var str = ddlRevenue.SelectedItem.ToString();
+
+                foreach (GridViewRow row in gridOffence.Rows)
+                {
+                    CheckBox chk = (CheckBox)row.FindControl("CheckBox1");
+
+                    Label lbltin = (Label)row.FindControl("lbltin");
+
+                    if (chk != null & chk.Checked)
+                    {
+                        strvalue += String.Format("{0}", lbltin.Text);
+
+                        if (j + 1 < totalCount)
+                        {
+                            strvalue += ",";
+                            ++j;
+                        }
+                    }
+
+                }
+
+                txtiddisplay.Visible = true;
+
+                Session["RevenueTypecode"] = ddlRevenue.Text.ToString();
+
+                Session["RevenueTypeName"] = ddlRevenue.SelectedItem.ToString();
+
+                Session["Startdate"] = txtstartdate.Text.ToString();
+
+                Session["Enddate"] = txtenddate.Text.ToString();
+
+                Session["startdate1"] = Convert.ToDateTime(txtstartdate.Text.ToString());
+
+                Session["Enddate1"] = Convert.ToDateTime(txtenddate.Text.ToString());
+
+                Session["RevenueOfficeID"] = strvalue;
+
+                var strrevenue = Session["RevenueOfficeID"].ToString();
+
+                var strrevennuetypecode = Session["RevenueTypecode"].ToString();
+
+                var startdate = Session["Startdate"].ToString();
+
+                var enddate = Session["Enddate"].ToString();
+
+                var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("dd/MM/yyyy");
+
+                var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy");
+
+                if (Encodings.IsValidUser(String.Format(
+                    "SELECT OrganizationName,TaxAgentTIN,RevenueOfficeID,RevenueOfficeName, Months, SUM(Amount) Amount FROM  vwTrend WHERE PaymentDate BETWEEN '{0}' AND '{1}' AND RevenueOfficeID IN ({2}) AND RevenueCode= '{3}' GROUP BY OrganizationName, TaxAgentTIN, RevenueOfficeID,RevenueOfficeName, Months ORDER BY OrganizationName ASC",
+                    startdate, enddate, strrevenue, strrevennuetypecode)))
+                {
+                    Response.Write("<script>");
+                    Response.Write("window.open('ViewTrend.aspx' ,'_blank')");
+                    Response.Write("</script>");
+                }
+                else
+                {
+                    this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', ' No Record Found for the Selected Range !', 'info');", true);
+                }
+
+
+            }
         }
     }
 }

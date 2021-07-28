@@ -33,6 +33,8 @@ namespace ReportPortal
         {
             sessions = new SessionManager();
 
+            string value = ConfigurationManager.AppSettings["Doperations"].ToString();
+
             XtraRepCertifi certifi = new XtraRepCertifi();
 
             if (sessions.MerchantCode.ToString() == "DTSS")
@@ -77,6 +79,8 @@ namespace ReportPortal
             certifi.xrLabel16.Text = strheader;
             certifi.DataSource = dts();
             certifi.DataMember = "ViewCertificateInformation";
+
+            certifi.xrLabel19.Text = value;
 
             certifi.CreateDocument();
 

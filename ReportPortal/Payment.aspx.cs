@@ -41,9 +41,13 @@ namespace ReportPortal
             {
                 this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Criteria is Empty !', 'error');", true); return;
             }
-            else if (string.IsNullOrWhiteSpace(txtstartdate.Text.ToString()) && string.IsNullOrWhiteSpace(txtenddate.Text.ToString()))
+            else if (string.IsNullOrWhiteSpace(txtstartdate.Text.ToString()))
             {
-                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Criteria is Empty !', 'error');", true);
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! Start Date is Empty !', 'error');", true);
+            }
+            else if (string.IsNullOrWhiteSpace(txtenddate.Text.ToString()))
+            {
+                this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Report!', '! End Date is Empty !', 'error');", true);
             }
             else if (Convert.ToDateTime(txtenddate.Text.ToString()) < Convert.ToDateTime(txtstartdate.Text.ToString()))
             {
