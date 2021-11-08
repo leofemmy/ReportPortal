@@ -135,6 +135,7 @@
                 </a>
                     <ul id="pages_dr" class="collapse collapse-level-1 two-col-list">
                         <li class="navigation-header"><span>Assessment</span> <i class="mdi mdi-more"></i></li>
+                          <li><a href="<%:ResolveUrl("~/Assessmentdetails.aspx") %>">Details</a> </li>
                         <li><a href="<%:ResolveUrl("~/AssessmentCummulativeSummary.aspx") %>">Summary (Cummulative)</a> </li>
                         <li><a href="<%:ResolveUrl("~/AssessmentTaxOfficeYear.aspx") %>">Summary (Years)</a> </li>
                         <li><a href="<%:ResolveUrl("~/AssessmentYearSummary.aspx") %>">Tax Office Comparative </a></li>

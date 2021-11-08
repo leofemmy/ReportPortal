@@ -1,5 +1,4 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -23,6 +22,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,34 +43,53 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="CryptSharp, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CryptSharpOfficial.2.1.0.0\lib\CryptSharp.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.CodeParser.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Data.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DbExtensions, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DbExtensions.6.2.0\lib\net45\DbExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Pdf.v20.1.Drawing, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v20.1.Export, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.ASPxThemes.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.Resources.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Xpo.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v20.1.Web, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v20.1.Web.WebForms, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.2.Drawing, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.2.Export, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.2.Web, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.2.Web.WebForms, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -80,6 +99,15 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -88,10 +116,8 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -108,11 +134,14 @@
     <Content Include="CollectionSummary.aspx" />
     <Content Include="Content\css\select2.css" />
     <Content Include="Content\css\select2.min.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="CummulativeSummary.aspx" />
+    <Content Include="Defaulter.aspx" />
     <Content Include="DetailByYear.aspx" />
     <Content Include="DetailsbyAll.aspx" />
     <Content Include="Detailsbytaxoffice.aspx" />
     <Content Include="DetailsIndividual.aspx" />
+    <Content Include="devexpress\styles.css" />
     <Content Include="forgotpassword.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\american-express.png" />
@@ -144,6 +173,8 @@
     <Content Include="Logo\ogunlogo.jpg" />
     <Content Include="Logo\oyostate logo.jpg" />
     <Content Include="Normalisation.aspx" />
+    <Content Include="Normalized.aspx" />
+    <Content Include="Organization.aspx" />
     <Content Include="Payer.aspx" />
     <Content Include="Payerledger.aspx" />
     <Content Include="Payment.aspx" />
@@ -906,82 +937,14 @@
     <Content Include="plugins\vendors\bower_components\wizard\steps.css" />
     <Content Include="plugins\vendors\bower_components\wizard\steps.js" />
     <Content Include="plugins\vendors\jquery.sparkline\dist\jquery.sparkline.min.js" />
+    <Content Include="Remi.aspx" />
+    <Content Include="Remit.aspx" />
     <Content Include="Remittance.aspx" />
     <Content Include="ResetPassword.aspx" />
-    <Content Include="Summary.aspx" />
-    <Content Include="TaxOfficeSummary.aspx" />
-    <Content Include="TaxOfficeYear.aspx" />
-    <Content Include="TCCDetailByYear.aspx" />
-    <Content Include="TCCDetailsbyAll.aspx" />
-    <Content Include="TCCDetailsbytaxoffice.aspx" />
-    <Content Include="TCCDetailsIndividual.aspx" />
-    <Content Include="TCCGeneralSummaryTaxoffice.aspx" />
-    <Content Include="TccLineSummaryAll.aspx" />
-    <Content Include="TCCLineSummaryTaxoffice.aspx" />
-    <Content Include="TccLineYearSummary.aspx" />
-    <Content Include="TccYearSummary.aspx" />
-    <Content Include="userreport.aspx" />
-    <Content Include="Users.aspx" />
-    <Content Include="ViewAssessmentCummulativeSummary.aspx" />
-    <Content Include="ViewAssessmentCummulativeSummaryChild.aspx" />
-    <Content Include="ViewAssessmentCummulativeSummaryChildDetails.aspx" />
-    <Content Include="ViewAssessmentTaxOfficeYear.aspx" />
-    <Content Include="ViewAssessmentTaxOfficeYearChild.aspx" />
-    <Content Include="ViewAssessmentYearSummary.aspx" />
-    <Content Include="ViewAssessmentYearSummaryChild.aspx" />
-    <Content Include="ViewAssessmentYearSummaryChildDetails.aspx" />
-    <Content Include="ViewBusiness.aspx" />
-    <Content Include="ViewBusinessdetails.aspx" />
-    <Content Include="ViewCollectionRanking.aspx" />
-    <Content Include="ViewCollectSum.aspx" />
-    <Content Include="ViewCollectSumAgency.aspx" />
-    <Content Include="ViewCollectSummaryAgencyChild.aspx" />
-    <Content Include="ViewCollectSummaryChild.aspx" />
-    <Content Include="ViewCummulativeSummary.aspx" />
-    <Content Include="ViewCummulativeSummaryChild.aspx" />
-    <Content Include="ViewCummulativeSummaryChildDetails.aspx" />
-    <Content Include="ViewdetailByTaxOffice.aspx" />
-    <Content Include="ViewDetailByYear.aspx" />
-    <Content Include="ViewDetailsbyAll.aspx" />
-    <Content Include="ViewDetailsByIndividual.aspx" />
-    <Content Include="ViewLineSummaryAll.aspx" />
-    <Content Include="ViewLineSummaryAllChild.aspx" />
-    <Content Include="ViewLineSummaryChild.aspx" />
-    <Content Include="ViewLineSummaryTaxOffice.aspx" />
-    <Content Include="ViewNormalisation.aspx" />
-    <Content Include="ViewRemittance.aspx" />
-    <Content Include="ViewSummarylistChild.aspx" />
-    <Content Include="ViewSummarySelfemploye.aspx" />
-    <Content Include="ViewSummarySelfemployedetails.aspx" />
-    <Content Include="ViewSummaryTaxAgent.aspx" />
-    <Content Include="ViewSummaryTaxAgentdetails.aspx" />
-    <Content Include="ViewTaxofficeLinesummary.aspx" />
-    <Content Include="ViewTaxOfficeSummary.aspx" />
-    <Content Include="ViewTaxOfficeYear.aspx" />
-    <Content Include="ViewTaxOfficeYearChild.aspx" />
-    <Content Include="ViewTCCDetailByYear.aspx" />
-    <Content Include="ViewTCCDetailsbyAll.aspx" />
-    <Content Include="ViewTCCDetailsbytaxoffice.aspx" />
-    <Content Include="ViewTCCDetailsIndividual.aspx" />
-    <Content Include="ViewTCCGeneralSummaryTaxoffice.aspx" />
-    <Content Include="ViewTCCGeneralSummaryTaxofficeChild.aspx" />
-    <Content Include="ViewTccLineSummaryAll.aspx" />
-    <Content Include="ViewTccLineSummaryAllChild.aspx" />
-    <Content Include="ViewTCCLineSummaryTaxoffice.aspx" />
-    <Content Include="ViewTCCLineSummaryTaxofficeChild.aspx" />
-    <Content Include="ViewTccLineYearSummary.aspx" />
-    <Content Include="ViewTccLineYearSummaryChild.aspx" />
-    <Content Include="ViewTccYearSummary.aspx" />
-    <Content Include="ViewTccYearSummaryChild.aspx" />
-    <Content Include="ViewTccYearSummaryChildDetails.aspx" />
-    <Content Include="ViewYear.aspx" />
-    <Content Include="ViewYearLineSummary.aspx" />
-    <Content Include="ViewYearSummary.aspx" />
-    <Content Include="VwSummary.aspx" />
-    <Content Include="Year.aspx" />
-    <Content Include="YearlineSummaryViewChild.aspx" />
-    <Content Include="YearSummary.aspx" />
-    <None Include="Scripts\jquery-1.7-vsdoc.js" />
+    <Content Include="devexpress\jslib\dxiconsmaterial.woff2" />
+    <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="Scripts\dx.aspnet.data.js" />
+    <Content Include="Scripts\dx.aspnet.data.min.js" />
     <Content Include="Scripts\i18n\af.js" />
     <Content Include="Scripts\i18n\ar.js" />
     <Content Include="Scripts\i18n\az.js" />
@@ -1041,10 +1004,92 @@
     <Content Include="Scripts\i18n\vi.js" />
     <Content Include="Scripts\i18n\zh-CN.js" />
     <Content Include="Scripts\i18n\zh-TW.js" />
-    <Content Include="Scripts\jquery-1.7.js" />
-    <Content Include="Scripts\jquery-1.7.min.js" />
+    <Content Include="Scripts\jquery-3.6.0.js" />
+    <Content Include="Scripts\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
     <Content Include="Scripts\select2.js" />
     <Content Include="Scripts\select2.min.js" />
+    <Content Include="Summary.aspx" />
+    <Content Include="TaxOfficeSummary.aspx" />
+    <Content Include="TaxOfficeYear.aspx" />
+    <Content Include="TCCDetailByYear.aspx" />
+    <Content Include="TCCDetailsbyAll.aspx" />
+    <Content Include="TCCDetailsbytaxoffice.aspx" />
+    <Content Include="TCCDetailsIndividual.aspx" />
+    <Content Include="TCCGeneralSummaryTaxoffice.aspx" />
+    <Content Include="TccLineSummaryAll.aspx" />
+    <Content Include="TCCLineSummaryTaxoffice.aspx" />
+    <Content Include="TccLineYearSummary.aspx" />
+    <Content Include="TccYearSummary.aspx" />
+    <Content Include="TrendAnalysis.aspx" />
+    <Content Include="userreport.aspx" />
+    <Content Include="Users.aspx" />
+    <Content Include="ViewAssessmentCummulativeSummary.aspx" />
+    <Content Include="ViewAssessmentCummulativeSummaryChild.aspx" />
+    <Content Include="ViewAssessmentCummulativeSummaryChildDetails.aspx" />
+    <Content Include="ViewAssessmentTaxOfficeYear.aspx" />
+    <Content Include="ViewAssessmentTaxOfficeYearChild.aspx" />
+    <Content Include="ViewAssessmentYearSummary.aspx" />
+    <Content Include="ViewAssessmentYearSummaryChild.aspx" />
+    <Content Include="ViewAssessmentYearSummaryChildDetails.aspx" />
+    <Content Include="ViewBusiness.aspx" />
+    <Content Include="ViewBusinessdetails.aspx" />
+    <Content Include="ViewCollectionRanking.aspx" />
+    <Content Include="ViewCollectSum.aspx" />
+    <Content Include="ViewCollectSumAgency.aspx" />
+    <Content Include="ViewCollectSummaryAgencyChild.aspx" />
+    <Content Include="ViewCollectSummaryChild.aspx" />
+    <Content Include="ViewCummulativeSummary.aspx" />
+    <Content Include="ViewCummulativeSummaryChild.aspx" />
+    <Content Include="ViewCummulativeSummaryChildDetails.aspx" />
+    <Content Include="ViewDefaulter.aspx" />
+    <Content Include="ViewdetailByTaxOffice.aspx" />
+    <Content Include="ViewDetailByYear.aspx" />
+    <Content Include="ViewDetailsbyAll.aspx" />
+    <Content Include="ViewDetailsByIndividual.aspx" />
+    <Content Include="ViewLineSummaryAll.aspx" />
+    <Content Include="ViewLineSummaryAllChild.aspx" />
+    <Content Include="ViewLineSummaryChild.aspx" />
+    <Content Include="ViewLineSummaryTaxOffice.aspx" />
+    <Content Include="ViewNormalisation.aspx" />
+    <Content Include="ViewNormalized.aspx" />
+    <Content Include="ViewNormalizedAgency.aspx" />
+    <Content Include="ViewNormalizeddetails.aspx" />
+    <Content Include="ViewNormalizedRevnue.aspx" />
+    <Content Include="ViewRemittance.aspx" />
+    <Content Include="ViewSummarylistChild.aspx" />
+    <Content Include="ViewSummarySelfemploye.aspx" />
+    <Content Include="ViewSummarySelfemployedetails.aspx" />
+    <Content Include="ViewSummaryTaxAgent.aspx" />
+    <Content Include="ViewSummaryTaxAgentdetails.aspx" />
+    <Content Include="ViewTaxofficeLinesummary.aspx" />
+    <Content Include="ViewTaxOfficeSummary.aspx" />
+    <Content Include="ViewTaxOfficeYear.aspx" />
+    <Content Include="ViewTaxOfficeYearChild.aspx" />
+    <Content Include="ViewTCCDetailByYear.aspx" />
+    <Content Include="ViewTCCDetailsbyAll.aspx" />
+    <Content Include="ViewTCCDetailsbytaxoffice.aspx" />
+    <Content Include="ViewTCCDetailsIndividual.aspx" />
+    <Content Include="ViewTCCGeneralSummaryTaxoffice.aspx" />
+    <Content Include="ViewTCCGeneralSummaryTaxofficeChild.aspx" />
+    <Content Include="ViewTccLineSummaryAll.aspx" />
+    <Content Include="ViewTccLineSummaryAllChild.aspx" />
+    <Content Include="ViewTCCLineSummaryTaxoffice.aspx" />
+    <Content Include="ViewTCCLineSummaryTaxofficeChild.aspx" />
+    <Content Include="ViewTccLineYearSummary.aspx" />
+    <Content Include="ViewTccLineYearSummaryChild.aspx" />
+    <Content Include="ViewTccYearSummary.aspx" />
+    <Content Include="ViewTccYearSummaryChild.aspx" />
+    <Content Include="ViewTccYearSummaryChildDetails.aspx" />
+    <Content Include="ViewTrend.aspx" />
+    <Content Include="ViewYear.aspx" />
+    <Content Include="ViewYearLineSummary.aspx" />
+    <Content Include="ViewYearSummary.aspx" />
+    <Content Include="VwSummary.aspx" />
+    <Content Include="Year.aspx" />
+    <Content Include="YearlineSummaryViewChild.aspx" />
+    <Content Include="YearSummary.aspx" />
     <Content Include="Self.aspx" />
     <Content Include="Signup.aspx" />
     <Content Include="ViewAgent.aspx" />
@@ -1075,6 +1120,9 @@
     <Compile Include="Agent.aspx.designer.cs">
       <DependentUpon>Agent.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="AssessmentCummulativeSummary.aspx.cs">
       <DependentUpon>AssessmentCummulativeSummary.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1138,12 +1186,23 @@
     <Compile Include="CollectionSummary.aspx.designer.cs">
       <DependentUpon>CollectionSummary.aspx</DependentUpon>
     </Compile>
+    <Compile Include="controller\AgentsController.cs" />
+    <Compile Include="controller\RevenueOfficeController.cs" />
+    <Compile Include="controller\StudentController.cs" />
     <Compile Include="CummulativeSummary.aspx.cs">
       <DependentUpon>CummulativeSummary.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CummulativeSummary.aspx.designer.cs">
       <DependentUpon>CummulativeSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\Defulter.cs" />
+    <Compile Include="Defaulter.aspx.cs">
+      <DependentUpon>Defaulter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Defaulter.aspx.designer.cs">
+      <DependentUpon>Defaulter.aspx</DependentUpon>
     </Compile>
     <Compile Include="DetailByYear.aspx.cs">
       <DependentUpon>DetailByYear.aspx</DependentUpon>
@@ -1227,6 +1286,20 @@
     <Compile Include="Normalisation.aspx.designer.cs">
       <DependentUpon>Normalisation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Normalized.aspx.cs">
+      <DependentUpon>Normalized.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Normalized.aspx.designer.cs">
+      <DependentUpon>Normalized.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Organization.aspx.cs">
+      <DependentUpon>Organization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Organization.aspx.designer.cs">
+      <DependentUpon>Organization.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Payer.aspx.cs">
       <DependentUpon>Payer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1256,6 +1329,20 @@
       <DependentUpon>PortalSite.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Remi.aspx.cs">
+      <DependentUpon>Remi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Remi.aspx.designer.cs">
+      <DependentUpon>Remi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remit.aspx.cs">
+      <DependentUpon>Remit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Remit.aspx.designer.cs">
+      <DependentUpon>Remit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Remittance.aspx.cs">
       <DependentUpon>Remittance.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1341,6 +1428,12 @@
     <Compile Include="Reports\XtraRepCummulativeSummaryChild.Designer.cs">
       <DependentUpon>XtraRepCummulativeSummaryChild.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\XtraRepDefaulter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepDefaulter.Designer.cs">
+      <DependentUpon>XtraRepDefaulter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\XtraRepEmployedPA.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1352,6 +1445,30 @@
     </Compile>
     <Compile Include="Reports\XtraRepNormalisation.Designer.cs">
       <DependentUpon>XtraRepNormalisation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepNormalisedAgency.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepNormalisedAgency.Designer.cs">
+      <DependentUpon>XtraRepNormalisedAgency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepNormalisedDetails.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepNormalisedDetails.Designer.cs">
+      <DependentUpon>XtraRepNormalisedDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepNormalisedrevnue.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepNormalisedrevnue.Designer.cs">
+      <DependentUpon>XtraRepNormalisedrevnue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepNormalized.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepNormalized.Designer.cs">
+      <DependentUpon>XtraRepNormalized.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\XtraRepPayerlineSummary.cs">
       <SubType>Component</SubType>
@@ -1478,6 +1595,18 @@
     </Compile>
     <Compile Include="Reports\XtraRepTccYearSummaryChildDetails.Designer.cs">
       <DependentUpon>XtraRepTccYearSummaryChildDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepTrend.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepTrend.Designer.cs">
+      <DependentUpon>XtraRepTrend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraRepTrendAnalysis.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraRepTrendAnalysis.Designer.cs">
+      <DependentUpon>XtraRepTrendAnalysis.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\XtraRepViewdetailByTaxOffice.cs">
       <SubType>Component</SubType>
@@ -1615,6 +1744,13 @@
     </Compile>
     <Compile Include="TccYearSummary.aspx.designer.cs">
       <DependentUpon>TccYearSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrendAnalysis.aspx.cs">
+      <DependentUpon>TrendAnalysis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrendAnalysis.aspx.designer.cs">
+      <DependentUpon>TrendAnalysis.aspx</DependentUpon>
     </Compile>
     <Compile Include="userreport.aspx.cs">
       <DependentUpon>userreport.aspx</DependentUpon>
@@ -1791,6 +1927,13 @@
     <Compile Include="ViewCummulativeSummaryChildDetails.aspx.designer.cs">
       <DependentUpon>ViewCummulativeSummaryChildDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ViewDefaulter.aspx.cs">
+      <DependentUpon>ViewDefaulter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewDefaulter.aspx.designer.cs">
+      <DependentUpon>ViewDefaulter.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewdetailByTaxOffice.aspx.cs">
       <DependentUpon>ViewdetailByTaxOffice.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1853,6 +1996,34 @@
     </Compile>
     <Compile Include="ViewNormalisation.aspx.designer.cs">
       <DependentUpon>ViewNormalisation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewNormalized.aspx.cs">
+      <DependentUpon>ViewNormalized.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewNormalized.aspx.designer.cs">
+      <DependentUpon>ViewNormalized.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewNormalizedAgency.aspx.cs">
+      <DependentUpon>ViewNormalizedAgency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewNormalizedAgency.aspx.designer.cs">
+      <DependentUpon>ViewNormalizedAgency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewNormalizeddetails.aspx.cs">
+      <DependentUpon>ViewNormalizeddetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewNormalizeddetails.aspx.designer.cs">
+      <DependentUpon>ViewNormalizeddetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewNormalizedRevnue.aspx.cs">
+      <DependentUpon>ViewNormalizedRevnue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewNormalizedRevnue.aspx.designer.cs">
+      <DependentUpon>ViewNormalizedRevnue.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewPay.aspx.cs">
       <DependentUpon>ViewPay.aspx</DependentUpon>
@@ -2057,6 +2228,13 @@
     <Compile Include="ViewTccYearSummaryChildDetails.aspx.designer.cs">
       <DependentUpon>ViewTccYearSummaryChildDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ViewTrend.aspx.cs">
+      <DependentUpon>ViewTrend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTrend.aspx.designer.cs">
+      <DependentUpon>ViewTrend.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewYear.aspx.cs">
       <DependentUpon>ViewYear.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2208,6 +2386,12 @@
     <Content Include="plugins\vendors\bower_components\summernote\dist\font\summernotef534.ttf" />
     <Content Include="plugins\vendors\bower_components\summernote\dist\font\summernotef534.woff" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.6.0.min.map" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2256,11 +2440,26 @@
     <EmbeddedResource Include="Reports\XtraRepCummulativeSummaryChild.resx">
       <DependentUpon>XtraRepCummulativeSummaryChild.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepDefaulter.resx">
+      <DependentUpon>XtraRepDefaulter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraRepEmployedPA.resx">
       <DependentUpon>XtraRepEmployedPA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraRepNormalisation.resx">
       <DependentUpon>XtraRepNormalisation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepNormalisedAgency.resx">
+      <DependentUpon>XtraRepNormalisedAgency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepNormalisedDetails.resx">
+      <DependentUpon>XtraRepNormalisedDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepNormalisedrevnue.resx">
+      <DependentUpon>XtraRepNormalisedrevnue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepNormalized.resx">
+      <DependentUpon>XtraRepNormalized.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraRepPayerlineSummary.resx">
       <DependentUpon>XtraRepPayerlineSummary.cs</DependentUpon>
@@ -2325,6 +2524,12 @@
     <EmbeddedResource Include="Reports\XtraRepTccYearSummaryChildDetails.resx">
       <DependentUpon>XtraRepTccYearSummaryChildDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepTrend.resx">
+      <DependentUpon>XtraRepTrend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraRepTrendAnalysis.resx">
+      <DependentUpon>XtraRepTrendAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraRepViewdetailByTaxOffice.resx">
       <DependentUpon>XtraRepViewdetailByTaxOffice.cs</DependentUpon>
     </EmbeddedResource>
@@ -2377,7 +2582,12 @@
       <DependentUpon>XtraRepSummaryLedger.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Data\" />
+    <Folder Include="Views\RevenueOffice\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -2403,11 +2613,12 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

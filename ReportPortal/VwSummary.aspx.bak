@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VwSummary.aspx.cs" Inherits="ReportPortal.VwSummary" %>
 
-<%@ Register Assembly="DevExpress.XtraReports.v20.1.Web.WebForms, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraReports.Web" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.XtraReports.v20.2.Web.WebForms, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraReports.Web" TagPrefix="dx" %>
 
 <!DOCTYPE html>
 
@@ -11,7 +11,7 @@
         function previewClick(s, e) {
             //$("#hdvalue").val(e.Brick.text())
             //document.getElementById("<=hdvalue.ClientID >").value = e.GetBrickText();
-            e.Brick && alert(e.GetBrickText())
+            //e.Brick && alert(e.GetBrickText())
 
             //PageMethods.loadchildreport(e.Brick.text());
 
@@ -26,7 +26,7 @@
                     window.location.href = "ViewSummarylistChild.aspx"
                 }
                 $("#hdvalue").val(e.Brick.text())
-                
+
             }
         }
 
