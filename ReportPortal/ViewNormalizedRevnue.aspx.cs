@@ -107,7 +107,7 @@ namespace ReportPortal
             }
 
 
-            string strquery = String.Format("SELECTRevenueCode, RevenueName, SUM(Amount) Amount FROM ViewNormalizedPayment  WHERE PaymentDate BETWEEN '{0}' AND '{1}' AND AgencyName = '{2}' GROUP BY RevenueCode, RevenueName ORDER BY  RevenueName ASC", startdate, enddate, vragencyname);
+            string strquery = String.Format("SELECT RevenueCode, RevenueName, SUM(Amount) Amount FROM ViewNormalizedPayment  WHERE PaymentDate BETWEEN '{0}' AND '{1}' AND AgencyName = '{2}' GROUP BY RevenueCode, RevenueName ORDER BY  RevenueName ASC", startdate, enddate, vragencyname);
 
             using (SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["Registration2ConnectionString"].ConnectionString))
             {

@@ -26,19 +26,6 @@
                 <div class="panel-body">
                     <div class="form-wrap">
                         <form class="form-horizontal" runat="server">
-                            <%-- <div class="form-group">
-                                <asp:Label ID="Label2" class="control-label mb-10 col-sm-2" runat="server" Text="From"></asp:Label>
-                                <div class="col-sm-10">
-                                    <asp:DropDownList ID="ddlyear" CssClass="form-control " runat="server"></asp:DropDownList>
-
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <asp:Label ID="Label1" class="control-label mb-10 col-sm-2" runat="server" Text="To"></asp:Label>
-                                <div class="col-sm-10">
-                                    <asp:DropDownList ID="ddlto" CssClass="form-control " runat="server"></asp:DropDownList>
-                                </div>
-                            </div>--%>
                             <div class="form-group">
                                 <asp:Label ID="Label16" class="control-label mb-10 col-sm-2" runat="server" Text="Start Date:"></asp:Label>
                                 <div class="col-sm-10">
@@ -53,6 +40,12 @@
                                     <asp:ImageButton ID="ImageButton1" runat="server" ClientIDMode="Static" ImageUrl="~/images/clearimage.jpeg" OnClientClick="ClearTextboxes1();" />
                                 </div>
                             </div>
+                        <%--    <div>
+                                <asp:Label ID="Label2" class="control-label mb-10 col-sm-2" runat="server" Text="Revenue Office"></asp:Label>
+                                <div style="height: 350px; width: 500px; overflow: auto; position: relative; overflow-x: hidden; overflow-y: auto;">
+                                    <div id="gridContainer"></div>
+                                </div>
+                            </div>--%>
                             <div class="form-group mb-0">
                                 <div class="col-sm-offset-2 col-sm-10">
                                     <asp:Button ID="btnpreview" runat="server" Text="Preview" class="btn btn-primary btn-anim text-uppercas" OnClick="btnpreview_Click" />

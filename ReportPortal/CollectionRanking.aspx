@@ -66,17 +66,6 @@
                             <div>
                                 <asp:Label ID="Label1" class="control-label mb-10 col-sm-2" runat="server" Text="Revenue Office"></asp:Label>
                                 <div style="height: 350px; width: 500px; overflow: auto; position: relative; overflow-x: hidden; overflow-y: auto;">
-                                    <%-- <table id="tblofficerevenue" class="table table-striped table-bordered table-hover responsive" style="width: 80%">
-                                        <thead>
-                                            <tr>
-                                               
-                                                <th>
-                                                    <input type="checkbox" name="select_all" value="1" id="example-select-all"></th>
-                                                <th>Revenue Office Name</th>
-                                              
-                                            </tr>
-                                        </thead>
-                                    </table>--%>
                                     <div id="gridContainer"></div>
                                 </div>
                             </div>
@@ -102,24 +91,9 @@
     <%--   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>--%>
 
-    <%--    <link type="text/css" href="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css" rel="stylesheet" />
-    <script type="text/javascript" src="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"></script>--%>
-
-    <%--<link href="<%: ResolveUrl("~/js/1.8/jquery-ui.css") %>" rel="stylesheet" />--%>
 
     <script type="text/javascript" src="<%: ResolveUrl("~/Scripts/select2.min.js")%>"></script>
-    <!-- data-table js -->
-    <%--  <script src="<%: ResolveUrl("~/plugins/vendors/bower_components/datatables.net/js/jquery.dataTables.min.js")%>"></script>
-    <script src="<%: ResolveUrl("~/plugins/vendors/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js")%>"></script>
-    <script src="<%: ResolveUrl("~/plugins/vendors/bower_components/data-table/js/jszip.min.js")%>"></script>
-    <script src="<%: ResolveUrl("~/plugins/vendors/bower_components/data-table/js/pdfmake.min.js")%>"></script>
-    <script src="<%: ResolveUrl("~/plugins/vendors/bower_components/data-table/js/vfs_fonts.js")%>"></script>
-    <script src="<%: ResolveUrl("~/plugins/vendors/bower_components/datatables.net-buttons/js/buttons.print.min.js")%>"></script>
-    <script src="<%: ResolveUrl("~/plugins/vendors/bower_components/datatables.net-buttons/js/buttons.html5.min.js")%>"></script>
-    <script src="<%: ResolveUrl("~/plugins/vendors/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js")%>"></script>
-    <script src="<%: ResolveUrl("~/plugins/vendors/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js")%>"></script>
-    <script src="<%: ResolveUrl("~/plugins/vendors/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js")%>"></script>
-    <script src="<%: ResolveUrl("~/plugins/vendors/bower_components/data-table/js/data-table-custom.js")%>"></script>--%>
+
 
     <script type="text/javascript">
         var dataGrid;
@@ -182,7 +156,7 @@
             ]
 
         }).dxDataGrid("instance");
-    
+
 
         $("#select-all-mode").dxSelectBox({
             dataSource: ["allPages", "page"],
