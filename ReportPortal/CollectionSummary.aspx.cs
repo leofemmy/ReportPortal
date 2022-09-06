@@ -46,22 +46,24 @@ namespace ReportPortal
 
                 Session["Values"] = rdbReport.SelectedValue.ToString();
 
-                Session["Startdate"] = txtstartdate.Text.ToString();
+                Session["Startdate"] = Convert.ToDateTime(txtstartdate.Text).ToString("yyyy-MM-dd 00:00:00");//txtstartdate.Text.ToString();
 
-                Session["Enddate"] = txtenddate.Text.ToString();
+                Session["Enddate"] = Convert.ToDateTime(txtenddate.Text).ToString("yyyy-MM-dd 23:59:59");//txtenddate.Text.ToString();
 
                 Session["startdate1"] = Convert.ToDateTime(txtstartdate.Text.ToString());
 
                 Session["Enddate1"] = Convert.ToDateTime(txtenddate.Text.ToString());
 
+                var test = Convert.ToDateTime(txtstartdate.Text).ToString("yyyy-MM-dd 00:00:00");
+                //var test2 = String.Format("{0:dd/MM/yyyy 23:59:59}", txtenddate.Text.ToString());
 
                 var startdate = Session["Startdate"].ToString();
 
                 var enddate = Session["Enddate"].ToString();
 
-                var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("dd/MM/yyyy");
+                var end = Convert.ToDateTime(Session["Enddate1"].ToString()).ToString("dd/MM/yyyy 23:59:59");
 
-                var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy");
+                var strat = Convert.ToDateTime(Session["startdate1"].ToString()).ToString("dd/MM/yyyy 00:00:00");
 
 
                 //if (string.IsNullOrWhiteSpace(txtstartdate.Text.ToString()) || string.IsNullOrWhiteSpace(txtenddate.Text.ToString()))

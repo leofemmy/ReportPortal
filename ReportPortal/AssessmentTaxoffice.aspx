@@ -11,7 +11,7 @@
                     <h6 class="panel-title txt-dark">Assessment Year Report</h6>
                 </div>
                 <div class="clearfix"></div>
-                <br/>
+                <br />
                 <asp:Label runat="server" ID="txtiddisplay" Text="You need to enable your browser pop-Up at the top right corner to view the report" ForeColor="red" Visible="False"></asp:Label>
             </div>
             <div class="panel-wrapper collapse in">
@@ -31,21 +31,6 @@
                                     <asp:DropDownList ID="ddlRevenue" runat="server" CssClass="form-control"></asp:DropDownList>
                                 </div>
                             </div>
-
-                            <%--     <div class="form-group">
-                                <asp:Label ID="Label16" class="control-label mb-10 col-sm-2" runat="server" Text="Start Date:"></asp:Label>
-                                <div class="col-sm-10">
-                                    <asp:TextBox ID="txtstartdate" runat="server" CausesValidation="false" autocomplete="off" ClientIDMode="Static" CssClass="form-control" TextMode="Date"></asp:TextBox>
-                                    <asp:ImageButton ID="ImageButton2" runat="server" ClientIDMode="Static" ImageUrl="~/images/clearimage.jpeg" OnClientClick="ClearTextboxes1();" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <asp:Label ID="Label1" runat="server" class="control-label mb-10 col-sm-2" Text="End Date: "></asp:Label>
-                                <div class="col-sm-10">
-                                    <asp:TextBox ID="txtenddate" runat="server" CausesValidation="false" autocomplete="off" ClientIDMode="Static" CssClass="form-control" TextMode="Date"></asp:TextBox>
-                                    <asp:ImageButton ID="ImageButton1" runat="server" ClientIDMode="Static" ImageUrl="~/images/clearimage.jpeg" OnClientClick="ClearTextboxes1();" />
-                                </div>
-                            </div>--%>
 
                             <div class="form-group mb-0">
                                 <div class="col-sm-offset-2 col-sm-10">

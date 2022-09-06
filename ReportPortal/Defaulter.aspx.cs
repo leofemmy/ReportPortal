@@ -151,9 +151,9 @@ namespace ReportPortal
 
                 Session["RevenueTypeName"] = ddlRevenue.SelectedItem.ToString();
 
-                Session["Startdate"] = txtstartdate.Text.ToString();
+                Session["Startdate"] = Convert.ToDateTime(txtstartdate.Text).ToString("yyyy-MM-dd 00:00:00");//txtstartdate.Text.ToString();
 
-                Session["Enddate"] = txtenddate.Text.ToString();
+                Session["Enddate"] = Convert.ToDateTime(txtenddate.Text).ToString("yyyy-MM-dd 23:59:59");//txtenddate.Text.ToString();
 
                 Session["startdate1"] = Convert.ToDateTime(txtstartdate.Text.ToString());
 

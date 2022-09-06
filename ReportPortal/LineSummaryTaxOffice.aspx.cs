@@ -62,7 +62,7 @@ namespace ReportPortal
 
             SqlCommand _command; SqlDataAdapter _adp; System.Data.DataSet responses = new System.Data.DataSet();
 
-            string strquery = String.Format("  SELECT RevenueOfficeID,RTRIM(LTRIM(RevenueOfficeName)) RevenueOfficeName FROM Setting.RevenueOffice ORDER BY RevenueOfficeName asc");
+            string strquery = String.Format("SELECT RevenueOfficeID,RTRIM(LTRIM(RevenueOfficeName)) RevenueOfficeName FROM Setting.RevenueOffice ORDER BY RevenueOfficeName asc");
 
             using (SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["Registration2ConnectionString"].ConnectionString))
             {

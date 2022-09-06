@@ -69,9 +69,9 @@ namespace ReportPortal
 
                 Session["Enddate1"] = Convert.ToDateTime(txtenddate.Text.ToString());
 
-                Session["Startdate"] = txtstartdate.Text.ToString();
+                Session["Startdate"] = Convert.ToDateTime(txtstartdate.Text).ToString("yyyy-MM-dd 00:00:00");// txtstartdate.Text.ToString();
 
-                Session["Enddate"] = txtenddate.Text.ToString();
+                Session["Enddate"] = Convert.ToDateTime(txtenddate.Text).ToString("yyyy-MM-dd 23:59:59");//txtenddate.Text.ToString();
 
                 var strrevenue = Session["Revenue"].ToString();
 
