@@ -85,7 +85,7 @@
             // 
             // xrTable1
             // 
-            this.xrTable1.Font = new System.Drawing.Font("Arial Black", 11F);
+            this.xrTable1.Font = new DevExpress.Drawing.DXFont("Arial Black", 11F);
             this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(202.25F, 0F);
             this.xrTable1.Name = "xrTable1";
             this.xrTable1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -112,7 +112,7 @@
             this.xrTableCell1.Text = "xrTableCell1";
             this.xrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrTableCell1.Weight = 1.3127269775310022D;
-            this.xrTableCell1.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.xrTableCell1_BeforePrint);
+            this.xrTableCell1.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.xrTableCell1_BeforePrint);
             this.xrTableCell1.PreviewMouseMove += new DevExpress.XtraReports.UI.PreviewMouseEventHandler(this.xrTableCell1_PreviewMouseMove);
             this.xrTableCell1.PreviewClick += new DevExpress.XtraReports.UI.PreviewMouseEventHandler(this.xrTableCell1_PreviewClick);
             // 
@@ -140,7 +140,7 @@
             // 
             // xrTable2
             // 
-            this.xrTable2.Font = new System.Drawing.Font("Arial", 11F);
+            this.xrTable2.Font = new DevExpress.Drawing.DXFont("Arial", 11F);
             this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(202.25F, 197.6267F);
             this.xrTable2.Name = "xrTable2";
             this.xrTable2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -191,7 +191,7 @@
             // 
             // xrLabel1
             // 
-            this.xrLabel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13F, System.Drawing.FontStyle.Bold);
+            this.xrLabel1.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 13F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(237.0591F, 62.95837F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
@@ -203,7 +203,7 @@
             // 
             // xrlbsubHead
             // 
-            this.xrlbsubHead.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13F, System.Drawing.FontStyle.Bold);
+            this.xrlbsubHead.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 13F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrlbsubHead.LocationFloat = new DevExpress.Utils.PointFloat(288.1875F, 93.33338F);
             this.xrlbsubHead.Multiline = true;
             this.xrlbsubHead.Name = "xrlbsubHead";
@@ -216,7 +216,7 @@
             // 
             // xrlbsubHead2
             // 
-            this.xrlbsubHead2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Bold);
+            this.xrlbsubHead2.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 11F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrlbsubHead2.LocationFloat = new DevExpress.Utils.PointFloat(218.3091F, 131.1667F);
             this.xrlbsubHead2.Multiline = true;
             this.xrlbsubHead2.Name = "xrlbsubHead2";
@@ -228,7 +228,7 @@
             // 
             // xrlborghead
             // 
-            this.xrlborghead.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13F, System.Drawing.FontStyle.Bold);
+            this.xrlborghead.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 13F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrlborghead.LocationFloat = new DevExpress.Utils.PointFloat(223.5174F, 27.37502F);
             this.xrlborghead.Multiline = true;
             this.xrlborghead.Name = "xrlborghead";
@@ -273,8 +273,8 @@
             this.sqlDataSource1});
             this.DataMember = "vwPayerInfo";
             this.DataSource = this.sqlDataSource1;
-            this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(100, 35, 38, 27);
+            this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
+            this.Margins = new DevExpress.Drawing.DXMargins(100, 35, 38, 27);
             this.Version = "20.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();

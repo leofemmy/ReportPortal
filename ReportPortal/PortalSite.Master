@@ -7,18 +7,31 @@
 <html lang="en">
 <head runat="server">
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Report Portal</title>
     <meta name="description" content="" />
     <meta name="keywords" content="admin, admin dashboard, report portal" />
     <meta name="author" content="SRGIT" />
+
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <%-- <link href="<%:ResolveUrl("~/css/master-stylesheet.css") %>" rel="stylesheet">--%>
+    <link href="assets/css/master-stylesheet.css" rel="stylesheet" />
+    <!-- You can change the theme colors from here -->
+    <%--  <link href="<%:ResolveUrl("~/css/colors/blue-dark.css") %>" id="theme" rel="stylesheet">--%>
+    <link href="assets/css/colors/blue-dark.css" rel="stylesheet" />
+
+    <%--  <link href="<%:ResolveUrl("~/plugins/vendors/perfect-scrollbar/css/perfect-scrollbar.css") %>" rel="stylesheet">
 
     <!-- jQuery -->
     <script src="<%:ResolveUrl("~/plugins/vendors/bower_components/jquery/dist/jquery.min.js") %>"></script>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="<%:ResolveUrl("~/plugins/assets/img/favicon/favicon.png") %>">
-    <link rel="icon" href="<%:ResolveUrl("~/plugins/assets/img/favicon/favicon.png") %>" type="image/x-icon">
+    <link rel="icon" href="<%:ResolveUrl("~/plugins/assets/img/favicon/favicon.png") %>" type="image/x-icon">--%>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.js"></script>
 
@@ -28,218 +41,698 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
-    <!-- Custom CSS -->
-    <link href="<%:ResolveUrl("~/plugins/assets/css/default.css") %>" rel="stylesheet" type="text/css">
+    <%--  <!-- Custom CSS -->
+    <link href="<%:ResolveUrl("~/plugins/assets/css/default.css") %>" rel="stylesheet" type="text/css">--%>
 </head>
-<body>
-    <!-- Preloader -->
-    <div class="preloader-it">
-        <div class="preloader">
-            <div class="circles-1">
-                <div class="circles-1-center"></div>
-                <div class="circles-1"></div>
-                <div class="circles-1"></div>
-                <div class="circles-1"></div>
-                <div class="circles-1"></div>
-                <div class="circles-1"></div>
-                <div class="circles-1"></div>
+
+<body class="card-no-border">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="lds-roller">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
         </div>
     </div>
-    <!-- //Preloader -->
-    <div class="wrapper light-theme">
-        <!-- Top Header -->
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="mobile-only-brand pull-left">
-                <div class="nav-header pull-left">
-                    <div class="logo-wrap">
-                        <a href="<%:ResolveUrl("~/Index.aspx") %>">
-                            <img class="brand-img" src="plugins/assets/img/logo.png" alt="brand" />
-                            <span class="brand-text">[ Report<strong> P</strong>ortal ]</span> </a>
-                        <br />
-                        <asp:Label runat="server" Text="" ID="txtuser" ForeColor="White"></asp:Label>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="<%:ResolveUrl("~/Index.aspx") %>">
+                        <!-- Logo icon -->
+                        <b>
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="<%:ResolveUrl("~/assets/images/logo-icon.png") %>" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo icon -->
+                            <img src="<%:ResolveUrl("~/assets/images/logo-light-icon.png") %>" alt="homepage" class="light-logo" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span class="brand-text">
+                            <!-- dark Logo text -->
+                            <img src="<%:ResolveUrl("~/assets/images/logo-text.png") %>" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo text -->
+                            <%--<img src="<%:ResolveUrl("~/assets/images/logo-light-text.png") %>" class="light-logo" alt="homepage" />--%>
+                                 [ Report<strong> P</strong>ortal ]
+                        </span> </a>
+
+                    <asp:Label runat="server" Text="" ID="txtuser" ForeColor="White" Width="200px"></asp:Label>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto">
+                        <!-- This is  -->
+                        <li class="nav-item"><a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a></li>
+                        <li class="nav-item hidden-sm-down"><span></span></li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item hidden-xs-down search-box"><a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="icon-Magnifi-Glass2"></i></a>
+                           <%-- <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search & enter">
+                                <a class="srh-btn"><i class="ti-close"></i></a>
+                            </form>--%>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- Comment -->
+                        <!-- ============================================================== -->
+                        <%--<li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-Bell"></i>
+                                <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right mailbox animated fadeIn">
+                                <ul>
+                                    <li>
+                                        <div class="drop-title">Notifications</div>
+                                    </li>
+                                    <li>
+                                        <div class="message-center">
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <div class="btn btn-danger btn-circle"><i class="fa fa-link"></i></div>
+                                                <div class="mail-contnet">
+                                                    <h5>Launch Admin</h5>
+                                                    <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <div class="btn btn-success btn-circle"><i class="ti-calendar"></i></div>
+                                                <div class="mail-contnet">
+                                                    <h5>Event today</h5>
+                                                    <span class="mail-desc">Just a reminder that you have event</span> <span class="time">9:10 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <div class="btn btn-info btn-circle"><i class="ti-settings"></i></div>
+                                                <div class="mail-contnet">
+                                                    <h5>Settings</h5>
+                                                    <span class="mail-desc">You can customize this template as you want</span> <span class="time">9:08 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <div class="btn btn-primary btn-circle"><i class="ti-user"></i></div>
+                                                <div class="mail-contnet">
+                                                    <h5>Mason Hudson</h5>
+                                                    <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link text-center" href="javascript:void(0);"><strong>Check all notifications</strong> <i class="fa fa-angle-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>--%>
+                        <!-- ============================================================== -->
+                        <!-- End Comment -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- Messages -->
+                        <!-- ============================================================== -->
+                        
+                        <!-- ============================================================== -->
+                        <!-- End Messages -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- mega menu -->
+                        <!-- ============================================================== -->
+                       <%-- <li class="nav-item dropdown mega-dropdown"><a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-Box-Close"></i></a>
+                            <div class="dropdown-menu animated fadeIn">
+                                <ul class="mega-dropdown-menu row">
+                                    <li class="col-lg-3 col-xlg-2 mb-30">
+                                        <h4 class="mb-20">CAROUSEL</h4>
+                                        <!-- CAROUSEL -->
+                                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                            <div class="carousel-inner" role="listbox">
+                                                <div class="carousel-item active">
+                                                    <div class="container">
+                                                        <img class="d-block img-fluid" src="<%:ResolveUrl("~/assets/images/big/img1.jpg") %>" alt="First slide">
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <div class="container">
+                                                        <img class="d-block img-fluid" src="<%:ResolveUrl("~/assets/images/big/img2.jpg" ) %>" alt="Second slide">
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <div class="container">
+                                                        <img class="d-block img-fluid" src="<%:ResolveUrl("~/assets/images/big/img3.jpg") %>" alt="Third slide">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span> </a>
+                                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span> </a>
+                                        </div>
+                                        <!-- End CAROUSEL -->
+                                    </li>
+                                    <li class="col-lg-3 mb-30">
+                                        <h4 class="mb-20">ACCORDION</h4>
+                                        <!-- Accordian -->
+                                        <div id="accordion" class="nav-accordion" role="tablist" aria-multiselectable="true">
+                                            <div class="card">
+                                                <div class="card-header" role="tab" id="headingOne">
+                                                    <h5 class="mb-0">
+                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Collapsible Group Item #1
+                                                </a>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                                                    <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high. </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" role="tab" id="headingTwo">
+                                                    <h5 class="mb-0">
+                                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Collapsible Group Item #2
+                                                </a>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                                    <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" role="tab" id="headingThree">
+                                                    <h5 class="mb-0">
+                                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Collapsible Group Item #3
+                                                </a>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                                                    <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="col-lg-3  mb-30">
+                                        <h4 class="mb-20">CONTACT US</h4>
+                                        <!-- Contact -->
+                                        <form>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="exampleInputname1" placeholder="Enter Name">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" placeholder="Enter email">
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Message"></textarea>
+                                            </div>
+                                            <button type="submit" class="btn btn-info">Submit</button>
+                                        </form>
+                                    </li>
+                                    <li class="col-lg-3 col-xlg-4 mb-30">
+                                        <h4 class="mb-20">List style</h4>
+                                        <!-- List style -->
+                                        <ul class="list-style-none">
+                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i>You can give link</a></li>
+                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i>Give link</a></li>
+                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i>Another Give link</a></li>
+                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i>Forth link</a></li>
+                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i>Another fifth link</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>--%>
+                        <!-- ============================================================== -->
+                        <!-- End mega menu -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- Language -->
+                        <!-- ============================================================== -->
+                        <%--<li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-us"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right animated fadeIn"><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-in"></i>India</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i>French</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i>China</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-de"></i>Dutch</a> </div>
+                        </li>--%>
+
+                        <!-- ============================================================== -->
+                        <!-- Profile -->
+                        <!-- ============================================================== -->
+                   <%--     <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="../assets/images/users/1.jpg" alt="user" class="profile-pic" /></a>
+                            <div class="dropdown-menu dropdown-menu-right animated fadeIn">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <div class="dw-user-box">
+                                            <div class="u-img">
+                                                <img src="../assets/images/users/1.jpg" alt="user">
+                                            </div>
+                                            <div class="u-text">
+                                                <h4>Mark Sanders  </h4>
+                                                <p class="text-muted">mark@gmail.com</p>
+                                                <a href="pages-profile.html" class="btn btn-rounded btn-primary btn-sm">View Profile</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"><i class="ti-user"></i>My Profile</a></li>
+                                    <li><a href="#"><i class="ti-wallet"></i>My Balance</a></li>
+                                    <li><a href="#"><i class="ti-email"></i>Inbox</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"><i class="ti-settings"></i>Account Setting</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"><i class="fa fa-power-off"></i>Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>--%>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="nav-devider"></li>
+                        <li class="nav-small-cap">PERSONAL</li>
+                   <%--     <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-apps mr-10"></i><span class="hide-menu">Dashboard</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="https://creativethemes.co.in/buy-creativetheme-html-template/studioux/hyrax-admin-bootstrap4/main/index.html">Dashboard V1</a></li>
+                                <li><a href="https://creativethemes.co.in/buy-creativetheme-html-template/studioux/hyrax-admin-bootstrap4/dark/index.html">Dashboard V2</a></li>
+                                <li><a href="index.html">Dashboard V3</a></li>
+
+                                <li><a href="https://creativethemes.co.in/buy-creativetheme-html-template/studioux/hyrax-admin-bootstrap4/mini-sidebar/index.html">Dashboard V4</a></li>
+                                <li><a href="index-stock.html">Dashboard V5</a></li>
+                                <li><a href="https://creativethemes.co.in/buy-creativetheme-html-template/studioux/hyrax-admin-bootstrap4/rtl/index.html">Dashboard V6</a></li>
+                            </ul>
+                        </li>--%>
+                        <li id="pagesreg" runat="server"><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-account-settings-variant mr-10"></i><span class="hide-menu">Registration Reports</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="<%:ResolveUrl("~/Organization.aspx") %>">Organizations</a></li>
+                                <li><a href="<%:ResolveUrl("~/Payer.aspx") %>">PAYE Taxpayers</a></li>
+                                <li><a href="<%:ResolveUrl("~/Self.aspx") %>">Self Employed Taxpayer</a></li>
+                                <li><a href="<%:ResolveUrl("~/Cerificate.aspx") %>">Print Certificate</a></li>
+                                <li><a href="<%:ResolveUrl("~/Summary.aspx") %>">Summary</a></li>
+
+                            </ul>
+                        </li>
+                        <li id="pagespayemts" runat="server"><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-cart mr-10"></i><span class="hide-menu">Payment Reports</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="<%:ResolveUrl("~/Payment.aspx") %>">Payment</a></li>
+                                <li><a href="<%:ResolveUrl("~/Normalized.aspx") %>">Normalized Payment</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li id="pagescollection" runat="server" class="three-column"><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-arrange-bring-forward mr-10"></i><span class="hide-menu">Collection Reports</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="<%:ResolveUrl("~/CollectionSummary.aspx") %>">Summary</a></li>
+                                <li><a href="<%:ResolveUrl("~/CollectionRanking.aspx") %>">Agent Ranking</a></li>
+                                <li><a href="<%:ResolveUrl("~/Remit.aspx") %>">Agent Remittance Statement</a></li>
+                                <li><a href="<%:ResolveUrl("~/Business.aspx") %>">Business Sector</a></li>
+                                <li><a href="<%:ResolveUrl("~/Normalisation.aspx") %>">Payment Normalisation</a></li>
+
+                                <li><a href="<%:ResolveUrl("~/Year.aspx") %>">Collection Year</a></li>
+                                <%--<li><a href="ui-sweetalert.html">Sweet Alert</a></li>
+                                <li><a href="ui-notification.html">Notification</a></li>
+                                <li><a href="ui-progressbar.html">Progressbar</a></li>
+                                <li><a href="ui-nestable.html">Nestable</a></li>
+                                <li><a href="ui-range-slider.html">Range slider</a></li>
+                                <li><a href="ui-timeline.html">Timeline</a></li>
+
+                                <li><a href="ui-typography.html">Typography</a></li>
+                                <li><a href="ui-horizontal-timeline.html">Horizontal Timeline</a></li>
+                                <li><a href="ui-session-timeout.html">Session Timeout</a></li>
+                                <li><a href="ui-session-ideal-timeout.html">Ideal Timeout</a></li>
+                                <li><a href="ui-bootstrap.html">Bootstrap Ui</a></li>
+                                <li><a href="ui-breadcrumb.html">Breadcrumb</a></li>
+                                <li><a href="ui-bootstrap-switch.html">Bootstrap Switch</a></li>
+                                <li><a href="ui-list-media.html">List Media</a></li>
+                                <li><a href="ui-ribbons.html">Ribbons</a></li>
+                                <li><a href="ui-grid.html">Grid</a></li>
+                                <li><a href="ui-carousel.html">Carousel</a></li>
+                                <li><a href="ui-date-paginator.html">Date-paginator</a></li>
+                                <li><a href="ui-dragable-portlet.html">Dragable Portlet</a></li>--%>
+                            </ul>
+                        </li>
+                        <li class="two-column"><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file-multiple mr-10"></i><span class="hide-menu">Tax Office Reports </span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="<%:ResolveUrl("~/Defaulter.aspx") %>">Tax Defaulter Report</a></li>
+                                <li><a href="<%:ResolveUrl("~/TrendAnalysis.aspx") %>">Trend Analysis</a></li>
+                                <%--<li><a href="pages-profile.html">Profile page</a></li>
+                                <li><a href="pages-animation.html">Animation</a></li>
+                                <li><a href="pages-fix-innersidebar.html">Sticky Left sidebar</a></li>
+                                <li><a href="pages-fix-inner-right-sidebar.html">Sticky Right sidebar</a></li>
+
+                                <li><a href="pages-treeview.html">Treeview</a></li>
+                                <li><a href="pages-utility-classes.html">Helper Classes</a></li>
+                                <li><a href="pages-search-result.html">Search result</a></li>
+                                <li><a href="pages-scroll.html">Scrollbar</a></li>
+                                <li><a href="pages-pricing.html">Pricing</a></li>
+                                <li><a href="pages-lightbox-popup.html">Lighbox popup</a></li>
+                                <li><a href="pages-gallery.html">Gallery</a></li>
+                                <li><a href="pages-faq.html">Faqs</a></li>
+                                <li><a href="#" class="has-arrow">Error Pages</a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="pages-error-400.html">400</a></li>
+                                        <li><a href="pages-error-403.html">403</a></li>
+                                        <li><a href="pages-error-404.html">404</a></li>
+                                        <li><a href="pages-error-500.html">500</a></li>
+                                        <li><a href="pages-error-503.html">503</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" class="has-arrow">Authentication</a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="pages-login.html">Login 1</a></li>
+                                        <li><a href="pages-login-2.html">Login 2</a></li>
+                                        <li><a href="pages-register.html">Register</a></li>
+                                        <li><a href="pages-register2.html">Register 2</a></li>
+                                        <li><a href="pages-lockscreen.html">Lockscreen</a></li>
+                                        <li><a href="pages-recover-password.html">Recover password</a></li>
+                                    </ul>
+                                </li>--%>
+                            </ul>
+                        </li>
+
+                        <li id="pagestaxreport" runat="server" class="two-column"><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file-document-box mr-10"></i><span class="hide-menu">Tax Reports</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li class="navigation-header"><span>Assessment</span> <i class="mdi mdi-more"></i></li>
+                                <li><a href="<%:ResolveUrl("~/Assessmentdetails.aspx") %>">Details</a></li>
+                                <li><a href="<%:ResolveUrl("~/AssessmentCummulativeSummary.aspx") %>">Summary (Cummulative)</a></li>
+                                <li><a href="<%:ResolveUrl("~/AssessmentTaxOfficeYear.aspx") %>">Summary (Years)</a></li>
+                                <li><a href="<%:ResolveUrl("~/AssessmentYearSummary.aspx") %>">Tax Office Comparative</a></li>
+                                <li class="navigation-header"><span>TCC</span> <i class="mdi mdi-more"></i></li>
+                                <li><a href="<%:ResolveUrl("~/CummulativeSummary.aspx") %>">Summary (Cummulative)</a></li>
+                                <li><a href="<%:ResolveUrl("~/TaxOfficeYear.aspx") %>">Summary (Years)</a></li>
+                                <li><a href="<%:ResolveUrl("~/TccYearSummary.aspx") %>">Tax Office Comparative</a></li>
+                                <%-- <li><a href="form-validation.html">Form Validation</a></li>
+                                <li><a href="form-dropzone.html">File Dropzone</a></li>
+                                <li><a href="form-icheck.html">Icheck control</a></li>
+                                <li><a href="form-img-cropper.html">Image Cropper</a></li>
+                                <li><a href="form-bootstrapwysihtml5.html">HTML5 Editor</a></li>
+                                <li><a href="form-typehead.html">Form Typehead</a></li>
+                                <li><a href="form-wizard.html">Form Wizard</a></li>
+                                <li><a href="form-xeditable.html">Xeditable Editor</a></li>
+                                <li><a href="form-summernote.html">Summernote Editor</a></li>
+                                <li><a href="form-tinymce.html">Tinymce Editor</a></li>--%>
+                            </ul>
+                        </li>
+                        <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-border-all mr-10"></i><span class="hide-menu">System</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li id="liuser" runat="server"><a href="<%:ResolveUrl("~/Users.aspx") %>">Create New User </a></li>
+                                <li id="liuserreport" runat="server"><a href="<%:ResolveUrl("~/userreport.aspx") %>">User's Report </a></li>
+                                <li><a href="<%:ResolveUrl("~/login.aspx") %>">Log Out</a></li>
+                                <%-- <li><a href="table-footable.html">Footable</a></li>
+                                <li><a href="table-jsgrid.html">Js Grid Table</a></li>
+                                <li><a href="table-responsive.html">Responsive Table</a></li>
+                                <li><a href="table-bootstrap.html">Bootstrap Tables</a></li>
+                                <li><a href="table-editable-table.html">Editable Table</a></li>--%>
+                            </ul>
+                        </li>
+                        <%--  <li>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-chemical-weapon mr-10"></i><span class="hide-menu">Extra</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a class="has-arrow " href="#" aria-expanded="false">Widgets</a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="widget-apps.html">Data Widgets</a></li>
+                                        <li><a href="widget-data.html">Statestic Widgets</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="has-arrow " href="#" aria-expanded="false">Maps</a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="map-google.html">Google Maps</a></li>
+                                        <li><a href="map-vector.html">Vector Maps</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="has-arrow " href="#" aria-expanded="false">Icons</a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="icon-material.html">Material Icons</a></li>
+                                        <li><a href="icon-fontawesome.html">Fontawesome Icons</a></li>
+                                        <li><a href="icon-themify.html">Themify Icons</a></li>
+                                        <li><a href="icon-weather.html">Weather Icons</a></li>
+                                        <li><a href="icon-iconmind.html">Mind Icons</a></li>
+                                        <li><a href="icon-simple-lineicon.html">Simple Line icons</a></li>
+                                        <li><a href="icon-flag.html">Flag Icons</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a class="has-arrow" href="#" aria-expanded="false">Page Layout</a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="layout-single-column.html">1 Column</a></li>
+                                        <li><a href="layout-fix-header.html">Fix header</a></li>
+                                        <li><a href="layout-fix-header-sidebar.html">Fix header &amp; Sidebar</a></li>
+                                        <li><a href="layout-logo-center.html">Logo in Center</a></li>
+                                    </ul>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </li>
+                        <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-format-line-spacing mr-10"></i><span class="hide-menu">Multi dd</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="#">item 1.1</a></li>
+                                <li><a href="#">item 1.2</a></li>
+                                <li><a class="has-arrow" href="#" aria-expanded="false">Menu 1.3</a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="#">item 1.3.1</a></li>
+                                        <li><a href="#">item 1.3.2</a></li>
+                                        <li><a href="#">item 1.3.3</a></li>
+                                        <li><a href="#">item 1.3.4</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">item 1.4</a></li>
+                            </ul>
+                        </li>--%>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+          <%--      <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h3 class="text-themecolor">Blank Page</h3>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                            <li class="breadcrumb-item active">Blank Page</li>
+                        </ol>
+                    </div>
+
+                    <div class="">
+                        <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
+                    </div>
+                </div>--%>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                    This is some text within a card block.
+                                </asp:ContentPlaceHolder>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+               <%-- <div class="right-sidebar">
+                    <div class="slimscrollright">
+                        <div class="rpanel-title">Service Panel <span><i class="ti-close right-side-toggle"></i></span></div>
+                        <div class="r-panel-body">
+                            <ul id="themecolors" class="m-t-20">
+                                <li><b>With Light sidebar</b></li>
+                                <li><a href="javascript:void(0)" data-theme="default" class="default-theme">1</a></li>
+                                <li><a href="javascript:void(0)" data-theme="green" class="green-theme">2</a></li>
+                                <li><a href="javascript:void(0)" data-theme="red" class="red-theme">3</a></li>
+                                <li><a href="javascript:void(0)" data-theme="blue" class="blue-theme">4</a></li>
+                                <li><a href="javascript:void(0)" data-theme="purple" class="purple-theme">5</a></li>
+                                <li><a href="javascript:void(0)" data-theme="megna" class="megna-theme">6</a></li>
+                                <li class="d-block m-t-30"><b>With Dark sidebar</b></li>
+                                <li><a href="javascript:void(0)" data-theme="default-dark" class="default-dark-theme working">7</a></li>
+                                <li><a href="javascript:void(0)" data-theme="green-dark" class="green-dark-theme">8</a></li>
+                                <li><a href="javascript:void(0)" data-theme="red-dark" class="red-dark-theme">9</a></li>
+                                <li><a href="javascript:void(0)" data-theme="blue-dark" class="blue-dark-theme">10</a></li>
+                                <li><a href="javascript:void(0)" data-theme="purple-dark" class="purple-dark-theme">11</a></li>
+                                <li><a href="javascript:void(0)" data-theme="megna-dark" class="megna-dark-theme ">12</a></li>
+                            </ul>
+                            <ul class="m-t-20 chatonline">
+                                <li><b>Chat option</b></li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <img src="assets/images/users/1.jpg" alt="user-img" class="img-circle">
+                                        <span>Michelle Roxx<small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <img src="assets/images/users/2.jpg" alt="user-img" class="img-circle">
+                                        <span>Mason Hudson <small class="text-warning">Away</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <img src="assets/images/users/3.jpg" alt="user-img" class="img-circle">
+                                        <span>Logan Wong <small class="text-danger">Busy</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <img src="assets/images/users/4.jpg" alt="user-img" class="img-circle">
+                                        <span>Steve Carter <small class="text-muted">Offline</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <img src="assets/images/users/5.jpg" alt="user-img" class="img-circle">
+                                        <span>Alexis Kross <small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <img src="assets/images/users/6.jpg" alt="user-img" class="img-circle">
+                                        <span>Christie Saldana<small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <img src="assets/images/users/7.jpg" alt="user-img" class="img-circle">
+                                        <span>Pepper Hensen<small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <img src="assets/images/users/8.jpg" alt="user-img" class="img-circle">
+                                        <span>Alicia Megan <small class="text-success">online</small></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>--%>
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
             </div>
-            <div id="mobile_right_sidebar" class="mobile-right-sidebar pull-right">
-                <ul class="nav navbar-right top-nav pull-right">
-                    <li class="dropdown auth-drp"><a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown">
-                        <%--<img src="plugins/assets/img/users/avatar-2.jpg" alt="user_auth" class="user-auth-img img-circle" /><span class="user-online-status"></span>--%>
-                    </a>
-                        <ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                            <li class="divider"></li>
-                            <li><a href="<%:ResolveUrl("~/login.aspx") %>"><i class="mdi mdi-power"></i><span>Log Out</span></a> </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <!-- /Top Menu Items -->
-
-        <!-- Left Sidebar Menu -->
-        <div class="fixed-sidebar-left">
-            <ul class="nav navbar-nav side-nav nicescroll-bar">
-                <%-- <li class="navigation-header"><span>Main</span> <i class="mdi mdi-more"></i></li>--%>
-                <li id="pagesreg" runat="server"><a href="javascript:void(0);" data-toggle="collapse" data-target="#admin-dash">
-                    <div class="pull-left"><i class="mdi mdi-apps mr-20"></i><span class="right-nav-text">Registration Reports</span></div>
-                    <div class="pull-right"><i class="mdi mdi-chevron-down"></i></div>
-                    <div class="clearfix"></div>
-                </a>
-                    <ul id="admin-dash" class="collapse collapse-level-1">
-                        <li><a href="<%:ResolveUrl("~/Organization.aspx") %>">Organizations</a></li>
-                        <li><a href="<%:ResolveUrl("~/Payer.aspx") %>">PAYE Taxpayers</a></li>
-                        <li><a href="<%:ResolveUrl("~/Self.aspx") %>">Self Employed Taxpayer</a></li>
-                        <li><a href="<%:ResolveUrl("~/Cerificate.aspx") %>">Print Certificate</a></li>
-                        <li><a href="<%:ResolveUrl("~/Summary.aspx") %>">Summary</a></li>
-                    </ul>
-                </li>
-                <li id="pagespayemts" runat="server"><a href="javascript:void(0);" data-toggle="collapse" data-target="#ui_element">
-                    <div class="pull-left"><i class="mdi mdi-puzzle mr-20"></i><span class="right-nav-text">Payment Reports</span></div>
-                    <div class="pull-right"><i class="mdi mdi-chevron-down"></i></div>
-                    <div class="clearfix"></div>
-                </a>
-                    <ul id="ui_element" class="collapse collapse-level-1">
-                        <li><a href="<%:ResolveUrl("~/Payment.aspx") %>" class="active">Payment </a></li>
-                        <li><a href="<%:ResolveUrl("~/Normalized.aspx") %>" class="active">Normalized Payment </a></li>
-                    </ul>
-                </li>
-                <li id="pagescollection" runat="server"><a href="javascript:void(0);" data-toggle="collapse" data-target="#pages_drs">
-                    <div class="pull-left"><i class="mdi mdi-star-circle mr-20"></i><span class="right-nav-text">Collection Reports</span></div>
-                    <div class="pull-right"><i class="mdi mdi-chevron-down"></i></div>
-                    <div class="clearfix"></div>
-                </a>
-                    <ul id="pages_drs" class="collapse collapse-level-1 two-col-list">
-                        <li><a href="<%:ResolveUrl("~/CollectionSummary.aspx") %>">Summary</a> </li>
-                        <li><a href="<%:ResolveUrl("~/CollectionRanking.aspx") %>">Agent Ranking</a> </li>
-                        <li><a href="<%:ResolveUrl("~/Remit.aspx") %>">Agent Remittance Statement</a> </li>
-                        <li><a href="<%:ResolveUrl("~/Business.aspx") %>">Business Sector</a> </li>
-                        <li><a href="<%:ResolveUrl("~/Normalisation.aspx") %>">Payment Normalisation</a> </li>
-                        <li><a href="<%:ResolveUrl("~/Year.aspx") %>">Collection Year</a> </li>
-                    </ul>
-                </li>
-                <li id="pageTaxofficereport" runat="server"><a href="javascript:void(0);" data-toggle="collapse" data-target="#pages_drstor">
-                    <div class="pull-left"><i class="mdi mdi-star-circle mr-20"></i><span class="right-nav-text">Tax Office Reports</span></div>
-                    <div class="pull-right"><i class="mdi mdi-chevron-down"></i></div>
-                    <div class="clearfix"></div>
-                </a>
-                    <ul id="pages_drstor" class="collapse collapse-level-1 two-col-list">
-                        <li><a href="<%:ResolveUrl("~/Defaulter.aspx") %>">Tax Defaulter Report</a> </li>
-                        <li><a href="<%:ResolveUrl("~/TrendAnalysis.aspx") %>">Trend Analysis</a> </li>
-
-                    </ul>
-                </li>
-                <li id="pagestaxreport" runat="server"><a href="javascript:void(0);" data-toggle="collapse" data-target="#pages_dr">
-                    <div class="pull-left"><i class="mdi mdi-star-circle mr-20"></i><span class="right-nav-text">Tax Reports</span></div>
-                    <div class="pull-right"><i class="mdi mdi-chevron-down"></i></div>
-                    <div class="clearfix"></div>
-                </a>
-                    <ul id="pages_dr" class="collapse collapse-level-1 two-col-list">
-                        <li class="navigation-header"><span>Assessment</span> <i class="mdi mdi-more"></i></li>
-                          <li><a href="<%:ResolveUrl("~/Assessmentdetails.aspx") %>">Details</a> </li>
-                        <li><a href="<%:ResolveUrl("~/AssessmentCummulativeSummary.aspx") %>">Summary (Cummulative)</a> </li>
-                        <li><a href="<%:ResolveUrl("~/AssessmentTaxOfficeYear.aspx") %>">Summary (Years)</a> </li>
-                        <li><a href="<%:ResolveUrl("~/AssessmentYearSummary.aspx") %>">Tax Office Comparative </a></li>
-                        <li class="navigation-header"><span>TCC</span> <i class="mdi mdi-more"></i></li>
-                        <li><a href="<%:ResolveUrl("~/CummulativeSummary.aspx") %>">Summary (Cummulative) </a></li>
-                        <li><a href="<%:ResolveUrl("~/TaxOfficeYear.aspx") %>">Summary (Years)</a> </li>
-                        <li><a href="<%:ResolveUrl("~/TccYearSummary.aspx") %>">Tax Office Comparative</a> </li>
-                    </ul>
-                </li>
-                <!-- ecommerce -->
-                <li><a href="javascript:void(0);" data-toggle="collapse" data-target="#icon_list">
-                    <div class="pull-left"><i class="mdi mdi-cube-outline mr-20"></i><span class="right-nav-text">System</span></div>
-                    <div class="pull-right"><i class="mdi mdi-chevron-down"></i></div>
-                    <div class="clearfix"></div>
-                </a>
-                    <ul id="icon_list" class="collapse collapse-level-1">
-                        <li id="liuser" runat="server"><a href="<%:ResolveUrl("~/Users.aspx") %>">Create New User </a></li>
-                        <li id="liuserreport" runat="server"><a href="<%:ResolveUrl("~/userreport.aspx") %>">User's Report </a></li>
-                        <li><a href="<%:ResolveUrl("~/login.aspx") %>">Log Out </a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <!-- /Left Sidebar Menu -->
-
-        <!-- Right Sidebar Menu -->
-
-        <!-- /Right Sidebar Menu -->
-
-        <!-- Main Content -->
-        <div class="page-wrapper">
-            <div class="container-fluid min-ht-600">
-                <!-- Title -->
-                <div class="row heading-bg">
-                    <%--   <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h5 class="txt-dark">Blank Page</h5>
-                    </div>--%>
-                    <!-- Breadcrumb -->
-                    <%-- <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                        <ol class="breadcrumb">
-                            <li><a href="index.html">Dashboard</a></li>
-                            <li><a href="#"><span>Other Pages</span></a></li>
-                            <li class="active"><span>Blank Page</span></li>
-                        </ol>
-                    </div>--%>
-                    <!-- /Breadcrumb -->
-
-                </div>
-                <!-- /Title -->
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                </asp:ContentPlaceHolder>
-            </div>
-
-
-            <!-- /Main Content -->
-            <!-- Row-->
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
             <!-- Footer -->
             <footer class="footer container-fluid pt-10 pb-10  pl-30 pr-30">
                 <div class="row">
                     <div class="col-sm-12 ">
-                        <%--<div class="pull-left text-dark pt-5 small">Copyright @ 2018  Hyrax UX  Panel. All Rights Reserved</div>--%>
                         <div class="pull-right">
-                            <%--<img src="plugins/assets/img/heartbeat.svg" alt="srgit" class="heart">--%>
-                        Copyright
-                       
-                            <script language="javascript">
-                                today = new Date();
-                                y0 = today.getFullYear();
-                            </script>
+                            Copyright
+                    
+                         <script language="javascript">
+                             today = new Date();
+                             y0 = today.getFullYear();
+                         </script>
                             &copy; 2007-<script language="javascript">
                                             document.write(y0);</script>
                             <a href="http://www.icmaservices.com/" target="_blank">ICMA Professional Services</a>. All Rights Reserved
-                       
+                    
                         </div>
                         <div class="clearfix"></div>
                     </div>
                 </div>
             </footer>
             <!-- /Footer -->
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
         </div>
-        <!-- /Main Content -->
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
     </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
 
 
 
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="<%:ResolveUrl("~/plugins/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js") %>"></script>
-    <script src="<%:ResolveUrl("~/plugins/vendors/bower_components/moment/moment.js") %>"></script>
-    <script src="<%:ResolveUrl("~/plugins/vendors/bower_components/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js") %>"></script>
-
-
+    <script src="<%:ResolveUrl("~/assets/vendors/jquery/jquery.min.js") %>"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="<%:ResolveUrl("~/assets/vendors/bootstrap/js/popper.min.js") %>"></script>
+    <script src="<%:ResolveUrl("~/assets/vendors/bootstrap/js/bootstrap.min.js") %>"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="<%:ResolveUrl("~/assets/vendors/ps/perfect-scrollbar.jquery.min.js") %>"></script>
+    <!--Wave Effects -->
+    <%--  <script src="<%:ResolveUrl("~/js/waves.js") %>"></script>--%>
+    <script src="js/waves.js"></script>
+    <!--Menu sidebar -->
+    <%--<script src="<%:ResolveUrl("~/js/sidebarmenu.js") %>"></script>--%>
+    <script src="js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="<%:ResolveUrl("~/assets/vendors/sticky-kit-master/dist/sticky-kit.min.js") %>"></script>
+    <script src="<%:ResolveUrl("~/assets/vendors/sparkline/jquery.sparkline.min.js") %>"></script>
+    <!--Custom JavaScript -->
+    <%--  <script src="<%:ResolveUrl("~/js/custom.min") %>"></script>--%>
+    <script src="js/custom.min.js"></script>
+    <!-- ============================================================== -->
+    <!-- Style switcher -->
+    <!-- ============================================================== -->
+    <script src="<%:ResolveUrl("~/assets/vendors/styleswitcher/jQuery.style.switcher.js") %>"></script>
     <asp:ContentPlaceHolder ID="ScriptContentHolder" runat="server">
     </asp:ContentPlaceHolder>
-
-    <!-- Slimscroll JavaScript -->
-    <script src="<%:ResolveUrl("~/plugins/assets/js/jquery.slimscroll.js") %>"></script>
-    <!-- Fancy Dropdown JS -->
-    <script src="<%:ResolveUrl("~/plugins/assets/js/dropdown-bootstrap-extended.js") %>"></script>
-
-    <!-- Switchery JavaScript -->
-    <script src="<%:ResolveUrl("~/plugins/vendors/bower_components/switchery/dist/switchery.min.js") %>"></script>
-
-    <!-- Init JavaScript -->
-    <script src="<%:ResolveUrl("~/plugins/assets/js/init.js") %>"></script>
 </body>
 </html>

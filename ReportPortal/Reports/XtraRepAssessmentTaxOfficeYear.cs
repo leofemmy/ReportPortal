@@ -12,13 +12,13 @@ namespace ReportPortal.Reports
             InitializeComponent();
         }
 
-        private void groupHeaderBand1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void groupHeaderBand1_BeforePrint(object sender, System.ComponentModel.CancelEventArgs e)
         {
             counter++;
             xrLabel2.Text = counter.ToString();
         }
 
-        private void xrLabel1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void xrLabel1_BeforePrint(object sender, System.ComponentModel.CancelEventArgs e)
         {
             xrLabel1.ForeColor = Color.Blue;
         }

@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ReportPortal {
-    
-    
-    public partial class login {
-        
+namespace ReportPortal
+{
+
+
+    public partial class login
+    {
+
         /// <summary>
         /// loginform control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace ReportPortal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm loginform;
-        
+
         /// <summary>
         /// txtemail control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace ReportPortal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtemail;
-        
+
         /// <summary>
         /// txtpassword control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace ReportPortal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtpassword;
-        
+
         /// <summary>
         /// Button1 control.
         /// </summary>

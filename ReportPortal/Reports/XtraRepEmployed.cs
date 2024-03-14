@@ -174,7 +174,7 @@ public class XtraRepEmployed : DevExpress.XtraReports.UI.XtraReport
             // 
             // xrlbsubHead
             // 
-            this.xrlbsubHead.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.xrlbsubHead.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 20F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrlbsubHead.LocationFloat = new DevExpress.Utils.PointFloat(245.9583F, 216.4999F);
             this.xrlbsubHead.Multiline = true;
             this.xrlbsubHead.Name = "xrlbsubHead";
@@ -214,7 +214,7 @@ public class XtraRepEmployed : DevExpress.XtraReports.UI.XtraReport
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable1});
-            this.Detail.Font = new System.Drawing.Font("Arial", 8F);
+            this.Detail.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
             this.Detail.HeightF = 25.79165F;
             this.Detail.Name = "Detail";
             this.Detail.StylePriority.UseFont = false;
@@ -376,7 +376,7 @@ public class XtraRepEmployed : DevExpress.XtraReports.UI.XtraReport
             // 
             this.xrLabel4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumCount([MerchantCode])")});
-            this.xrLabel4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel4.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(562.9583F, 5.125046F);
             this.xrLabel4.Multiline = true;
             this.xrLabel4.Name = "xrLabel4";
@@ -391,7 +391,7 @@ public class XtraRepEmployed : DevExpress.XtraReports.UI.XtraReport
             // 
             // xrLabel5
             // 
-            this.xrLabel5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel5.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(428.6847F, 5.125046F);
             this.xrLabel5.Multiline = true;
             this.xrLabel5.Name = "xrLabel5";
@@ -406,7 +406,7 @@ public class XtraRepEmployed : DevExpress.XtraReports.UI.XtraReport
             // 
             this.xrLabel1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[RevenueOfficeName]")});
-            this.xrLabel1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 8.125051F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
@@ -430,7 +430,7 @@ public class XtraRepEmployed : DevExpress.XtraReports.UI.XtraReport
             // 
             // xrTable2
             // 
-            this.xrTable2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.xrTable2.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 0F);
             this.xrTable2.Name = "xrTable2";
             this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -584,7 +584,7 @@ public class XtraRepEmployed : DevExpress.XtraReports.UI.XtraReport
             // 
             // xrLabel6
             // 
-            this.xrLabel6.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
+            this.xrLabel6.Font = new DevExpress.Drawing.DXFont("Arial", 15F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(441.0001F, 327.2499F);
             this.xrLabel6.Multiline = true;
             this.xrLabel6.Name = "xrLabel6";
@@ -599,7 +599,7 @@ public class XtraRepEmployed : DevExpress.XtraReports.UI.XtraReport
             // 
             this.xrLabel3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumCount([MerchantCode])")});
-            this.xrLabel3.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
+            this.xrLabel3.Font = new DevExpress.Drawing.DXFont("Arial", 15F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(552.0001F, 327.2499F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
@@ -615,7 +615,7 @@ public class XtraRepEmployed : DevExpress.XtraReports.UI.XtraReport
             // 
             // xrlborghead
             // 
-            this.xrlborghead.Font = new System.Drawing.Font("Arial Rounded MT Bold", 25F, System.Drawing.FontStyle.Bold);
+            this.xrlborghead.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 25F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrlborghead.LocationFloat = new DevExpress.Utils.PointFloat(257.4167F, 138.2916F);
             this.xrlborghead.Multiline = true;
             this.xrlborghead.Name = "xrlborghead";
@@ -627,7 +627,7 @@ public class XtraRepEmployed : DevExpress.XtraReports.UI.XtraReport
             // 
             // xrlbsubHead2
             // 
-            this.xrlbsubHead2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19F, System.Drawing.FontStyle.Bold);
+            this.xrlbsubHead2.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 19F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrlbsubHead2.LocationFloat = new DevExpress.Utils.PointFloat(245.9583F, 273.8749F);
             this.xrlbsubHead2.Multiline = true;
             this.xrlbsubHead2.Name = "xrlbsubHead2";
@@ -654,9 +654,9 @@ public class XtraRepEmployed : DevExpress.XtraReports.UI.XtraReport
             this.sqlDataSource2});
             this.DataMember = "ViewPaye";
             this.DataSource = this.sqlDataSource2;
-            this.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
             this.Landscape = true;
-            this.Margins = new System.Drawing.Printing.Margins(100, 100, 51, 27);
+            this.Margins = new DevExpress.Drawing.DXMargins(100, 100, 51, 27);
             this.PageHeight = 850;
             this.PageWidth = 1100;
             this.Version = "20.1";

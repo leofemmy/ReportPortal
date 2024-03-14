@@ -158,7 +158,7 @@ namespace ReportPortal.Reports
             // 
             // xrlbsubHead2
             // 
-            this.xrlbsubHead2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold);
+            this.xrlbsubHead2.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 12F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrlbsubHead2.LocationFloat = new DevExpress.Utils.PointFloat(163.1007F, 121.1667F);
             this.xrlbsubHead2.Multiline = true;
             this.xrlbsubHead2.Name = "xrlbsubHead2";
@@ -170,7 +170,7 @@ namespace ReportPortal.Reports
             // 
             // xrlborghead
             // 
-            this.xrlborghead.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13F, System.Drawing.FontStyle.Bold);
+            this.xrlborghead.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 13F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrlborghead.LocationFloat = new DevExpress.Utils.PointFloat(163.1007F, 10.00001F);
             this.xrlborghead.Multiline = true;
             this.xrlborghead.Name = "xrlborghead";
@@ -182,7 +182,7 @@ namespace ReportPortal.Reports
             // 
             // xrlbsubHead
             // 
-            this.xrlbsubHead.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Bold);
+            this.xrlbsubHead.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 11F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrlbsubHead.LocationFloat = new DevExpress.Utils.PointFloat(163.1007F, 64.00002F);
             this.xrlbsubHead.Multiline = true;
             this.xrlbsubHead.Name = "xrlbsubHead";
@@ -218,7 +218,7 @@ namespace ReportPortal.Reports
             // 
             // xrTableCell7
             // 
-            this.xrTableCell7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell7.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell7.Multiline = true;
             this.xrTableCell7.Name = "xrTableCell7";
             this.xrTableCell7.StylePriority.UseFont = false;
@@ -341,8 +341,8 @@ namespace ReportPortal.Reports
             this.sqlDataSource1});
             this.DataMember = "ViewNormalizedPayment";
             this.DataSource = this.sqlDataSource1;
-            this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(100, 100, 191, 25);
+            this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
+            this.Margins = new DevExpress.Drawing.DXMargins(100, 100, 191, 25);
             this.Version = "20.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();

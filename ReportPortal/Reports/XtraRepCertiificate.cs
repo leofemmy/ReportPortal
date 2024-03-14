@@ -143,7 +143,7 @@ public class XtraRepCertiificate : DevExpress.XtraReports.UI.XtraReport
             // 
             // xrLabel18
             // 
-            this.xrLabel18.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.xrLabel18.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 12F);
             this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(175.1249F, 172.75F);
             this.xrLabel18.Multiline = true;
             this.xrLabel18.Name = "xrLabel18";
@@ -156,7 +156,7 @@ public class XtraRepCertiificate : DevExpress.XtraReports.UI.XtraReport
             // 
             // xrLabel17
             // 
-            this.xrLabel17.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.xrLabel17.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 12F);
             this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(205.5416F, 148.75F);
             this.xrLabel17.Multiline = true;
             this.xrLabel17.Name = "xrLabel17";
@@ -169,7 +169,7 @@ public class XtraRepCertiificate : DevExpress.XtraReports.UI.XtraReport
             // 
             // xrLabel16
             // 
-            this.xrLabel16.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13F);
+            this.xrLabel16.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 13F);
             this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(187.2083F, 126F);
             this.xrLabel16.Multiline = true;
             this.xrLabel16.Name = "xrLabel16";
@@ -230,7 +230,7 @@ public class XtraRepCertiificate : DevExpress.XtraReports.UI.XtraReport
             this.Detail.KeepTogether = true;
             this.Detail.Name = "Detail";
             this.Detail.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
-            this.Detail.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.Detail_BeforePrint);
+            this.Detail.BeforePrint += new BeforePrintEventHandler(this.Detail_BeforePrint);
             // 
             // xrLabel19
             // 
@@ -260,7 +260,7 @@ public class XtraRepCertiificate : DevExpress.XtraReports.UI.XtraReport
             // 
             // xrRichText1
             // 
-            this.xrRichText1.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.xrRichText1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
             this.xrRichText1.LocationFloat = new DevExpress.Utils.PointFloat(28.08329F, 273.2917F);
             this.xrRichText1.Name = "xrRichText1";
             this.xrRichText1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -270,7 +270,7 @@ public class XtraRepCertiificate : DevExpress.XtraReports.UI.XtraReport
             // 
             // xrLabel14
             // 
-            this.xrLabel14.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel14.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(43.58332F, 212.875F);
             this.xrLabel14.Multiline = true;
             this.xrLabel14.Name = "xrLabel14";
@@ -283,7 +283,7 @@ public class XtraRepCertiificate : DevExpress.XtraReports.UI.XtraReport
             // 
             // xrLabel13
             // 
-            this.xrLabel13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel13.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(43.58332F, 177.375F);
             this.xrLabel13.Multiline = true;
             this.xrLabel13.Name = "xrLabel13";
@@ -296,7 +296,7 @@ public class XtraRepCertiificate : DevExpress.XtraReports.UI.XtraReport
             // 
             // xrLabel12
             // 
-            this.xrLabel12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel12.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(43.58332F, 150.875F);
             this.xrLabel12.Multiline = true;
             this.xrLabel12.Name = "xrLabel12";
@@ -309,7 +309,7 @@ public class XtraRepCertiificate : DevExpress.XtraReports.UI.XtraReport
             // 
             // xrLabel11
             // 
-            this.xrLabel11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel11.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(43.58332F, 111.375F);
             this.xrLabel11.Multiline = true;
             this.xrLabel11.Name = "xrLabel11";
@@ -322,7 +322,7 @@ public class XtraRepCertiificate : DevExpress.XtraReports.UI.XtraReport
             // 
             // xrLabel10
             // 
-            this.xrLabel10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel10.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(43.58332F, 84.875F);
             this.xrLabel10.Multiline = true;
             this.xrLabel10.Name = "xrLabel10";
@@ -335,7 +335,7 @@ public class XtraRepCertiificate : DevExpress.XtraReports.UI.XtraReport
             // 
             // xrLabel9
             // 
-            this.xrLabel9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel9.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(43.58332F, 54.37499F);
             this.xrLabel9.Multiline = true;
             this.xrLabel9.Name = "xrLabel9";
@@ -348,7 +348,7 @@ public class XtraRepCertiificate : DevExpress.XtraReports.UI.XtraReport
             // 
             // xrLabel8
             // 
-            this.xrLabel8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel8.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(43.58332F, 22.87499F);
             this.xrLabel8.Multiline = true;
             this.xrLabel8.Name = "xrLabel8";
@@ -508,8 +508,8 @@ public class XtraRepCertiificate : DevExpress.XtraReports.UI.XtraReport
             this.sqlDataSource1});
             this.DataMember = "ViewCertificateInformation";
             this.DataSource = this.sqlDataSource1;
-            this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(100, 100, 217, 40);
+            this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
+            this.Margins = new DevExpress.Drawing.DXMargins(100, 100, 217, 40);
             this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrRichText1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -518,7 +518,7 @@ public class XtraRepCertiificate : DevExpress.XtraReports.UI.XtraReport
 
     #endregion
 
-    private void Detail_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+    private void Detail_BeforePrint(object sender, CancelEventArgs e)
     {
         var hg = this.GetCurrentColumnValue("PayerUtin").ToString();
 

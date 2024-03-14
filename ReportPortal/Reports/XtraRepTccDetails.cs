@@ -8,7 +8,7 @@
             InitializeComponent();
         }
 
-        private void groupHeaderBand1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void groupHeaderBand1_BeforePrint(object sender, System.ComponentModel.CancelEventArgs e)
         {
             counter++;
             xrLabel1.Text = counter.ToString();

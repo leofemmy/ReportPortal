@@ -14,7 +14,7 @@ namespace ReportPortal
             InitializeComponent();
         }
 
-        private void groupHeaderBand1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void groupHeaderBand1_BeforePrint(object sender, CancelEventArgs e)
         {
             counter++;
             xrLabel11.Text = counter.ToString();

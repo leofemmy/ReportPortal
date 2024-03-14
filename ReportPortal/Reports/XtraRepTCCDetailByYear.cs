@@ -8,7 +8,7 @@
             InitializeComponent();
         }
 
-        private void xrLabel5_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void xrLabel5_BeforePrint(object sender, System.ComponentModel.CancelEventArgs e)
         {
             counter++;
             xrLabel5.Text = counter.ToString();

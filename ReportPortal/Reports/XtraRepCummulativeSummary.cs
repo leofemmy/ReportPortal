@@ -11,7 +11,7 @@ namespace ReportPortal.Reports
             InitializeComponent();
         }
 
-        private void xrTableCell1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void xrTableCell1_BeforePrint(object sender, System.ComponentModel.CancelEventArgs e)
         {
             xrTableCell1.ForeColor = Color.Blue;
         }

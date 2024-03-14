@@ -8,7 +8,7 @@ namespace ReportPortal
     {
         string strutin; private string strname, strcode;
 
-        private void xrLabel4_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void xrLabel4_BeforePrint(object sender, System.ComponentModel.CancelEventArgs e)
         {
             xrLabel4.ForeColor = Color.MediumPurple;
         }
