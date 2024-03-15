@@ -17,6 +17,16 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="assets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendors/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+     <!-- Page plugins css -->
+    <link href="assets/vendors/clockpicker/dist/jquery-clockpicker.min.css" rel="stylesheet">
+    <!-- Color picker plugins css -->
+    <link href="assets/vendors/jquery-asColorPicker-master/css/asColorPicker.css" rel="stylesheet">
+    <!-- Date picker plugins css -->
+    <link href="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+    <!-- Daterange picker plugins css -->
+    <link href="assets/vendors/timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
+    <link href="assets/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     <!-- Custom CSS -->
     <%-- <link href="<%:ResolveUrl("~/css/master-stylesheet.css") %>" rel="stylesheet">--%>
     <link href="assets/css/master-stylesheet.css" rel="stylesheet" />
@@ -93,7 +103,7 @@
                             <!-- Light Logo text -->
                             <%--<img src="<%:ResolveUrl("~/assets/images/logo-light-text.png") %>" class="light-logo" alt="homepage" />--%>
                                  [ Report<strong> P</strong>ortal ]
-                        </span> </a>
+                        </span></a>
 
                     <asp:Label runat="server" Text="" ID="txtuser" ForeColor="White" Width="200px"></asp:Label>
                 </div>
@@ -117,7 +127,7 @@
                         <!-- Search -->
                         <!-- ============================================================== -->
                         <li class="nav-item hidden-xs-down search-box"><a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="icon-Magnifi-Glass2"></i></a>
-                           <%-- <form class="app-search">
+                            <%-- <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Search & enter">
                                 <a class="srh-btn"><i class="ti-close"></i></a>
                             </form>--%>
@@ -182,14 +192,14 @@
                         <!-- ============================================================== -->
                         <!-- Messages -->
                         <!-- ============================================================== -->
-                        
+
                         <!-- ============================================================== -->
                         <!-- End Messages -->
                         <!-- ============================================================== -->
                         <!-- ============================================================== -->
                         <!-- mega menu -->
                         <!-- ============================================================== -->
-                       <%-- <li class="nav-item dropdown mega-dropdown"><a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-Box-Close"></i></a>
+                        <%-- <li class="nav-item dropdown mega-dropdown"><a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-Box-Close"></i></a>
                             <div class="dropdown-menu animated fadeIn">
                                 <ul class="mega-dropdown-menu row">
                                     <li class="col-lg-3 col-xlg-2 mb-30">
@@ -301,7 +311,7 @@
                         <!-- ============================================================== -->
                         <!-- Profile -->
                         <!-- ============================================================== -->
-                   <%--     <li class="nav-item dropdown">
+                        <%--     <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img src="../assets/images/users/1.jpg" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated fadeIn">
@@ -347,7 +357,7 @@
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-small-cap">PERSONAL</li>
-                   <%--     <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-apps mr-10"></i><span class="hide-menu">Dashboard</span></a>
+                        <%--     <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-apps mr-10"></i><span class="hide-menu">Dashboard</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="https://creativethemes.co.in/buy-creativetheme-html-template/studioux/hyrax-admin-bootstrap4/main/index.html">Dashboard V1</a></li>
                                 <li><a href="https://creativethemes.co.in/buy-creativetheme-html-template/studioux/hyrax-admin-bootstrap4/dark/index.html">Dashboard V2</a></li>
@@ -558,7 +568,7 @@
                 <!-- ============================================================== -->
                 <!-- Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
-          <%--      <div class="row page-titles">
+                <%--      <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
                         <h3 class="text-themecolor">Blank Page</h3>
                         <ol class="breadcrumb">
@@ -596,7 +606,7 @@
                 <!-- Right sidebar -->
                 <!-- ============================================================== -->
                 <!-- .right-sidebar -->
-               <%-- <div class="right-sidebar">
+                <%-- <div class="right-sidebar">
                     <div class="slimscrollright">
                         <div class="rpanel-title">Service Panel <span><i class="ti-close right-side-toggle"></i></span></div>
                         <div class="r-panel-body">
