@@ -741,7 +741,24 @@
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
-    <script src="<%:ResolveUrl("~/assets/vendors/styleswitcher/jQuery.style.switcher.js") %>"></script>
+    <!-- ============================================================== -->
+    <!-- Plugins for this page -->
+    <!-- ============================================================== -->
+    <!-- Plugin JavaScript -->
+    <script src="assets/vendors/moment/moment.js"></script>
+    <script src="assets/vendors/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <!-- Clock Plugin JavaScript -->
+    <script src="assets/vendors/clockpicker/dist/jquery-clockpicker.min.js"></script>
+    <!-- Color Picker Plugin JavaScript -->
+    <script src="assets/vendors/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
+    <script src="assets/vendors/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
+    <script src="assets/vendors/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
+    <!-- Date Picker Plugin JavaScript -->
+    <script src="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <!-- Date range Plugin JavaScript -->
+    <script src="assets/vendors/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="assets/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+      <script src="<%:ResolveUrl("~/assets/vendors/styleswitcher/jQuery.style.switcher.js") %>"></script>
     <asp:ContentPlaceHolder ID="ScriptContentHolder" runat="server">
     </asp:ContentPlaceHolder>
 </body>
